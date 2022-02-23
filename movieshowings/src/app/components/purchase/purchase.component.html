@@ -1,0 +1,15 @@
+<h1 style="margin-top: 100px;">Purchase Tickets</h1>
+<p>Welcome! Please verify the ticket information is correct before making your purchase.</p>
+
+<div class="purchase-main">
+
+  <h1>Tickets</h1>
+  <div id="ticket-container">
+    <ticket *ngFor="let ticket of (tickets | async)" [ticket]="ticket"></ticket>
+  </div>
+
+  <div class="purchase-button">
+    <button id="purchase-button" (click)="sendPurchase()">Purchase Tickets</button>
+  </div>
+
+</div>

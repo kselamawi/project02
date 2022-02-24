@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <h2>Update Information</h2>
+    <form>
+        <div class="row-1">
+            <label class="col-1" for="firstName">First Name:</label>
+            <input class="col-2" type="text" name="firstName" [(ngModel)]="showFirst">
+        </div>
+
+        <div class="row-1">
+            <label class="col-1" for="lastName">Last Name:</label>
+            <input class="col-2" type="text" name="lastName"  [(ngModel)]="showLast">
+        </div>
+
+        <div class="row-1">
+            <label class="col-1" for="email">Email:</label>
+            <input class="col-2" type="email" name="email"  [(ngModel)]="showEmail">
+        </div>
+
+        <div class="row-1">
+            <label class="col-1" for="password">Password:</label>
+            <input class="col-2" type="password" name="password"  [(ngModel)]="showPassword">
+        </div>
+    </form>
+
+    <button class="col-sm-3" (click)="updateUser()">Update Information</button>

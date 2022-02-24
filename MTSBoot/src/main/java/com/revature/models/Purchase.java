@@ -53,12 +53,12 @@ public class Purchase {
         this.purchaseDate = purchaseDate;
     }
 
-    public User getUser() {
+    public User getOwner() {
         return owner;
     }
 
-    public void setUser(User user) {
-        this.owner = user;
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
 
     //    public List<Ticket> getTickets() {

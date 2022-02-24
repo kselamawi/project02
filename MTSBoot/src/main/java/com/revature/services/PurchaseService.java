@@ -26,9 +26,13 @@ public class PurchaseService {
         return pr.save(purchase);
     }
 
-//    public void deletePurchase(Purchase purchase) {
-//       pr.delete(purchase);
-//    }
+    public Purchase getPurchaseById(int id) {
+        return pr.getById(id);
+    }
+
+    public void deletePurchase(Purchase purchase) {
+       pr.delete(purchase);
+    }
 
 
 }

@@ -29,8 +29,8 @@ public class User {
     @Column(name="userType")
     private UserType userType;
 
-//    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
-//    private List<Purchase> purchases = new ArrayList<>();
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
+    private List<Purchase> purchases = new ArrayList<>();
 
 
     public User(){
@@ -42,6 +42,22 @@ public class User {
         this.last = last;
         this.email = email;
         this.password = password;
+    }
+
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
+    }
+
+    public List<Purchase> getPurchases() {
+        return purchases;
+    }
+
+    public void setPurchases(List<Purchase> purchases) {
+        this.purchases = purchases;
     }
 
     public int getId() {

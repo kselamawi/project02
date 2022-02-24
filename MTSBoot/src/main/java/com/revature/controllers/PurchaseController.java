@@ -22,13 +22,25 @@ public class PurchaseController {
     @PostMapping("/")
     @ResponseBody
     public Purchase createPurchase(@RequestBody Purchase purchase) {
-        return ps.createPurchase(purchase.getPurchaseId(), purchase.getPurchaseDate(), purchase.getUserId());
+
+        return ps.createPurchase(purchase.getPurchaseId(), purchase.getPurchaseDate(), purchase.getOwner());
     }
 
-//    @DeleteMapping("/{purchaseId}")
-//    @ResponseBody
-//    Purchase getPurchaseById(@PathVariable("id")int purchaseId) {
-//        return null;
-//    }
+    @GetMapping("/{purchaseId}")
+    @ResponseBody
+    Purchase getPurchaseById(@PathVariable("purchaseId")int purchaseId) {
+        Purchase purchase = ps.getPurchaseById(purchaseId);
+
+        return purchase;
+    }
+
+    @DeleteMapping("/{purchaseId}")
+    @ResponseBody
+    boolean deletePurchaseById(@PathVariable("purchaseId")int purchaseId) {
+        Purchase purchase = ps.getPurchaseById(purchaseId);
+        ps.deletePurchase(purchase);
+
+        return true;
+    }
 
 }

@@ -1,5 +1,7 @@
 package com.revature.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.persistence.Table;
 import java.util.ArrayList;
@@ -18,8 +20,10 @@ public class Purchase {
     @Column(name="purchase_date", nullable = false)
     private Date purchaseDate;
 
-    @Column(name="userId")
-    private int userId;
+    @ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
+    @JoinColumn(name="owner")
+    @JsonIgnore
+    private User owner;
 
 //    @OneToMany(mappedBy = "ticket", cascade = CascadeType.ALL)
 //    private List<Ticket> tickets = new ArrayList<>();
@@ -27,10 +31,10 @@ public class Purchase {
 
     public Purchase() {}
 
-    public Purchase(int purchaseId, Date purchaseDate, int userId) {
-        this.purchaseId = purchaseId;
+    public Purchase(int id, Date purchaseDate, User user) {
+        this.purchaseId = id;
         this.purchaseDate = purchaseDate;
-        this.userId = userId;
+        this.owner = user;
     }
 
     public int getPurchaseId() {
@@ -49,20 +53,19 @@ public class Purchase {
         this.purchaseDate = purchaseDate;
     }
 
-    public int getUserId() {
-        return userId;
+    public User getOwner() {
+        return owner;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
 
-//    public List<Ticket> getTickets() {
+    //    public List<Ticket> getTickets() {
 //        return tickets;
 //    }
-//
+
 //    public void setTickets(List<Ticket> tickets) {
 //        this.tickets = tickets;
 //    }
-
 }

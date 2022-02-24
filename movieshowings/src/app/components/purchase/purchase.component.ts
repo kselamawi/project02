@@ -3,8 +3,6 @@ import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { EmailValidator } from '@angular/forms';
 import { UpdateUserComponent } from '../update-user/update-user.component';
-// const nodemailer = require("nodemailer");
-
 
 @Component({
   selector: 'purchase',
@@ -39,7 +37,7 @@ export class PurchaseComponent implements OnInit {
   purchaseTotalAmt: Number = 0;
   purchasedDate: Date = new Date(); //get current date
 
-  transporter = nodemailer.createTransport(transport[, defaults])
+  //transporter = nodemailer.createTransport();
 
   ticketInfo = {
     movieName: "",
@@ -68,6 +66,7 @@ export class PurchaseComponent implements OnInit {
     }
     this.makePurchase.emit(purchase);
 
+    
     const message = {
       from: "sender@MovieTheater.com",
       to: this.userEmail,
@@ -76,7 +75,8 @@ export class PurchaseComponent implements OnInit {
         this.purchasedDate + ". Enjoy your movie!",
     }
 
-    this.transporter.sendMail(message); //hopefully this sends email to this.userEmail
+   // this.transporter.sendMail(message); //hopefully this sends email to this.userEmail
+
 
     alert("Thank you for your purchase. Enjoy your movie!")
 

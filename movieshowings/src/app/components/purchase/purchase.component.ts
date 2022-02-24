@@ -1,7 +1,6 @@
+import { Time } from '@angular/common';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Observable, ObservableInputTuple } from 'rxjs';
-import { ITicket } from 'src/app/Interfaces/ITicket';
-import { TicketService } from 'src/app/services/ticket.service';
+import { UpdateUserComponent } from '../update-user/update-user.component';
 
 @Component({
   selector: 'purchase',
@@ -10,72 +9,66 @@ import { TicketService } from 'src/app/services/ticket.service';
 })
 export class PurchaseComponent implements OnInit {
 
-  tickets:Observable<ITicket[]> = new Observable<ITicket[]>();
+  @Output() makePurchase = new EventEmitter();
 
   hide: boolean = true;
 
-  ticket: Iticket = {
-    id: 0,
-    price: "",
-    movie: "",
-    date: null,
-    showTime:null,
-    user: {
-      userId: 0,
-      userType:0,
-      email: "",
-      first: "",
-      last: "",
-    }
+  showHide(): void {
+    this.hide = !this.hide;
   }
 
-  //send purchase data
-  @Output() sendPurchase = new EventEmitter();
-
-  //variables for storing user's data
-  userId: Number = 0;
-  userFirstName: String = ""; //want to have name ready to thank them for purchase
-  userLastName: String = "";
-  userEmail: String = "";
-
-  //variables for storing ticket data
-  ticketId: Number = 0;
-  ticketPrice: Number = 0;
-  ticketQuantity: Number = 0;
-
-
-  onSubmit(): void {
-    console.log("User:", this.userFirstName, this.userLastName, this.userEmail)
-    console.log("Purchased Ticket(s):", this.ticketId, this.ticketPrice, this.ticketQuantity)
-
-
-    const purchase = {
-      purchaseId: 0,
-      userId: 0,
-      firstName: this.userFirstName,
-      lastName: this.userLastName,
-      email: this.userEmail,
-      purchaseAmount: 0,
-      purchaseDate: null
-    }
-
-    this.sendPurchase.emit(purchase);
-
-    this.userId = 0;
-    this.userFirstName = "";
-    this.userLastName = "";
-    this.userEmail = "";
-  }
-
-
-  //We need to tell angular that we want to use the service in our component
-  //We do that with injection
-  constructor(private ticketService:TicketService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    //We will use ngOnInit lifecycle method to grab the posts from our service, and display them
-    this.ticketService.getTickets();
-    this.tickets = this.ticketService.movie;
   }
 
+  userFirst: String = "";
+  userLast: String = "";
+  userEmail: String = "";
+  userPassword: String = "";
+
+  ticketMovieName: String = "";
+  ticketPrice: Number = 0;
+  ticketQuantity: Number = 0;
+  ticketDateAndTime: Date = new Date(); //date and time of movie showing
+
+  purchaseTotalAmt: Number = 0;
+  purchasedDate: Date = new Date(); //get current date
+
+  showHide(): void {
+    this.hide = !this.hide;
+  }
+
+  ticketInfo = {
+    movieName: "",
+    pricePerTicket: 0,
+    numberTickets: 0,
+    showingDateAndTime: new Date()
+  }
+
+  getTicketInfoFromSaveTickets($event: any): void{
+    console.log("called getTicketInfoFromSaveTickets");
+    console.log($event);
+
+    this.ticketInfo = $event;
+
+    this.ticketMovieName = this.ticketInfo.movieName;
+    this.ticketPrice = this.ticketInfo.pricePerTicket;
+    this.ticketQuantity = this.ticketInfo.numberTickets;
+    this.ticketDateAndTime = this.ticketInfo.showingDateAndTime;
+  }
+
+  updatePurchase(): void {
+    const purchase = {
+      purchaseAmount: this.purchaseTotalAmt;
+      purchaseDate: this.purchasedDate;
+    }
+  }
+
+  this.makePurchase.emit(purchase);
+
+  this.purchaseTotalAmt = 0;
+  this.purchasedDate = new Date();
+
 }
+

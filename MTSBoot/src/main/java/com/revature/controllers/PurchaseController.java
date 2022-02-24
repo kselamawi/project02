@@ -25,4 +25,10 @@ public class PurchaseController {
         return ps.createPurchase(purchase.getPurchaseId(), purchase.getPurchaseDate(), purchase.getUserId());
     }
 
+//    @DeleteMapping("/{purchaseId}")
+//    @ResponseBody
+//    Purchase getPurchaseById(@PathVariable("id")int purchaseId) {
+//        return null;
+//    }
+
 }

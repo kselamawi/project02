@@ -25,9 +25,9 @@ public class PurchaseService {
         return pr.save(purchase);
     }
 
-    public void deletePurchase(Purchase purchase) {
-       pr.delete(purchase);
-    }
+//    public void deletePurchase(Purchase purchase) {
+//       pr.delete(purchase);
+//    }
 
 
 }

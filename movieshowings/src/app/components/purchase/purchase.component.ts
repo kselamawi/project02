@@ -46,6 +46,7 @@ export class PurchaseComponent implements OnInit {
     showingDateAndTime: new Date()
   }
 
+  //get the information from when the tickets were saved to user account
   getTicketInfoFromSaveTickets($event: any): void{
     console.log("called getTicketInfoFromSaveTickets");
     console.log($event);

@@ -29,8 +29,10 @@ public class User {
     @Column(name="userType")
     private UserType userType;
 
+
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
     private List<Purchase> purchases = new ArrayList<>();
+
 
 
     public User(){

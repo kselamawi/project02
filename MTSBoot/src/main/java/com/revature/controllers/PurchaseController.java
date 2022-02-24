@@ -22,7 +22,7 @@ public class PurchaseController {
     @PostMapping("/")
     @ResponseBody
     public Purchase createPurchase(@RequestBody Purchase purchase) {
-        return ps.createPurchase(purchase.getPurchaseId(), purchase.getPurchaseDate(), purchase.getUserId());
+        return ps.createPurchase(purchase.getPurchaseId(), purchase.getPurchaseDate(), purchase.getUser());
     }
 
 //    @DeleteMapping("/{purchaseId}")

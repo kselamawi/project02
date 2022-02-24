@@ -3,43 +3,48 @@ package com.revature.controllers;
 
 import com.revature.models.User;
 import com.revature.repository.UserRepository;
+import com.revature.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/users")
 @CrossOrigin("*")
 public class UserController {
 
-    private UserRepository us;
-
-
-    @Autowired
-    public UserController(UserRepository us){
-        this.us = us;
-    }
-
-
+    private UserService us;
 
     public UserController(){
 
+    }
+
+    @Autowired
+    public UserController(UserService us){
+        this.us = us;
     }
 
 
     @GetMapping("/")
     @ResponseBody
     public List<User> getAllPeople(){
-        List<User> userList = new ArrayList<>();
-        User user = new User("John", "Jenkins", "jk@email.com", "password");
-        userList.add(user);
-        return userList;
+        return us.getAllUsers();
+    }
+
+    @PostMapping("/")
+    @ResponseBody
+    public User createUser(@RequestBody User u){
+
+    return us.createNewUser(u.getEmail(), u.getFirst(), u.getLast(), u.getPassword());
+    }
+
+    @GetMapping("/{id}")
+    @ResponseBody
+    public User getUserById(@PathVariable("id")int id){
+    return us.getUserById(id);
     }
 
 }

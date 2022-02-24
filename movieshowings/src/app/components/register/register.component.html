@@ -1,0 +1,32 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+<div class="text-center mb-4">
+    <img class="mb-4" src="https://lewes.lib.de.us/files/2017/07/Movie-reel-film-reel-clipart.jpeg" alt width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Sign Up Here</h1>
+    <p>Words, moar words, i'm so tired</p>
+</div>
+<div class="form-label-group text-center mb-4">
+    <form id="register" (ngSubmit)="onSubmit()">
+        <div>
+            <input [(ngModel)]="firstName" id="first" name="first" type="string" class="form-control" placeholder="First Name" required autofocus/>
+        </div>
+        <br>
+        <div>
+            <input [(ngModel)]="lastName" id="last" name="last" type="string" class="form-control" placeholder="Last Name" required autofocus/>
+        </div>
+        <br>
+        <div>
+            <input [(ngModel)]="email" id="email" name="email" type="email" class="form-control" placeholder="E-Mail" required autofocus/>
+        </div>
+        <br>
+        <div>
+            <input [(ngModel)]="password" id="password" name="password" type="password" class="form-control" placeholder="Password" required autofocus minlength="8"/>
+        </div>
+        <br>
+        <input type="submit" class="btn btn-log btn-primary btn-block" value="Sign Up"/>
+    </form>
+</div>
+</body>
+ 

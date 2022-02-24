@@ -1,0 +1,52 @@
+.text-center {
+    text-align: center!important;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem!important;
+}
+
+.form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+    padding: var(--input-adding-y) var(--input-adding-x);
+}
+
+.form-control{
+    width: 30%;
+    height: 30px;
+    font-size: 1rem;
+    line-height: 1.5;
+
+}
+
+body {
+    background-image: url();
+    background-color: green;
+    align-items: center;
+    padding: 100px;
+    margin: auto;
+   }
+
+.btn {
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.btn-primary {
+    color: white;
+    background-color: crimson;
+    border-color: brown;
+}
+
+.btn-block {
+    width: 40%;
+}
+
+.btn-log {
+    padding: .5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+
+}

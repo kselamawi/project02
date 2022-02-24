@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad944271-0c46-47a3-aa31-5e2f36cbd485" name="Changes" comment="incorporated Isaiah's branch into mine">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movieshowings/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movieshowings/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movieshowings/src/app/components/purchase/purchase.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/src/app/components/purchase/purchase.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movieshowings/src/app/components/purchase/purchase.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/src/app/components/purchase/purchase.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movieshowings/src/app/components/purchase/purchase.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/src/app/components/purchase/purchase.component.ts" afterDir="false" />
     </list>
@@ -80,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645651297279</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="incorporated Isaiah's branch into mine">
+      <created>1645731442889</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1645731442889</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -98,6 +104,7 @@
     <MESSAGE value="1st commit on my branch" />
     <MESSAGE value="updating my branch from Isaiah's changes today" />
     <MESSAGE value="no big changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="no big changes" />
+    <MESSAGE value="incorporated Isaiah's branch into mine" />
+    <option name="LAST_COMMIT_MESSAGE" value="incorporated Isaiah's branch into mine" />
   </component>
 </project>

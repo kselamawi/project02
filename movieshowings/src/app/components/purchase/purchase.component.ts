@@ -1,6 +1,10 @@
 import { Time } from '@angular/common';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { EmailValidator } from '@angular/forms';
 import { UpdateUserComponent } from '../update-user/update-user.component';
+// const nodemailer = require("nodemailer");
+
 
 @Component({
   selector: 'purchase',
@@ -35,9 +39,7 @@ export class PurchaseComponent implements OnInit {
   purchaseTotalAmt: Number = 0;
   purchasedDate: Date = new Date(); //get current date
 
-  showHide(): void {
-    this.hide = !this.hide;
-  }
+  transporter = nodemailer.createTransport(transport[, defaults])
 
   ticketInfo = {
     movieName: "",
@@ -61,15 +63,28 @@ export class PurchaseComponent implements OnInit {
 
   updatePurchase(): void {
     const purchase = {
-      purchaseAmount: this.purchaseTotalAmt;
-      purchaseDate: this.purchasedDate;
+      purchaseAmount: this.purchaseTotalAmt,
+      purchaseDate: this.purchasedDate
     }
+    this.makePurchase.emit(purchase);
+
+    const message = {
+      from: "sender@MovieTheater.com",
+      to: this.userEmail,
+      subject: "Purchase Confirmation",
+      text: "Thank you for your purchase! A purchase of " + this.purchaseTotalAmt + " was made on " +
+        this.purchasedDate + ". Enjoy your movie!",
+    }
+
+    this.transporter.sendMail(message); //hopefully this sends email to this.userEmail
+
+    alert("Thank you for your purchase. Enjoy your movie!")
+
+    this.purchaseTotalAmt = 0;
+    this.purchasedDate = new Date();
+
+
   }
-
-  this.makePurchase.emit(purchase);
-
-  this.purchaseTotalAmt = 0;
-  this.purchasedDate = new Date();
 
 }
 

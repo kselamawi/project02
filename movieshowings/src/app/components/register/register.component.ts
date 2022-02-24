@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+//import { first, last } from 'rxjs';
+import { UserService } from 'src/app/services/user.service';
 //import { EventEmitter } from 'stream';
 
 @Component({
@@ -29,12 +31,15 @@ export class RegisterComponent implements OnInit {
 
     console.log(user);
 
-    //call userservice (*make* register user service)
-    //then do subscribe like fetchhh
+    //connecting to userservice
+    this.userService.register(user.first, user.last, user.email, user.password)
+    .subscribe(data => {
+      console.log(data);
+    })
     
   }
 
-  constructor() { }
+  constructor(private userService:UserService) { }
 
   ngOnInit(): void {
   }

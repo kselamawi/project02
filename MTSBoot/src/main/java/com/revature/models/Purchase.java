@@ -21,9 +21,9 @@ public class Purchase {
     private Date purchaseDate;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
-    @JoinColumn(name="userId")
+    @JoinColumn(name="owner")
     @JsonIgnore
-    private User userId;
+    private User owner;
 
 //    @OneToMany(mappedBy = "ticket", cascade = CascadeType.ALL)
 //    private List<Ticket> tickets = new ArrayList<>();
@@ -34,7 +34,7 @@ public class Purchase {
     public Purchase(int id, Date purchaseDate, User user) {
         this.purchaseId = id;
         this.purchaseDate = purchaseDate;
-        this.userId = user;
+        this.owner = user;
     }
 
     public int getPurchaseId() {
@@ -53,12 +53,13 @@ public class Purchase {
         this.purchaseDate = purchaseDate;
     }
 
-    public User getUser() {
-        return userId;
+
+    public User getOwner() {
+        return owner;
     }
 
-    public void setUser(User user) {
-        this.userId = user;
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
 
     //    public List<Ticket> getTickets() {

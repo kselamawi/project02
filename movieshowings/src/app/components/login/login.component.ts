@@ -16,16 +16,22 @@ export class LoginComponent implements OnInit {
     console.log(this.email);
     console.log(this.password);
 
-    //still need to make a user service?
-    this.userService.login(this.email, this.password);
-
-    /*.subscribe(data => {
-      let mail = "";
+    //connect to userService
+    this.userService.login(this.email, this.password)
+    .subscribe(data => {
+      let email2 = "";
+      let password2 = "";
       if(data.email) {
-        mail = data.email;
+        email2 = data.email;
       }
-*/
-   // })
+      if(data.password) {
+        password2 = data.password;
+      }
+      this.userService.user = {
+        email: email2,
+        password: password2
+      };
+    });
 
   }
 

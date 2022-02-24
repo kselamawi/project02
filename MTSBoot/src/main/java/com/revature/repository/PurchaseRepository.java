@@ -9,4 +9,5 @@ public interface PurchaseRepository extends JpaRepository<Purchase, Integer> {
 
     //Purchase findAllPurchaseByUserId(int userId);
 
+
 }

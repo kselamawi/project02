@@ -1,16 +1,37 @@
 package com.revature.models;
 
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name="users")
 public class User {
 
     //Database Values
+    @Id
+    @Column(name="userId")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name="first_name", nullable = false)
     private String first;
+
+    @Column(name="last_name", nullable = false)
     private String last;
+
+    @Column(name="email", nullable = false)
     private String email;
+
+    @Column(name="password", nullable = false)
     private String password;
+
+    @Column(name="userType")
     private UserType userType;
+
+//    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
+//    private List<Purchase> purchases = new ArrayList<>();
+
 
     public User(){
 

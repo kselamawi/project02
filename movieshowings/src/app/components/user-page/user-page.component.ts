@@ -21,6 +21,9 @@ export class UserPageComponent implements OnInit {
   showEmail:String = "";
   showPassword:String = "";
 
+  ticketMovieName:String = "";
+  ticketPrice:String = "";
+
   userInfo = {
     f_name:"",
     l_name:"",

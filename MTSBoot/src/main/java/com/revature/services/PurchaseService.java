@@ -32,9 +32,9 @@ public class PurchaseService {
     }
 // This method gets all purchase by user (waiting on UserService to be created) *********************************
 
-//    public List<Purchase> getPurchasesByUser(User user){
-//        return pr.findAllByOwner(user);
-//    }
+    public List<Purchase> getPurchasesByUser(User user){
+        return pr.findAllByOwner(user);
+    }
 
     public void deletePurchase(Purchase purchase) {
        pr.delete(purchase);

@@ -53,6 +53,7 @@ public class Purchase {
         this.purchaseDate = purchaseDate;
     }
 
+
     public User getOwner() {
         return owner;
     }

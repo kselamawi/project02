@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="GradleMigrationSettings" migrationVersion="1" />
+=======
+>>>>>>> ce5cb435937e9248c76a63437952f7ab7a5ecfdd
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
+<<<<<<< HEAD
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
 <<<<<<< HEAD
         <option name="gradleHome" value="$PROJECT_DIR$/../../../../../Gradle/gradle-7.3.3" />
@@ -16,6 +20,14 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+=======
+        <option name="externalProjectPath" value="$PROJECT_DIR$/MTSBoot" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../gradle-7.3.3" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/MTSBoot" />
+>>>>>>> ce5cb435937e9248c76a63437952f7ab7a5ecfdd
           </set>
         </option>
       </GradleProjectSettings>

@@ -10,20 +10,41 @@ import { catchError } from 'rxjs';
 })
 export class UserService {
 
+  newUser: IUser = {
+    first: "",
+    last: "",
+    email: "",
+    password: ""
+  }
+
   user: IUser = {
     email: "",
     password: ""
   }
 
-  login(email: String, password: String): any {
-    this.http.post<IUser>("http://localhost:4200/login", JSON.stringify({email, password}))
-    //.pipe(catchError((e) => {
-      //return new throwError(e);
-    //}))
+  //shouldn't this and login return an observable since there's multiple values?
+  register(first: String, last: String, email: String, password: String): Observable<IUser> {
+    return this.http.post<IUser>("http://localhost:4200/register", JSON.stringify({first, last, email, password}))
+    .pipe(catchError((e) => {
+      return throwError(e);
+    }));
+    /*
     .subscribe((data) => {
       console.log(data);
     })
+    */
+  }
 
+  login(email: String, password: String): Observable<IUser> {
+    return this.http.post<IUser>("http://localhost:4200/login", JSON.stringify({email, password}))
+    .pipe(catchError((e) => {
+      return throwError(e);
+    }))
+    /*
+    .subscribe((data) => {
+      console.log(data);
+    })
+*/
   }
 
   constructor(private http:HttpClient) { }

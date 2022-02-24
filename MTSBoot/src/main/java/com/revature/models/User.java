@@ -1,6 +1,7 @@
 package com.revature.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -27,6 +28,9 @@ public class User {
 
     @Column(name="userType")
     private UserType userType;
+
+//    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
+//    private List<Purchase> purchases = new ArrayList<>();
 
 
     public User(){

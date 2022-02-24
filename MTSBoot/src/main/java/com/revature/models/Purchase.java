@@ -7,7 +7,7 @@ import java.util.List;
 import java.sql.Date;
 
 @Entity
-@Table(name="people")
+@Table(name="purchases")
 public class Purchase {
 
     @Id
@@ -21,8 +21,8 @@ public class Purchase {
     @Column(name="userId")
     private int userId;
 
-    @OneToMany(mappedBy = "ticket", cascade = CascadeType.ALL)
-    private List<Ticket> tickets = new ArrayList<>();
+//    @OneToMany(mappedBy = "ticket", cascade = CascadeType.ALL)
+//    private List<Ticket> tickets = new ArrayList<>();
 
 
     public Purchase() {}
@@ -57,11 +57,11 @@ public class Purchase {
         this.userId = userId;
     }
 
-    public List<Ticket> getTickets() {
-        return tickets;
-    }
+//    public List<Ticket> getTickets() {
+//        return tickets;
+//    }
 
-    public void setTickets(List<Ticket> tickets) {
-        this.tickets = tickets;
-    }
+//    public void setTickets(List<Ticket> tickets) {
+//        this.tickets = tickets;
+//    }
 }

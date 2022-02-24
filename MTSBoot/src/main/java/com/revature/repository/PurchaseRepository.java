@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PurchaseRepository extends JpaRepository<Purchase, Integer> {
 
-    Purchase findPurchaseById(int purchaseId);
+    //Purchase findPurchaseById(int purchaseId);
 
 }

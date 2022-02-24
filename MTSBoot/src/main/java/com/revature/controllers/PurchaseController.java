@@ -35,12 +35,12 @@ public class PurchaseController {
 
     // This method gets all purchase by user (waiting on UserService to be created) *********************************
 
-//    @GetMapping("/user/{id}")
-//    @ResponseBody
-//    public List<Purchase> getPurchaseByUserId(@PathVariable("id")int id) {
-//         User user = us.getById(id);
-//         return ps.getPurchasesByUser(user);
-//    }
+    @GetMapping("/user/{id}")
+    @ResponseBody
+    public List<Purchase> getPurchaseByUserId(@PathVariable("id")int id) {
+         User user = us.getUserById(id);
+         return ps.getPurchasesByUser(user);
+    }
 
     @DeleteMapping("/{purchaseId}")
     @ResponseBody

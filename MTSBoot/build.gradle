@@ -18,6 +18,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'org.springframework.boot:spring-boot:2.6.1'
     runtimeOnly 'org.postgresql:postgresql'
+    implementation group: 'javax.mail', name: 'javax.mail-api', version: '1.6.2'
 
 
 }

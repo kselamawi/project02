@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8a4b731f-4793-482d-a002-1920fb6d5074" name="Changes" comment="pulled from main, updating my branch">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/8/e8399bda719351b2620db47091aff4938b7e3cd1" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/8/e8399bda719351b2620db47091aff4938b7e3cd1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/MtsBootApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/MtsBootApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/services/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/services/EmailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movieshowings/src/app/components/purchase/purchase.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/src/app/components/purchase/purchase.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movieshowings/src/app/services/ticket-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/src/app/services/ticket-service.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +101,14 @@
       <option name="presentableId" value="Default" />
       <updated>1645653083618</updated>
     </task>
+    <task id="LOCAL-00001" summary="pulled from main, updating my branch">
+      <created>1645826201772</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1645826201772</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

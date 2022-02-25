@@ -8,8 +8,8 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class LoginComponent implements OnInit {
 
-  email: String = "";
-  password: String = "";
+  email: string = "";
+  password: string = "";
   error: boolean = false;
 
   onSubmit(): void {

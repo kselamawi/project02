@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad944271-0c46-47a3-aa31-5e2f36cbd485" name="Changes" comment="purchase page front end update. Tried to get email working by adding a server service to frontend....but it doesn't seem to work">
-      <change afterPath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/services/EmailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+    <list default="true" id="8a4b731f-4793-482d-a002-1920fb6d5074" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MTSBoot/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/MTSBoot/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/MtsBootApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/MtsBootApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,25 +15,34 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$">
+    <projectState path="$PROJECT_DIR$/MTSBoot">
       <ProjectState />
     </projectState>
   </component>
-  <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/isaiah" />
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="MTSBoot" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="25RHXBmowqbHAiko8Z0yS4Gyt0u" />
+  <component name="ProjectId" id="25WqF2jjHn1qVlfpIK3jiErVJ3s" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -44,58 +50,17 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="advanced.settings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/MTSBoot" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ad944271-0c46-47a3-aa31-5e2f36cbd485" name="Changes" comment="" />
-      <created>1645483018072</created>
+      <changelist id="8a4b731f-4793-482d-a002-1920fb6d5074" name="Changes" comment="" />
+      <created>1645653083618</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1645483018072</updated>
+      <updated>1645653083618</updated>
     </task>
-    <task id="LOCAL-00001" summary="1st commit on my branch">
-      <created>1645483126806</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1645483126807</updated>
-    </task>
-    <task id="LOCAL-00002" summary="updating my branch from Isaiah's changes today">
-      <created>1645567615385</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1645567615386</updated>
-    </task>
-    <task id="LOCAL-00003" summary="no big changes">
-      <created>1645651297279</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1645651297279</updated>
-    </task>
-    <task id="LOCAL-00004" summary="incorporated Isaiah's branch into mine">
-      <created>1645731442889</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1645731442889</updated>
-    </task>
-    <task id="LOCAL-00005" summary="purchase page front end update. Tried to get email working by adding a server service to frontend....but it doesn't seem to work">
-      <created>1645744060768</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1645744060768</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -108,17 +73,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="1st commit on my branch" />
-    <MESSAGE value="updating my branch from Isaiah's changes today" />
-    <MESSAGE value="no big changes" />
-    <MESSAGE value="incorporated Isaiah's branch into mine" />
-    <MESSAGE value="purchase page front end update. Tried to get email working by adding a server service to frontend....but it doesn't seem to work" />
-    <option name="LAST_COMMIT_MESSAGE" value="purchase page front end update. Tried to get email working by adding a server service to frontend....but it doesn't seem to work" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>

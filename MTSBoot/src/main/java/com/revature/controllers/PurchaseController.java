@@ -29,7 +29,7 @@ public class PurchaseController {
     @PostMapping("/")
     @ResponseBody
     public Purchase createPurchase(@RequestBody Purchase purchase) {
-
+        System.out.println("why is it not working?" + purchase);
         return ps.createPurchase(purchase.getPurchaseId(), purchase.getPurchaseDate(), purchase.getOwner());
     }
 

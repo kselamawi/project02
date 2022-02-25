@@ -25,7 +25,7 @@ public class UserService {
 
     public User createNewUser(String email, String first, String last, String password){
         User u = new User(first, last, email, password);
-        u.setUserType(UserType.CUSTOMER);
+        //u.setUserType(UserType.CUSTOMER);
         System.out.print(u);
         return ur.save(u);
     }

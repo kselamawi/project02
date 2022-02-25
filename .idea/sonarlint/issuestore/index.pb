@@ -7,3 +7,11 @@ t
 DMTSBoot/src/main/java/com/revature/controllers/TicketController.java,2\8\28acfa3cf067f77eb963b1e8aaecd49dfa7259c7
 v
 FMTSBoot/src/main/java/com/revature/controllers/PurchaseController.java,e\8\e8399bda719351b2620db47091aff4938b7e3cd1
+W
+'movieshowings/src/app/app.component.css,5\1\51ddb53411ab0a30e4887505d29c8beea4bbd890
+X
+(movieshowings/src/app/app.component.html,7\b\7b05492d35a2b14a8e19e1c6dd32951236c2d765
+V
+&movieshowings/src/app/app.component.ts,1\a\1abe9cafed11e6f05fe98588f7d80b5c708043de
+S
+#movieshowings/src/app/app.module.ts,f\5\f5b0b6ab193724a0d7e907abc78570c857f75331

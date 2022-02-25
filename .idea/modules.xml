@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MTSBoot.iml" filepath="$PROJECT_DIR$/.idea/modules/MTSBoot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MTSBoot.main.iml" filepath="$PROJECT_DIR$/.idea/modules/MTSBoot.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MTSBoot.test.iml" filepath="$PROJECT_DIR$/.idea/modules/MTSBoot.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Project02.iml" filepath="$PROJECT_DIR$/.idea/Project02.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Project2.iml" filepath="$PROJECT_DIR$/.idea/modules/Project2.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Project2.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Project2.app.iml" />

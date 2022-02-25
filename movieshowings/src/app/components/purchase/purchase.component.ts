@@ -3,6 +3,7 @@ import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { EmailValidator } from '@angular/forms';
 import { UpdateUserComponent } from '../update-user/update-user.component';
+import { PurchaseService } from 'src/app/services/purchase-service.service';
 
 @Component({
   selector: 'purchase',
@@ -11,15 +12,14 @@ import { UpdateUserComponent } from '../update-user/update-user.component';
 })
 export class PurchaseComponent implements OnInit {
 
-  @Output() makePurchase = new EventEmitter();
-
   hide: boolean = true;
 
   showHide(): void {
     this.hide = !this.hide;
   }
 
-  constructor() { }
+    constructor() { }
+    constructor(private purchaseService: PurchaseService) { }
 
   ngOnInit(): void {
   }
@@ -44,7 +44,40 @@ export class PurchaseComponent implements OnInit {
     pricePerTicket: 0,
     numberTickets: 0,
     showingDateAndTime: new Date()
-  }
+    }
+
+
+
+    onSubmit(): void {
+        console.log(this.ticketInfo);
+
+        //connect to purchaseService
+        this.purchaseService.purchase(this.ticketMovieName, this.ticketPrice, this.ticketQuantity, this.ticketDateAndTime)
+            .subscribe(data => {
+                let movieName2 = "";
+                let tPrice = 0;
+                let tQuant = 0;
+                let tDateandTime = "";
+                if (data.ticketMovieName) {
+                    movieName2 = data.ticketMovieName;
+                }
+                if (data.ticketPrice) {
+                    tPrice = data.ticketPrice;
+                }
+                if (data.ticketQuantity) {
+                    tQuant = data.ticketQuantity;
+                }
+                if (data.ticketDateAndTime) {
+                    tDateandTime = data.ticketDateAndTime;
+                }
+                this.purchaseService.ticket = {
+                    movieName: movieName2,
+                    price: tPrice,
+                    quantity: tQuant,
+                    show_date_and_time: tDateandTime
+                };
+            });
+    }
 
   //get the information from when the tickets were saved to user account
   getTicketInfoFromSaveTickets($event: any): void{

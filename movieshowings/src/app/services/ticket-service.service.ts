@@ -9,7 +9,8 @@ export class TicketServiceService {
 
   ticket = {
     movie_name:"",
-    price:"",
+    price: 0,
+    show_date_and_time: new Date(),
   }
   
   

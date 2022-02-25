@@ -10,41 +10,32 @@ import { catchError } from 'rxjs';
 })
 export class UserService {
 
-  newUser: IUser = {
+  user: IUser = {
     first: "",
     last: "",
     email: "",
     password: ""
   }
 
-  user: IUser = {
+  logUser: IUser = {
     email: "",
     password: ""
   }
 
   //shouldn't this and login return an observable since there's multiple values?
-  register(first: String, last: String, email: String, password: String): Observable<IUser> {
-    return this.http.post<IUser>("http://localhost:4200/register", JSON.stringify({first, last, email, password}))
+  register(user: IUser): Observable<IUser> {
+    return this.http.post<IUser>("http://localhost:8080/users/", JSON.stringify(user))
     .pipe(catchError((e) => {
       return throwError(e);
     }));
-    /*
-    .subscribe((data) => {
-      console.log(data);
-    })
-    */
   }
 
+  //may have to change backend to allow two posts
   login(email: String, password: String): Observable<IUser> {
-    return this.http.post<IUser>("http://localhost:4200/login", JSON.stringify({email, password}))
+    return this.http.post<IUser>("http://localhost:8080/login", JSON.stringify({email, password}))
     .pipe(catchError((e) => {
       return throwError(e);
     }))
-    /*
-    .subscribe((data) => {
-      console.log(data);
-    })
-*/
   }
 
   constructor(private http:HttpClient) { }

@@ -2,16 +2,12 @@ package com.revature.services;
 
 import com.revature.exceptions.NotAValidLogin;
 import com.revature.models.User;
-import com.revature.models.UserType;
 import com.revature.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.client.HttpClientErrorException;
 
-import javax.servlet.http.HttpSession;
 import java.util.List;
-import java.util.Locale;
 
 @Service
 @Transactional
@@ -28,7 +24,6 @@ public class UserService {
 
     public User createNewUser(String email, String first, String last, String password){
         User u = new User(first, last, email, password);
-        u.setUserType(UserType.CUSTOMER);
         System.out.print(u);
         return ur.save(u);
     }
@@ -41,11 +36,17 @@ public class UserService {
         return ur.getById(id);
     }
 
-    public boolean login(String email) throws NotAValidLogin {
-        System.out.println(ur.findUserByEmail(email));
-        if(ur.findUserByEmail(email)!= null){
-            return true;
+    public User login(User user) throws NotAValidLogin {
+        User info = ur.findUserByEmail(user.getEmail());
+        System.out.println(info.getPassword() + user.getPassword());
+        if(info!= null && info.getPassword().equals(user.getPassword())){
+            return info;
         }
-        return false;
+        return null;
     }
+
+    public void updateUser(User u){
+        ur.save(u);
+    }
+
 }

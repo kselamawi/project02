@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { IUser } from 'src/app/interfaces/IUser';
 
 @Component({
   selector: 'user-update',
@@ -16,10 +17,10 @@ export class UpdateUserComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  showFirst:String = "";
-  showLast:String = "";
-  showEmail:String = "";
-  showPassword:String = "";
+  showFirst:string = "";
+  showLast:string = "";
+  showEmail:string = "";
+  showPassword:string = "";
   
   showHide(): void {
     this.hide = !this.hide;
@@ -27,9 +28,9 @@ export class UpdateUserComponent implements OnInit {
   }
 
   updateUser(): void {
-    const user = {
-      f_name: this.showFirst,
-      l_name: this.showLast,
+    const user:IUser = {
+      first: this.showFirst,
+      last: this.showLast,
       email: this.showEmail,
       password: this.showPassword
     }

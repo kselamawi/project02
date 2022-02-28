@@ -15,10 +15,6 @@ public class Ticket {
     @Column(name="id")
     private int id;
 
-    @Column(name="ownerID")
-    private int ownerID;
-
-
     @Column(name="Show_Time_Date",nullable = false)
     private Date Show_Time_Date;
 
@@ -33,29 +29,15 @@ public class Ticket {
 
     @Column(name="ReleaseDate",nullable = false)
     private  Date releaseDate;
-    // many users can have same ticket (i.e many users can watch same movie)
-    @OneToMany(mappedBy ="ticket",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    @JsonIgnore
-    private List<User> users =new ArrayList<>();
-    // second option
-    /*  @ManyToOne (fetch = FetchType.LAZY, optional = false)
-    @JoinColumn (name = "ticket_id", nullable = false)
-    private User user;.
-)
-* */
-    // many purchasers can purchase the many tickets but a ticket can be purchased by one
-    // so the relationship is OneToMany or the reverse is ManyToOne
-    @OneToMany(mappedBy ="ticket", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JsonIgnore
-    private List<Purchase> purchases =new ArrayList<>();
-    // second option
-/*  @ManyToOne (fetch = FetchType.LAZY, optional = false)
-    @JoinColumn (name = "ticket_id", nullable = false)
-    private Purchase purchase;.
-)
-* */
 
-    List<Ticket> tickets;
+    @ManyToOne(fetch =FetchType.LAZY)
+    @JoinColumn(name="purchase")
+    public Purchase purchase;
+    
+    @ManyToOne(fetch =FetchType.LAZY)
+    @JoinColumn(name="owner")
+    private User owner;  //unique, null.
+  
     public Ticket (){
         this.tickets =new ArrayList<>();
     }
@@ -95,41 +77,65 @@ public class Ticket {
         return price;
     }
 
+    public Ticket (){
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
     public void setPrice(double price) {
         this.price = price;
     }
 
     public Date getShowTimeDate() {
-        return Show_Time_Date;
+        return showTimeDate;
     }
 
     public void setShowTimeDate(Date showTimeDate) {
-        this.Show_Time_Date = showTimeDate;
+        this.showTimeDate = showTimeDate;
     }
 
     public String getMovie_name() {
-        return movie_title;
+        return movie_name;
     }
 
     public void setMovie_name(String movie_name) {
-        this.movie_title = movie_name;
+        this.movie_name = movie_name;
     }
 
-    public int getTicket_Id() {
-        return id;
+    public Purchase getPurchase() {
+        return purchase;
     }
 
-    public void setTicket_Id(int ticket_Id) {
-        this.id = ticket_Id;
+    public void setPurchase(Purchase purchase) {
+        this.purchase = purchase;
     }
 
-    @Override
-    public String toString() {
-        return "Ticket{" +
-                "id=" + id +
-                ", ownerID=" + ownerID +
-                ", price=" + price +
-                '}';
+    public Ticket(int id, User owner, double price, Date showTimeDate, String movie_name, Purchase purchase) {
+        this.id = id;
+        this.owner = owner;
+        this.price = price;
+        this.showTimeDate = showTimeDate;
+        this.movie_name = movie_name;
+        this.purchase = purchase;
     }
 }
 

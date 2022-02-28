@@ -11,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +33,7 @@ public class UserController {
         this.us = us;
     }
 
-
+    //This request is used to get all people.
     @GetMapping("/")
     @ResponseBody
     public List<User> getAllPeople(){
@@ -45,6 +47,7 @@ public class UserController {
     return us.createNewUser(u.getEmail(), u.getFirst(), u.getLast(), u.getPassword());
     }
 
+    //This is used to update a person by ID.
     @PutMapping("/{id}/update")
     @ResponseBody
     public ResponseEntity<String> updateUser(@PathVariable("id")int id, @RequestBody User user){
@@ -54,21 +57,36 @@ public class UserController {
         return new ResponseEntity<String>("Information Updated", HttpStatus.OK);
     }
 
+    //This is used to get a user by ID.
     @GetMapping("/{id}")
     @ResponseBody
     public User getUserById(@PathVariable("id")int id){
     return us.getUserById(id);
     }
 
+
+    //This is used to login a user.
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody User u, HttpSession session) throws NotAValidLogin {
+    public ResponseEntity<String> login(@RequestBody User u, HttpServletResponse response) throws NotAValidLogin {
         System.out.println(u.getEmail() + " " +u.getPassword());
         User test = us.login(u);
         if(test != null){
-            session.setAttribute("id", u.getId());
+            Cookie cookie = new Cookie("id", ""+test.getId());
+            response.addCookie(cookie);
             return new ResponseEntity<String>("YES", HttpStatus.OK);
         }
         return new ResponseEntity<>("Wrong login information", HttpStatus.FORBIDDEN);
+    }
+
+    //THis is used to log a user out.
+    @GetMapping("/logout")
+    public ResponseEntity<String> login(HttpServletResponse response) {
+        Cookie cookie = new Cookie("id", null);
+        cookie.setMaxAge(0);
+
+        response.addCookie(cookie);
+
+        return new ResponseEntity<>("User has been logged out.", HttpStatus.OK);
     }
 
 }

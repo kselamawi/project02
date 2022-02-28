@@ -3,7 +3,7 @@ import { IUser } from '../interfaces/IUser';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs';
-
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +24,7 @@ export class UserService {
 
   //shouldn't this and login return an observable since there's multiple values?
   register(user: IUser): Observable<IUser> {
-    return this.http.post<IUser>("http://localhost:8080/users/", JSON.stringify(user))
+    return this.http.post<IUser>("http://localhost:8080/users/", JSON.stringify(user), {headers : new HttpHeaders({ 'Content-Type': 'application/json' })})
     .pipe(catchError((e) => {
       return throwError(e);
     }));
@@ -37,6 +37,17 @@ export class UserService {
       return throwError(e);
     }))
   }
+
+
+    //shouldn't this and login return an observable since there's multiple values?
+    update(user:IUser): Observable<IUser> {
+      return this.http.put<IUser>("http://localhost:8080/users/1/update", JSON.stringify(user),
+       {headers : new HttpHeaders({ 'Content-Type': 'application/json' })})
+      .pipe(catchError((e) => {
+        return throwError(e);
+      }));
+       }
+
 
   constructor(private http:HttpClient) { }
 }

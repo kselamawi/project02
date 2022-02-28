@@ -25,8 +25,8 @@ public class Purchase {
 //    @JsonIgnore
     private User owner;
 
-//    @OneToMany(mappedBy = "ticket", cascade = CascadeType.ALL)
-//    private List<Ticket> tickets = new ArrayList<>();
+    @OneToMany(mappedBy = "purchase", cascade = CascadeType.ALL)
+    private List<Ticket> tickets = new ArrayList<>();
 
 
     public Purchase() {}

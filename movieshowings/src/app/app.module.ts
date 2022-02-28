@@ -7,9 +7,11 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { UserPageComponent } from './components/user-page/user-page.component';
 import { UpdateUserComponent } from './components/update-user/update-user.component';
-import { PurchaseComponent } from './components/purchase/purchase.component';
+import { AppRoutingModule } from './app-routing.module';
 
 import { HttpClientModule } from '@angular/common/http';
+import { SavedTicketsComponent } from './components/saved-tickets/saved-tickets.component';
+
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { HttpClientModule } from '@angular/common/http';
     UpdateUserComponent,
     RegisterComponent,
     LoginComponent,
-    PurchaseComponent
+    SavedTicketsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

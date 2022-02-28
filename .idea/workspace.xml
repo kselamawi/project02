@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a4b731f-4793-482d-a002-1920fb6d5074" name="Changes" comment="pulled from main, updating my branch">
-      <change afterPath="$PROJECT_DIR$/movieshowings/src/app/interfaces/ITicket.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/movieshowings/src/app/services/purchase-service.service.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/movieshowings/src/app/services/purchase-service.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="8a4b731f-4793-482d-a002-1920fb6d5074" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movieshowings/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movieshowings/src/app/components/logout/logout.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/src/app/components/logout/logout.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movieshowings/src/app/components/logout/logout.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/src/app/components/logout/logout.component.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movieshowings/src/app/components/logout/logout.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/src/app/components/logout/logout.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movieshowings/src/app/components/purchase/purchase.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/src/app/components/purchase/purchase.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movieshowings/src/assets/js/jsFiles.js" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/src/assets/js/jsFiles.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +26,7 @@
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="Project2" type="f1a62948:ProjectNode" />
+                <item name="MTSBoot" type="f1a62948:ProjectNode" />
               </path>
             </expand>
             <select />
@@ -47,18 +38,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JpbToolWindowState">
-    <option name="myId2FirstActivated">
-      <map>
-        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
-      </map>
-    </option>
-    <option name="myId2Visible">
-      <map>
-        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
-      </map>
-    </option>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -68,39 +47,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/MTSBoot" />
-  </component>
-  <component name="RunManager" selected="Application.MtsBootApplication">
-    <configuration name="EmailService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="EmailService" />
-      <module name="MTSBoot.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MtsBootApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.revature.MtsBootApplication" />
-      <module name="MTSBoot.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.revature.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.EmailService" />
-        <item itemvalue="Application.MtsBootApplication" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -111,21 +60,6 @@
       <option name="presentableId" value="Default" />
       <updated>1645653083618</updated>
     </task>
-    <task id="LOCAL-00001" summary="pulled from main, updating my branch">
-      <created>1645826201772</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1645826201772</updated>
-    </task>
-    <task id="LOCAL-00002" summary="pulled from main, updating my branch">
-      <created>1645826739078</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1645826739078</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,20 +72,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="pulled from main, updating my branch" />
-    <option name="LAST_COMMIT_MESSAGE" value="pulled from main, updating my branch" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/MtsBootApplication.java</url>
-          <line>7</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

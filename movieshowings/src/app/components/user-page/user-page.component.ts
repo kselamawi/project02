@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { UpdateUserComponent } from '../update-user/update-user.component';
+import { UserService } from 'src/app/services/user.service';
+import { IUser } from 'src/app/interfaces/IUser';
 
 @Component({
   selector: 'user-page',
@@ -11,22 +13,22 @@ export class UserPageComponent implements OnInit {
 
   hide:boolean = true;
 
-  constructor() { }
+  constructor(private userService:UserService) { }
 
   ngOnInit(): void {
   }
 
-  showFirst:String = "";
-  showLast:String = "";
+  showFirst?:String = "";
+  showLast?:String = "";
   showEmail:String = "";
   showPassword:String = "";
 
   ticketMovieName:String = "";
   ticketPrice:String = "";
 
-  userInfo = {
-    f_name:"",
-    l_name:"",
+  userInfo:IUser = {
+    first:"",
+    last:"",
     email:"",
     password:""
   }
@@ -41,15 +43,23 @@ export class UserPageComponent implements OnInit {
 
     this.userInfo = $event;
 
-    this.showFirst = this.userInfo.f_name;
-    this.showLast = this.userInfo.l_name;
+
+    this.userService.update(this.userInfo)
+    .subscribe((data) => {
+      console.log(data);
+      
+    })
+
+
+
+    this.showFirst = this.userInfo.first;
+    this.showLast = this.userInfo.last;
     this.showEmail = this.userInfo.email;
     this.showPassword = this.userInfo.password;
   
     
 
   }
-
 
 
 

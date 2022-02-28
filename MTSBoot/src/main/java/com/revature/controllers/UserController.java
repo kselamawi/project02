@@ -45,6 +45,15 @@ public class UserController {
     return us.createNewUser(u.getEmail(), u.getFirst(), u.getLast(), u.getPassword());
     }
 
+    @PutMapping("/{id}/update")
+    @ResponseBody
+    public ResponseEntity<String> updateUser(@PathVariable("id")int id, @RequestBody User user){
+        System.out.println(user);
+        user.setId(id);
+        us.updateUser(user);
+        return new ResponseEntity<String>("Information Updated", HttpStatus.OK);
+    }
+
     @GetMapping("/{id}")
     @ResponseBody
     public User getUserById(@PathVariable("id")int id){
@@ -53,7 +62,9 @@ public class UserController {
 
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody User u, HttpSession session) throws NotAValidLogin {
-        if(us.login(u.getEmail())) {
+        System.out.println(u.getEmail() + " " +u.getPassword());
+        User test = us.login(u);
+        if(test != null){
             session.setAttribute("id", u.getId());
             return new ResponseEntity<String>("YES", HttpStatus.OK);
         }

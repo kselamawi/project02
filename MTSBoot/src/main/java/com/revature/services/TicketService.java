@@ -50,5 +50,9 @@ public class TicketService {
         public Ticket getTicketByPrice(double price){
             return tr.getTicketByPrice(price);
         }
+
+        public Ticket createTicket(Ticket ticket) {
+            return tr.save(ticket);
+        }
     }
 

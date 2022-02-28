@@ -4,6 +4,7 @@ import com.revature.models.Purchase;
 import com.revature.models.Ticket;
 import com.revature.models.User;
 import com.revature.services.PurchaseService;
+import com.revature.services.TicketService;
 import com.revature.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,7 @@ import java.util.List;
 public class PurchaseController {
     private UserService us;
     private PurchaseService ps;
+    private TicketService ts;
 
     public PurchaseController(){}
 
@@ -37,7 +39,6 @@ public class PurchaseController {
         return ps.createPurchase(purchase.getPurchaseId(), purchase.getPurchaseDate(), purchase.getOwner());
     }
 
-    // This method gets all purchase by user (waiting on UserService to be created) *********************************
 
     @GetMapping("/user/{id}")
     @ResponseBody
@@ -47,13 +48,13 @@ public class PurchaseController {
          return ps.getPurchasesByUser(user);
     }
 
-    @GetMapping("/purchase/{purchaseId}")
-    @ResponseBody
-    public List<Ticket> getAllTicketsByPurchaseId(@PathVariable("purchaseId")int purchaseId) {
-        Purchase purchase = ps.getPurchaseById(purchaseId);
-
-        return ts.getTicketByPurchaseId(ticket);
-    }
+//    @GetMapping("/purchase/{purchaseId}")
+//    @ResponseBody
+//    public List<Ticket> getAllTicketsByPurchaseId(@PathVariable("purchaseId")int purchaseId) {
+//        Purchase purchase = ps.getPurchaseById(purchaseId);
+//
+//        return ts.getTicketByPurchaseId(ticket);
+//    }
 
     @DeleteMapping("/{purchaseId}")
     @ResponseBody

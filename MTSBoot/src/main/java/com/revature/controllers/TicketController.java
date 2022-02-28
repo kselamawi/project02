@@ -59,5 +59,12 @@ import java.util.List;
             return ts.getTicketByPrice(price);
         }
 
+        @PostMapping("/purchased")
+        @ResponseBody
+        public Ticket createTicket(@RequestBody Ticket ticket) {
+            return ts.createTicket(ticket);
+        }
+
+
     }
 

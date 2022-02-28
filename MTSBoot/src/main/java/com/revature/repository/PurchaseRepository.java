@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface PurchaseRepository extends JpaRepository<Purchase, Integer> {
     List<Purchase> findAllByOwner(User user);
-    List<Ticket> findAllTicketsByPurchase(Purchase purchase);
+//    List<Ticket> findAllTicketsByPurchase(Purchase purchase);
 
 }
 

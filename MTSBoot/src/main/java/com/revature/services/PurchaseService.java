@@ -4,6 +4,7 @@ import com.revature.models.Purchase;
 import com.revature.models.Ticket;
 import com.revature.models.User;
 import com.revature.repository.PurchaseRepository;
+import com.revature.repository.TicketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -43,9 +44,11 @@ public class PurchaseService {
        pr.delete(purchase);
     }
 
-    public List<Ticket> getAllTicketsByPurchase(Purchase purchase) {
-        return tr.findAllTicketsByPurchase(purchase);
-    }
+
+
+//    public List<Ticket> getAllTicketsByPurchase(Purchase purchase) {
+//        return tr.findAllTicketsByPurchase(purchase);
+//    }
 
 
 }

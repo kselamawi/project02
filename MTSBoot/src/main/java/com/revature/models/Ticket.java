@@ -41,9 +41,20 @@ public class Ticket {
     public Ticket() {
     }
 
+    public Ticket(Date show_Time_Date, String movie_title, double price, String genre, Date releaseDate, Purchase purchase, User owner) {
+        this.showTimeDate = show_Time_Date;
+        this.movieTitle = movie_title;
+        this.price = price;
+        this.genre = genre;
+        this.releaseDate = releaseDate;
+        this.purchase = purchase;
+        this.owner = owner;
+    }
+
+
     public Ticket(int id, Date show_Time_Date, String movie_title, double price, String genre, Date releaseDate, Purchase purchase, User owner) {
         this.id = id;
-        showTimeDate = show_Time_Date;
+        this.showTimeDate = show_Time_Date;
         this.movieTitle = movie_title;
         this.price = price;
         this.genre = genre;

@@ -16,10 +16,10 @@ public class Ticket {
     private int id;
 
     @Column(name="Show_Time_Date",nullable = false)
-    private Date Show_Time_Date;
+    private Date showTimeDate;
 
     @Column(name = "movie_title",nullable = false)
-    private String movie_title;
+    private String movieTitle;
 
     @Column(name="price")
     private double price;
@@ -37,48 +37,19 @@ public class Ticket {
     @ManyToOne(fetch =FetchType.LAZY)
     @JoinColumn(name="owner")
     private User owner;  //unique, null.
-  
-    public Ticket (){
-        this.tickets =new ArrayList<>();
+
+    public Ticket() {
     }
-    public Ticket(int id, int ownerID, double price, Date Show_Time_Date, String movie_title,String genre,Date releaseDate) {
+
+    public Ticket(int id, Date show_Time_Date, String movie_title, double price, String genre, Date releaseDate, Purchase purchase, User owner) {
         this.id = id;
-        this.ownerID = ownerID;
-
+        showTimeDate = show_Time_Date;
+        this.movieTitle = movie_title;
         this.price = price;
-        this.Show_Time_Date= Show_Time_Date;
-        this.movie_title = movie_title;
-        this.releaseDate =releaseDate;
-        this.genre =genre;
-
-    }
-    public Date getReleaseDate(){
-        return releaseDate;
-    }
-    public void setReleaseDate(){
-        this.releaseDate =releaseDate;
-    }
-    public String getGenres(){
-        return genre;
-    }
-    public void  setGenres(){
-        this.genre =genre;
-    }
-
-    public int getOwnerID() {
-        return ownerID;
-    }
-
-    public void setOwnerID(int ownerID) {
-        this.ownerID = ownerID;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public Ticket (){
-
+        this.genre = genre;
+        this.releaseDate = releaseDate;
+        this.purchase = purchase;
+        this.owner = owner;
     }
 
     public int getId() {
@@ -89,13 +60,6 @@ public class Ticket {
         this.id = id;
     }
 
-    public User getOwner() {
-        return owner;
-    }
-
-    public void setOwner(User owner) {
-        this.owner = owner;
-    }
 
     public double getPrice() {
         return price;
@@ -105,20 +69,20 @@ public class Ticket {
         this.price = price;
     }
 
-    public Date getShowTimeDate() {
-        return showTimeDate;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setShowTimeDate(Date showTimeDate) {
-        this.showTimeDate = showTimeDate;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
-    public String getMovie_name() {
-        return movie_name;
+    public Date getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setMovie_name(String movie_name) {
-        this.movie_name = movie_name;
+    public void setReleaseDate(Date releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
     public Purchase getPurchase() {
@@ -129,13 +93,42 @@ public class Ticket {
         this.purchase = purchase;
     }
 
-    public Ticket(int id, User owner, double price, Date showTimeDate, String movie_name, Purchase purchase) {
-        this.id = id;
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
         this.owner = owner;
-        this.price = price;
+    }
+
+    public Date getShowTimeDate() {
+        return showTimeDate;
+    }
+
+    public void setShowTimeDate(Date showTimeDate) {
         this.showTimeDate = showTimeDate;
-        this.movie_name = movie_name;
-        this.purchase = purchase;
+    }
+
+    public String getMovieTitle() {
+        return movieTitle;
+    }
+
+    public void setMovieTitle(String movieTitle) {
+        this.movieTitle = movieTitle;
+    }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "id=" + id +
+                ", showTimeDate=" + showTimeDate +
+                ", movieTitle='" + movieTitle + '\'' +
+                ", price=" + price +
+                ", genre='" + genre + '\'' +
+                ", releaseDate=" + releaseDate +
+                ", purchase=" + purchase +
+                ", owner=" + owner +
+                '}';
     }
 }
 

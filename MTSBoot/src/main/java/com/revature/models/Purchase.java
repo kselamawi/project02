@@ -20,13 +20,13 @@ public class Purchase {
     @Column(name="purchase_date", nullable = false)
     private Date purchaseDate;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
+    @ManyToOne(fetch=FetchType.LAZY) //removed @CascadeType.All
     @JoinColumn(name="owner")
-    @JsonIgnore
+//    @JsonIgnore
     private User owner;
 
-//    @OneToMany(mappedBy = "ticket", cascade = CascadeType.ALL)
-//    private List<Ticket> tickets = new ArrayList<>();
+    @OneToMany(mappedBy = "purchase", cascade = CascadeType.ALL)
+    private List<Ticket> tickets = new ArrayList<>();
 
 
     public Purchase() {}
@@ -55,7 +55,7 @@ public class Purchase {
 
 
     public User getOwner() {
-        return owner;
+        return this.owner;
     }
 
     public void setOwner(User owner) {

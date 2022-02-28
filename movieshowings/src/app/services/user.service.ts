@@ -32,7 +32,7 @@ export class UserService {
 
   //may have to change backend to allow two posts
   login(email: String, password: String): Observable<IUser> {
-    return this.http.post<IUser>("http://localhost:8080/login", JSON.stringify({email, password}))
+    return this.http.post<IUser>("http://localhost:8080/users/login", JSON.stringify({email, password}))
     .pipe(catchError((e) => {
       return throwError(e);
     }))

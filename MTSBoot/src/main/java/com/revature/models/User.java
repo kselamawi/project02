@@ -26,10 +26,6 @@ public class User {
     @Column(name="password", nullable = false)
     private String password;
 
-    @Column(name="userType")
-    private UserType userType;
-
-
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
     private List<Purchase> purchases = new ArrayList<>();
 
@@ -44,14 +40,6 @@ public class User {
         this.last = last;
         this.email = email;
         this.password = password;
-    }
-
-    public UserType getUserType() {
-        return userType;
-    }
-
-    public void setUserType(UserType userType) {
-        this.userType = userType;
     }
 
     public List<Purchase> getPurchases() {

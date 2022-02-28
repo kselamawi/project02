@@ -1,3 +1,5 @@
 
-]
-java:S2094"BRemove this empty class, write its code or make it an "interface".(Ζο‰ªψÿÿÿÿ
+r	java:S1170"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§ϋξύÿÿÿÿ8ΆΆΕ’τ/
+m	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™Μ’8£ΆΕ’τ/
+k	java:S1170"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§ϋξύÿÿÿÿ
+f	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™Μ’

@@ -7,6 +7,10 @@
     "\\src\\app\\components\\purchase",
     "\\src\\app\\services"
   ],
+<<<<<<< Updated upstream
   "SelectedNode": "\\src\\app\\services\\ticket-service.service.spec.ts",
+=======
+  "SelectedNode": "\\src\\app\\app.module.ts",
+>>>>>>> Stashed changes
   "PreviewInSolutionExplorer": false
 }

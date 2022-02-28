@@ -24,6 +24,7 @@ export class PurchaseComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  userID: number = 0;
   userFirst: String = "";
   userLast: String = "";
   userEmail: String = "";
@@ -34,6 +35,7 @@ export class PurchaseComponent implements OnInit {
   ticketQuantity: Number = 0;
   ticketDateAndTime: Date = new Date(); //date and time of movie showing
 
+  purchaseID: number = 0;
   purchaseTotalAmt: Number = 0;
   purchasedDate: Date = new Date(); //get current date
 
@@ -52,24 +54,21 @@ export class PurchaseComponent implements OnInit {
         console.log(this.ticketInfo);
 
         //connect to purchaseService
-        this.purchaseService.purchase(this.ticketMovieName, this.ticketPrice, this.ticketQuantity, this.ticketDateAndTime)
+        this.purchaseService.purchase(this.userID)
             .subscribe(data => {
                 let movieName2 = "";
                 let tPrice = 0;
                 let tQuant = 0;
                 let tDateandTime = "";
-                if (data.ticketMovieName) {
-                    movieName2 = data.ticketMovieName;
+                let userID = 0;
+                let purchaseID = 0;
+                if (data.userID) {
+                    userID = data.userID;
                 }
-                if (data.ticketPrice) {
-                    tPrice = data.ticketPrice;
+                if (data.purchaseID) {
+                purchaseID = data.purchaseID;
                 }
-                if (data.ticketQuantity) {
-                    tQuant = data.ticketQuantity;
-                }
-                if (data.ticketDateAndTime) {
-                    tDateandTime = data.ticketDateAndTime;
-                }
+                
                 this.purchaseService.ticket = {
                     movieName: movieName2,
                     price: tPrice,
@@ -92,12 +91,9 @@ export class PurchaseComponent implements OnInit {
     this.ticketDateAndTime = this.ticketInfo.showingDateAndTime;
   }
 
-  updatePurchase(): void {
-    const purchase = {
-      purchaseAmount: this.purchaseTotalAmt,
-      purchaseDate: this.purchasedDate
-    }
-    //this.purchaseService.purchase(purchase);
+  sendPurchase(): void {
+    
+    this.purchaseService.purchase(this.purchaseID, this.userID);
 
     
     const message = {

@@ -29,7 +29,8 @@ public class User {
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
     private List<Purchase> purchases = new ArrayList<>();
 
-
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
+    private List<Ticket> tickets = new ArrayList<>();
 
     public User(){
 

@@ -33,7 +33,7 @@ public class UserController {
         this.us = us;
     }
 
-
+    //This request is used to get all people.
     @GetMapping("/")
     @ResponseBody
     public List<User> getAllPeople(){
@@ -47,6 +47,7 @@ public class UserController {
     return us.createNewUser(u.getEmail(), u.getFirst(), u.getLast(), u.getPassword());
     }
 
+    //This is used to update a person by ID.
     @PutMapping("/{id}/update")
     @ResponseBody
     public ResponseEntity<String> updateUser(@PathVariable("id")int id, @RequestBody User user){
@@ -56,12 +57,15 @@ public class UserController {
         return new ResponseEntity<String>("Information Updated", HttpStatus.OK);
     }
 
+    //This is used to get a user by ID.
     @GetMapping("/{id}")
     @ResponseBody
     public User getUserById(@PathVariable("id")int id){
     return us.getUserById(id);
     }
 
+
+    //This is used to login a user.
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody User u, HttpServletResponse response) throws NotAValidLogin {
         System.out.println(u.getEmail() + " " +u.getPassword());
@@ -74,6 +78,7 @@ public class UserController {
         return new ResponseEntity<>("Wrong login information", HttpStatus.FORBIDDEN);
     }
 
+    //THis is used to log a user out.
     @GetMapping("/logout")
     public ResponseEntity<String> login(HttpServletResponse response) {
         Cookie cookie = new Cookie("id", null);

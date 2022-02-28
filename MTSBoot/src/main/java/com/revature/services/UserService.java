@@ -3,7 +3,6 @@ package com.revature.services;
 import com.revature.exceptions.NotAValidLogin;
 import com.revature.models.User;
 import com.revature.repository.UserRepository;
-import com.revature.models.UserType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,7 +24,6 @@ public class UserService {
 
     public User createNewUser(String email, String first, String last, String password){
         User u = new User(first, last, email, password);
-        u.setUserType(UserType.CUSTOMER);
         System.out.print(u);
         return ur.save(u);
     }

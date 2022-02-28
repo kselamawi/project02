@@ -21,6 +21,7 @@ public class PurchaseService {
 
     @Autowired
     public PurchaseService(PurchaseRepository pr) {
+
         this.pr = pr;
     }
 

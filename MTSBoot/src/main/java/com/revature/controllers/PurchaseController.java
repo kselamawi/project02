@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -29,7 +30,9 @@ public class PurchaseController {
     @PostMapping("/")
     @ResponseBody
     public Purchase createPurchase(@RequestBody Purchase purchase) {
-        System.out.println("why is it not working?" + purchase);
+        java.util.Date utilDate = new java.util.Date();
+        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+        purchase.setPurchaseDate(sqlDate);
         return ps.createPurchase(purchase.getPurchaseId(), purchase.getPurchaseDate(), purchase.getOwner());
     }
 
@@ -39,6 +42,7 @@ public class PurchaseController {
     @ResponseBody
     public List<Purchase> getPurchaseByUserId(@PathVariable("id")int id) {
          User user = us.getUserById(id);
+
          return ps.getPurchasesByUser(user);
     }
 
@@ -50,5 +54,6 @@ public class PurchaseController {
 
         return true;
     }
+
 
 }

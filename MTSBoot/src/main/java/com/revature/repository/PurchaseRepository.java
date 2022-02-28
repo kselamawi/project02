@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface PurchaseRepository extends JpaRepository<Purchase, Integer> {
-    List<Purchase> findAllByOwner(User userId);
+    List<Purchase> findAllByOwner(User user);
 }
 

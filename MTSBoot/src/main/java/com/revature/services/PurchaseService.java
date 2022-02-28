@@ -1,6 +1,7 @@
 package com.revature.services;
 
 import com.revature.models.Purchase;
+import com.revature.models.Ticket;
 import com.revature.models.User;
 import com.revature.repository.PurchaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import java.util.List;
 @Transactional
 public class PurchaseService {
     private PurchaseRepository pr;
+    private TicketRepository tr;
 
     public PurchaseService() {}
 
@@ -30,7 +32,7 @@ public class PurchaseService {
     public Purchase getPurchaseById(int id) {
         return pr.getById(id);
     }
-// This method gets all purchase by user (waiting on UserService to be created) *********************************
+
 
     public List<Purchase> getPurchasesByUser(User user){
         return pr.findAllByOwner(user);
@@ -38,6 +40,10 @@ public class PurchaseService {
 
     public void deletePurchase(Purchase purchase) {
        pr.delete(purchase);
+    }
+
+    public List<Ticket> getAllTicketsByPurchase(Purchase purchase) {
+        return tr.findAllTicketsByPurchase(purchase);
     }
 
 

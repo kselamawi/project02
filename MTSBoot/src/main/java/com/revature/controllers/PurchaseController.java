@@ -1,6 +1,7 @@
 package com.revature.controllers;
 
 import com.revature.models.Purchase;
+import com.revature.models.Ticket;
 import com.revature.models.User;
 import com.revature.services.PurchaseService;
 import com.revature.services.UserService;
@@ -22,7 +23,7 @@ public class PurchaseController {
     public PurchaseController(){}
 
     @Autowired
-    public PurchaseController(PurchaseService ps, UserService us) {
+    public PurchaseController(PurchaseService ps, UserService us, TicketService ts) {
         this.ps = ps;
         this.us = us;
     }
@@ -44,6 +45,14 @@ public class PurchaseController {
          User user = us.getUserById(id);
 
          return ps.getPurchasesByUser(user);
+    }
+
+    @GetMapping("/purchase/{purchaseId}")
+    @ResponseBody
+    public List<Ticket> getAllTicketsByPurchaseId(@PathVariable("purchaseId")int purchaseId) {
+        Purchase purchase = ps.getPurchaseById(purchaseId);
+
+        return ts.getTicketByPurchaseId(ticket);
     }
 
     @DeleteMapping("/{purchaseId}")

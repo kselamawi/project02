@@ -10,6 +10,8 @@ export class SavedTicketsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
+
   }
 
 }

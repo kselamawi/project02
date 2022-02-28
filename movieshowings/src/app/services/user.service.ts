@@ -24,7 +24,7 @@ export class UserService {
 
   //shouldn't this and login return an observable since there's multiple values?
   register(user: IUser): Observable<IUser> {
-    return this.http.post<IUser>("http://localhost:8080/users/", JSON.stringify(user))
+    return this.http.post<IUser>("http://localhost:8080/users/", JSON.stringify(user), {headers : new HttpHeaders({ 'Content-Type': 'application/json' })})
     .pipe(catchError((e) => {
       return throwError(e);
     }));

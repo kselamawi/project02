@@ -30,7 +30,7 @@
               "src/styles.css"
             ],
             "scripts": [
-              "assets/js/jsFiles.js"
+              "src/assets/js/jsFiles.js"
             ]
           },
           "configurations": {

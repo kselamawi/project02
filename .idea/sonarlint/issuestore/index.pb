@@ -15,3 +15,11 @@ V
 &movieshowings/src/app/app.component.ts,1\a\1abe9cafed11e6f05fe98588f7d80b5c708043de
 S
 #movieshowings/src/app/app.module.ts,f\5\f5b0b6ab193724a0d7e907abc78570c857f75331
+h
+8movieshowings/src/app/services/ticket-service.service.ts,5\e\5e8d99cdd0fa28b863ead096e0b223eb38d41f1a
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+m
+=MTSBoot/src/main/java/com/revature/services/EmailService.java,c\5\c57b6eedc6dcef5196dd0c9f7bd382b06d03d8db
+j
+:MTSBoot/src/main/java/com/revature/MtsBootApplication.java,6\1\61dd4bdd38f940507f5a9f22459a57ff80b1894b

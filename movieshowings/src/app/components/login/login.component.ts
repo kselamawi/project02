@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
         email: email2,
         password: password2
       };
+      //document.cookie = `id=${res.headers.get("id")}`;
     });
 
   }

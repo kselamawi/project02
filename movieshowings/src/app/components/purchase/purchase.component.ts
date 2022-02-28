@@ -97,7 +97,7 @@ export class PurchaseComponent implements OnInit {
       purchaseAmount: this.purchaseTotalAmt,
       purchaseDate: this.purchasedDate
     }
-    this.makePurchase.emit(purchase);
+    //this.purchaseService.purchase(purchase);
 
     
     const message = {

@@ -2,9 +2,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { IUser } from 'src/app/interfaces/IUser';
 import { UserService } from 'src/app/services/user.service';
 //import { EventEmitter } from 'stream';
+declare function openSignUp(): any;
+declare function openSignIn(): any;
 
-declare function openSignUp() :any;
-declare function openSignIn() :any;
 
 @Component({
   selector: 'register',
@@ -50,6 +50,8 @@ export class RegisterComponent implements OnInit {
   constructor(private userService:UserService) { }
 
   ngOnInit(): void {
+    openSignUp();
+    openSignIn();
   }
 
 }

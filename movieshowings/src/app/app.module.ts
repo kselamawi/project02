@@ -9,6 +9,7 @@ import { UserPageComponent } from './components/user-page/user-page.component';
 import { UpdateUserComponent } from './components/update-user/update-user.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { SavedTicketsComponent } from './components/saved-tickets/saved-tickets.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     UserPageComponent,
     UpdateUserComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    SavedTicketsComponent
   ],
   imports: [
     BrowserModule,

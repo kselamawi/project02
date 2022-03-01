@@ -1,7 +1,8 @@
 import { ITicket as ITicketModel } from 'src/app/interfaces/ITicket';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
-import { LocalStorageService} from 'src/app/services/local-storage-services.service'
+// import { LocalStorageService} from 'src/app/services/local-storage-services.service'
+import { TicketServiceService } from 'src/app/services/ticket-service.service';
 
 // checkbox boolean interface
 interface ITicket extends ITicketModel {
@@ -41,9 +42,10 @@ export class SavedTicketsComponent implements OnInit {
   //setting initial select all to false
   selectAllTicketsState: boolean = false;
 
-  constructor(private router: Router, private localStore: LocalStorageService ) { }
+  constructor(private router: Router, private ts: TicketServiceService ) { }
 
   ngOnInit(): void {
+    
 
   }
 
@@ -61,7 +63,7 @@ export class SavedTicketsComponent implements OnInit {
 
   submitToPurchasePage() {
     const selectedTickets = this.tickets.filter(item => item.addToPurchase);
-    this.localStore.setItem('tickets', JSON.stringify(selectedTickets));
+    // this.localStore.setItem('tickets', JSON.stringify(selectedTickets));
     this.router.navigate(["/purchase"]);
 
   //   const selectedTickets = this.tickets.filter(item => item.addToPurchase);

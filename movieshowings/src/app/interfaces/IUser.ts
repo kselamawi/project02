@@ -1,4 +1,4 @@
-import { IPurchase } from "./ipurchase";
+import { IPurchase } from "../interfaces/ipurchase";
 
 export interface IUser {
     id?: number;

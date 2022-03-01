@@ -8,9 +8,11 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { UserPageComponent } from './components/user-page/user-page.component';
 import { UpdateUserComponent } from './components/update-user/update-user.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PurchaseComponent } from './components/purchase/purchase.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { SavedTicketsComponent } from './components/saved-tickets/saved-tickets.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { SavedTicketsComponent } from './components/saved-tickets/saved-tickets.
     UpdateUserComponent,
     RegisterComponent,
     LoginComponent,
-    SavedTicketsComponent
+    SavedTicketsComponent,
+    PurchaseComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,

@@ -23,17 +23,21 @@
     <div id="purchase-container">
       <h3 id="userFirst"><b>Welcome </b> {{userFirst}}</h3>
       <h2>Select tickets for purchase</h2>
+      <!--
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="selectAllTickets()">
+  <label class="form-check-label" for="flexCheckDefault">
+    Select All
+  </label>
+    -->
+      <input type="submit" class="select-all-btn" value="Select All" (click)="selectAllTickets()" />
+
       <div class="table-container">
         <table class="table table-hover">
           <thead>
             <tr>
 
-              <th scope="col">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="selectAllTickets()">
-                <label class="form-check-label" for="flexCheckDefault">
-                  Select All
-                </label>
-              </th>
+              <!--<th scope="col">-->
+              <!--</th>-->
               <th scope="col">Ticket Id</th>
               <th scope="col">Movie</th>
               <th scope="col">Genre</th>
@@ -61,7 +65,7 @@
         <a href="mailto:{{userEmail}}">Confirmation of Purchase E-mail</a>
       </div>
     </div>
-    <input type="submit" class="purchase-btn" value="Purchase" (click)="sendPurchase()" />
+          <input type="submit" class="purchase-btn" value="Purchase" (click)="sendPurchase()" />
   </div>
 
 

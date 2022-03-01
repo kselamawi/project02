@@ -15,11 +15,10 @@ interface ITicket extends ITicketModel {
 })
 export class SavedTicketsComponent implements OnInit {
 
-  @Output() goToPurchasePage = new EventEmitter();
+  // @Output() goToPurchasePage = new EventEmitter();
 
   tickets: ITicket[] = [
     {
-    id: 1,
     price: 15.32,
     movieTitle: "Titanic",
     genre: "something here",
@@ -29,7 +28,6 @@ export class SavedTicketsComponent implements OnInit {
     addToPurchase: false,
     },
     {
-      id: 2,
       price: 50.32,
       movieTitle: "Titanic",
       genre: "something here",
@@ -64,7 +62,7 @@ export class SavedTicketsComponent implements OnInit {
   submitToPurchasePage() {
     const selectedTickets = this.tickets.filter(item => item.addToPurchase);
     this.localStore.setItem('tickets', JSON.stringify(selectedTickets));
-    this.router.navigate(["/purchase-page"]);
+    this.router.navigate(["/purchase"]);
 
   //   const selectedTickets = this.tickets.filter(item => item.addToPurchase);
   //   const navigationExtras: NavigationExtras = {

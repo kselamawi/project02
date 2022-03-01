@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ITicket } from '../interfaces/ITicket';
+import { catchError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+
 
 
 @Injectable({
@@ -7,15 +11,28 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TicketServiceService {
 
-  ticket = {
-    movie_name:"",
-    price:"",
-  }
-  
-  
+  tickets: ITicket[] = [];
 
+  // ticket = {
+  //   id: Number,
+  //   movie_name:"",
+  //   price:"",
+  //   showtime_date: "",
+  //   timeslot: "",
+  // }
+  
   constructor(private http:HttpClient) { }
 
-
+  getTickets(): void{
+    this.http.get<ITicket[]>("http://localhost:8080/saved-tickets")
+    .pipe(
+      catchError((e)=> {
+        return throwError(e);
+      })
+      ).subscribe((data) => {
+        this.tickets = data;
+      });
+      
+  }
 
 }

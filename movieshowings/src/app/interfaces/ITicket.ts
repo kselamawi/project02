@@ -23,15 +23,17 @@ Expected Ticket Object from server:
 */
 
 
-export interface IPrice {
-    price: string;
-    ageGroup: string;
-}
+// export interface IPrice {
+//     price: string;
+//     ageGroup: string;
+// }
 
 export interface ITicket {
     id?: number;
-    price: IPrice;
-    movieName: string;
+    price: number;
+    movieTitle: string;
+    genre: string;
+    releaseDate: string;
     showTimeDate: string;
     timeslot: string;
     user?: IUser;

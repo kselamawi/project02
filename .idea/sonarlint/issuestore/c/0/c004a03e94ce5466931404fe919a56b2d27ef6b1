@@ -1,0 +1,11 @@
+
+Atypescript:S1128"&Remove this unused import of 'Output'.(žäº*
+Gtypescript:S1128",Remove this unused import of 'EventEmitter'.(žäº*
+Ttypescript:S1128"3Remove this unused import of 'UpdateUserComponent'.(¥ÒÐªÿÿÿÿÿ
+?typescript:S1186"#Unexpected empty method 'ngOnInit'.(Åˆ³Â
+ctypescript:S1533"BReplace this "String" wrapper object with primitive type "string".(»š÷¢þÿÿÿÿ
+ctypescript:S1533"BReplace this "String" wrapper object with primitive type "string".(òõƒÓúÿÿÿÿ
+ctypescript:S1533"BReplace this "String" wrapper object with primitive type "string".(±–¥”ûÿÿÿÿ
+^typescript:S1533"BReplace this "String" wrapper object with primitive type "string".(Æä°ð
+ctypescript:S1533"BReplace this "String" wrapper object with primitive type "string".(ÄÇÔÕøÿÿÿÿ
+^typescript:S1533"BReplace this "String" wrapper object with primitive type "string".(œé›¦

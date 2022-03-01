@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
     console.log(this.email);
     console.log(this.password);
 
+
     //connect to userService
     this.userService.login(this.email, this.password)
     .subscribe(data => {
@@ -31,6 +32,7 @@ export class LoginComponent implements OnInit {
         email: email2,
         password: password2
       };
+      //document.cookie = `id=${res.headers.get("id")}`;
     });
 
   }
@@ -38,6 +40,7 @@ export class LoginComponent implements OnInit {
   constructor(private userService:UserService) { }
 
   ngOnInit(): void {
+
   }
 
 }

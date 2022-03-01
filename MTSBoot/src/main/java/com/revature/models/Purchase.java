@@ -1,6 +1,7 @@
 package com.revature.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.revature.services.EmailService;
 
 import javax.persistence.*;
 import javax.persistence.Table;
@@ -35,6 +36,10 @@ public class Purchase {
         this.purchaseId = id;
         this.purchaseDate = purchaseDate;
         this.owner = user;
+    }
+
+    public void sendEmailConfirmation(String smtpServer, String to, String from, String subject, String body){
+        EmailService.send(smtpServer, to, from, subject, body);
     }
 
     public int getPurchaseId() {

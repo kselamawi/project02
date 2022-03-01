@@ -38,7 +38,6 @@ public class UserService {
 
     public User login(User user) throws NotAValidLogin {
         User info = ur.findUserByEmail(user.getEmail());
-        System.out.println(info.getPassword() + user.getPassword());
         if(info!= null && info.getPassword().equals(user.getPassword())){
             return info;
         }

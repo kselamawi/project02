@@ -1,0 +1,12 @@
+.nav-bar {
+    background-color: black;
+    overflow: hidden;
+  }
+  
+  .nav-bar a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 10px 10px;
+    font-size: 15px;
+  }

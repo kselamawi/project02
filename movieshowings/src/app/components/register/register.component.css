@@ -22,9 +22,9 @@
 
 body {
   background-image: url();
-  background-color: green;
+  background-color: #063332;
   align-items: center;
-  padding: 100px;
+  padding: 30px;
   margin: auto;
  }
 
@@ -36,8 +36,8 @@ body {
 
 .btn-primary {
   color: white;
-  background-color: crimson;
-  border-color: brown;
+  background-color: #b78534;
+  border-color: #efc570;
 }
 
 .btn-block {

@@ -4,15 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad944271-0c46-47a3-aa31-5e2f36cbd485" name="Changes" comment="...">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_mail_javax_mail_api_1_6_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/4/1474d02f55e19763053d7bad481bb2000e17e31e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1abe9cafed11e6f05fe98588f7d80b5c708043de" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/1/51ddb53411ab0a30e4887505d29c8beea4bbd890" beforeDir="false" />
+    <list default="true" id="ad944271-0c46-47a3-aa31-5e2f36cbd485" name="Changes" comment="got front end to compile but still doesn't look right">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movieshowings/.vs/movieshowings/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/.vs/movieshowings/v17/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movieshowings/.vs/slnx.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/.vs/slnx.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movieshowings/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movieshowings/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movieshowings/src/app/components/purchase/purchase.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/src/app/components/purchase/purchase.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movieshowings/src/app/interfaces/IUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/src/app/interfaces/IUser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movieshowings/src/app/services/purchase-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/src/app/services/purchase-service.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646090688113</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="got front end to compile but still doesn't look right">
+      <created>1646091815093</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1646091815093</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -134,6 +140,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="got front end to compile but still doesn't look right" />
+    <option name="LAST_COMMIT_MESSAGE" value="got front end to compile but still doesn't look right" />
   </component>
 </project>

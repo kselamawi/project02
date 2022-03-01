@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IPurchase } from '../interfaces/IPurchase';
+import { IPurchase } from '../interfaces/ipurchase';
 import { ITicket } from '../interfaces/ITicket';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs';

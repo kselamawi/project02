@@ -18,7 +18,7 @@ export class PurchaseComponent implements OnInit {
     this.hide = !this.hide;
   }
 
-    constructor() { }
+   // constructor() { }
     constructor(private purchaseService: PurchaseService) { }
 
   ngOnInit(): void {
@@ -54,7 +54,7 @@ export class PurchaseComponent implements OnInit {
         console.log(this.ticketInfo);
 
         //connect to purchaseService
-        this.purchaseService.purchase(this.userID)
+        this.purchaseService.purchase(this.purchaseID, this.userID)
             .subscribe(data => {
                 let movieName2 = "";
                 let tPrice = 0;
@@ -68,7 +68,7 @@ export class PurchaseComponent implements OnInit {
                 if (data.purchaseID) {
                 purchaseID = data.purchaseID;
                 }
-                
+
                 this.purchaseService.ticket = {
                     movieName: movieName2,
                     price: tPrice,
@@ -92,10 +92,10 @@ export class PurchaseComponent implements OnInit {
   }
 
   sendPurchase(): void {
-    
+
     this.purchaseService.purchase(this.purchaseID, this.userID);
 
-    
+
     const message = {
       from: "sender@MovieTheater.com",
       to: this.userEmail,

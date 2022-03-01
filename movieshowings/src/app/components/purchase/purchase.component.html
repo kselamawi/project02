@@ -1,19 +1,68 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!-- This is what I had before. But changed it to something similar to what Amy has in her saved-tickets
 <body>
   <div class="container-fluid2">
     <h3 id="userFirst"><b>Welcome </b> {{userFirst}}</h3>
-    <h2>Purchase Information</h2>
-    <p class="col-1" id="ticketMovieName"><b>Movie:</b> {{ticketMovieName}}</p>
-    <p class="col-1" id="ticketDateAndTime"><b>Showing Date and Time:</b> {{ticketDateAndTime}}</p>
-    <p class="col-1" id="ticketPrice"><b>Price per Ticket:</b> {{ticketPrice}}</p>
-    <p class="col-1" id="ticketQuantity"><b>Number of Tickets:</b> {{ticketQuantity}}</p>
-    <p class="col-1" id="purchaseTotalAmt"><b>Total Cost:</b> {{purchaseTotalAmt}}</p>
-
-    <button class="purchase-btn" (click)="sendPurchase()">Make Purchase</button>
-    
-
-    <p id="userEmail"><b>A confirmation email will be sent to :</b> {{userEmail}}</p>
-    <a href="mailto:{{userEmail}}">Confirmation of Purchase E-mail</a>
+    <h2>Select tickets for purchase</h2>
+    <form>
+      <p class="col-1" id="ticketMovieName"><b>Movie:</b> {{ticketMovieName}}</p>
+      <p class="col-1" id="ticketDateAndTime"><b>Showing Date and Time:</b> {{ticketDateAndTime}}</p>
+      <p class="col-1" id="ticketPrice"><b>Price per Ticket:</b> {{ticketPrice}}</p>
+      <p class="col-1" id="ticketQuantity"><b>Number of Tickets:</b> {{ticketQuantity}}</p>
+      <p class="col-1" id="purchaseTotalAmt"><b>Total Cost:</b> {{purchaseTotalAmt}}</p>
+    </form>
   </div>
-</body>
+  <button class="purchase-btn" (click)="sendPurchase()">Make Purchase</button>
 
+
+  
+</body>
+-->
+
+<body>
+  <div class="container-fluid2">
+    <div id="purchase-container">
+      <h3 id="userFirst"><b>Welcome </b> {{userFirst}}</h3>
+      <h2>Select tickets for purchase</h2>
+      <div class="table-container">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+
+              <th scope="col">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="selectAllTickets()">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Select All
+                </label>
+              </th>
+              <th scope="col">Ticket Id</th>
+              <th scope="col">Movie</th>
+              <th scope="col">Genre</th>
+              <th scope="col">ReleaseDate</th>
+              <th scope="col">Price</th>
+              <th scope="col">Showtime Date</th>
+              <th scope="col">Timeslot</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let purchase of ticketsForPurchase">
+              <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="handleChecked(purchase)" [checked]="purchase.addToPurchase"></td>
+              <td>{{purchase.ticketID}}</td>
+              <td>{{purchase.movieTitle}}</td>
+              <td>{{purchase.genre}}</td>
+              <td>{{purchase.releaseDate}}</td>
+              <td>{{purchase.price}}</td>
+              <td>{{purchase.showTimeDate}}</td>
+              <td>{{purchase.timeslot}}</td>
+            </tr>
+          </tbody>
+          <br>
+        </table>
+        <p id="userEmail"><b>A confirmation email will be sent to :</b> {{userEmail}}</p>
+        <a href="mailto:{{userEmail}}">Confirmation of Purchase E-mail</a>
+      </div>
+    </div>
+    <input type="submit" class="purchase-btn" value="Purchase" (click)="sendPurchase()" />
+  </div>
+
+
+</body>

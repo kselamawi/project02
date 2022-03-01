@@ -1,7 +1,14 @@
 package com.revature.services;
+import com.revature.models.Purchase;
+
 import javax.mail.*;
 import javax.mail.internet.*;
 import java.util.*;
+
+/*
+Borrowed from:
+https://www.infoworld.com/article/2075785/javamail-quick-start.html#:~:text=JavaMail%20quick%20start%201%20Setup.%20If%20you%20use,introduced%20the%20javax.mail.Part%20interface%20implemented%20by%20javax.mail.Message.%20
+ */
 
 public class EmailService {
 
@@ -12,7 +19,9 @@ public class EmailService {
             String from = args[2];
             String subject = args[3];
             String body = args[4];
-            send(smtpServer, to, from, subject, body);
+            //send(smtpServer, to, from, subject, body);
+            send("smtp.office365.com", "jeremiah.grimes@revature.net",
+                    "germygrimes@gmail.com", "testing java mail", "test test test");
         } catch (Exception e) {
             System.out.println("Usage: smtpServer toAddress fromAddress subjectText bodyText");
         }
@@ -42,7 +51,8 @@ public class EmailService {
             msg.setSubject(subject);
             msg.setText(body);
             // -- Set some other header information --
-            msg.setHeader("X-Mailer", "LOTONtechEmail");
+            msg.setHeader("email", "jeremiah.grimes@revature.net");
+            msg.setHeader("password", "WeeWeeRoof12*");
             msg.setSentDate(new Date());
             // -- Send the message --
             Transport.send(msg);

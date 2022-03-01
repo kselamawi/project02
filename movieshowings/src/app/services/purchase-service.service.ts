@@ -39,6 +39,11 @@ export class PurchaseService {
 
   constructor(private http: HttpClient) { }
 
-
+  doPurchase(purchases: IPurchase[]): Observable<IPurchase> {
+    return this.http.post<IPurchase>("http://localhost:8080/purchase", JSON.stringify({ purchases }), { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })
+      .pipe(catchError((e) => {
+        return throwError(e);
+      }))
+  }
 
 }

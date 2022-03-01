@@ -36,9 +36,10 @@ public class Purchase {
         this.purchaseId = id;
         this.purchaseDate = purchaseDate;
         this.owner = user;
+
     }
 
-    public void sendEmailConfirmation(String smtpServer, String to, String from, String subject, String body){
+    public static void sendEmailConfirmation(String smtpServer, String to, String from, String subject, String body){
         EmailService.send(smtpServer, to, from, subject, body);
     }
 

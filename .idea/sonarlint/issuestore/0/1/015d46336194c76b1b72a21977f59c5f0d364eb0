@@ -1,0 +1,6 @@
+
+Q	java:S1251"<This block of commented-out lines of code should be removed.(åì˜
+R
+java:S1128"7Remove this unused import 'com.revature.models.Ticket'.(ÿ €ıÿÿÿÿ
+<
+java:S1068"&Remove this unused "tr" private field.(‹º¯£

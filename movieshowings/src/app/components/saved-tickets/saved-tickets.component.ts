@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
 import { ITicket as ITicketModel } from 'src/app/interfaces/ITicket';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Router, NavigationExtras } from '@angular/router';
+import { LocalStorageService} from 'src/app/services/local-storage-services.service'
 
+// checkbox boolean interface
 interface ITicket extends ITicketModel {
   addToPurchase: boolean;
 }
@@ -12,22 +15,35 @@ interface ITicket extends ITicketModel {
 })
 export class SavedTicketsComponent implements OnInit {
 
-  // ticketsToAddToPurcahse: ITicket[] = [];
+  @Output() goToPurchasePage = new EventEmitter();
 
   tickets: ITicket[] = [
     {
     id: 1,
-    price: 15.00,
-    movieName: "Titanic",
+    price: 15.32,
+    movieTitle: "Titanic",
+    genre: "something here",
+    releaseDate: "1/1/1999",
     showTimeDate: "2/28/22",
     timeslot: "8:00pm",
     addToPurchase: false,
-    }
+    },
+    {
+      id: 2,
+      price: 50.32,
+      movieTitle: "Titanic",
+      genre: "something here",
+      releaseDate: "1/1/1999",
+      showTimeDate: "2/28/22",
+      timeslot: "12:00pm",
+      addToPurchase: false,
+      }
   ];
 
+  //setting initial select all to false
   selectAllTicketsState: boolean = false;
 
-  constructor() { }
+  constructor(private router: Router, private localStore: LocalStorageService ) { }
 
   ngOnInit(): void {
 
@@ -43,6 +59,20 @@ export class SavedTicketsComponent implements OnInit {
     this.tickets.forEach(item => {
       item.addToPurchase = this.selectAllTicketsState;
     })
+  }
+
+  submitToPurchasePage() {
+    const selectedTickets = this.tickets.filter(item => item.addToPurchase);
+    this.localStore.setItem('tickets', JSON.stringify(selectedTickets));
+    this.router.navigate(["/purchase-page"]);
+
+  //   const selectedTickets = this.tickets.filter(item => item.addToPurchase);
+  //   const navigationExtras: NavigationExtras = {
+  //     state: {
+  //       selectedTickets 
+  //     }
+  //   };
+  //   this.router.navigate(["/user-page"], navigationExtras );
   }
 
 }

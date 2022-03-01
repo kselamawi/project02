@@ -20,11 +20,11 @@ export class TicketServiceService {
   //   showtime_date: "",
   //   timeslot: "",
   // }
-
+  
   constructor(private http:HttpClient) { }
 
   getTickets(): void{
-    this.http.get<ITicket[]>("http://localhost:4200/saved-tickets")
+    this.http.get<ITicket[]>("http://localhost:8080/saved-tickets")
     .pipe(
       catchError((e)=> {
         return throwError(e);
@@ -32,7 +32,7 @@ export class TicketServiceService {
       ).subscribe((data) => {
         this.tickets = data;
       });
-
+      
   }
 
 }

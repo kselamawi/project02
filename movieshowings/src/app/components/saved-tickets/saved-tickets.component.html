@@ -16,6 +16,8 @@
                     </th>
                     <th scope="col">Ticket Id</th>
                     <th scope="col">Movie</th>
+                    <th scope="col">Genre</th>
+                    <th scope="col">ReleaseDate</th>
                     <th scope="col">Price</th>
                     <th scope="col">Showtime Date</th>
                     <th scope="col">Timeslot</th>
@@ -25,14 +27,16 @@
                     <tr *ngFor="let ticket of tickets">
                         <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="handleChecked(ticket)" [checked]="ticket.addToPurchase"></td>
                         <td>{{ticket.id}}</td>
-                        <td>{{ticket.movieName}}</td>
+                        <td>{{ticket.movieTitle}}</td>
+                        <td>{{ticket.genre}}</td>
+                        <td>{{ticket.releaseDate}}</td>
                         <td>{{ticket.price}}</td>
                         <td>{{ticket.showTimeDate}}</td>
                         <td>{{ticket.timeslot}}</td>
                     </tr>
                 </tbody>
                 <br>
-                <input type="submit" class="btn btn-log btn-primary btn-block" value="Add To Cart"/>
+                <input type="submit" class="btn btn-log btn-primary btn-block" value="Add To Cart" (click)="submitToPurchasePage()" />
             </table>
         </div>
     </div>

@@ -87,9 +87,10 @@ export class MainPageComponent implements OnInit {
     this.ticket.genre = pageMovie.genres;
     this.ticket.owner.id = 1;
 
+    let id = this.getCookie("id");
 
-    for (let i = 0; i < ticketAmount; i++){
-    this.ticketService.createTickets(this.ticket)
+    for (let i = 0; i < ticketAmount.id; i++){
+    this.ticketService.createTickets(this.ticket, id)
       .subscribe((data) => {
         console.log(data);
       });
@@ -111,6 +112,20 @@ export class MainPageComponent implements OnInit {
   }
   
 
-
+  getCookie(cname:any) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
 
 }

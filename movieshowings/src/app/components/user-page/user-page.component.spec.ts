@@ -1,6 +1,27 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { UserPageComponent } from './user-page.component';
+import {RouterTestingModule} from '@angular/router/testing';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {UserService} from '../../services/user.service';
+import {Subject} from 'rxjs';
+import {IUser} from '../../interfaces/IUser';
+
+class MockUserService {
+  user: Subject<IUser[]> = new Subject<IUser[]>(); 
+
+  getUserFromUpdateUser() {
+    return [
+      {
+        id: 0,
+        first: "Test",
+        last: "Test",
+        email: "Test",
+        password: "Test"
+      }
+    ]
+  }
+
+}
 
 describe('UserPageComponent', () => {
   let component: UserPageComponent;
@@ -8,7 +29,8 @@ describe('UserPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserPageComponent ]
+      declarations: [ UserPageComponent ],
+      imports: [RouterTestingModule, HttpClientTestingModule]
     })
     .compileComponents();
   });

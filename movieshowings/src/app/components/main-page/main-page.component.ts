@@ -62,11 +62,11 @@ export class MainPageComponent implements OnInit {
     price: 15.99,
     movieTitle: "",
     genre: "",
-    releaseDate:"",
     showTimeDate:"",
+    releaseDate:"",
     timeslot:"",
     owner:{
-
+      id: 0,
       email:"",
       password:""
     },
@@ -85,7 +85,7 @@ export class MainPageComponent implements OnInit {
     //Setting up our ticket to send back
     this.ticket.movieTitle = pageMovie.title;
     this.ticket.genre = pageMovie.genres;
-    this.ticket.timeslot = ticketDay;
+    this.ticket.owner.id = 1;
 
 
     this.ticketService.createTickets(this.ticket)

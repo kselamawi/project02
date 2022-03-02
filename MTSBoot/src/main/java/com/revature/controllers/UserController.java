@@ -66,7 +66,6 @@ public class UserController {
     return us.getUserById(id);
     }
 
-
     //This is used to login a user.
     @PostMapping("/login")
     @ResponseBody

@@ -44,7 +44,7 @@ export class TicketServiceService {
 
 
     createTickets(ticket:ITicket): Observable<ITicket> {
-      return this.http.post<ITicket>("http://localhost:8080/tickets/purchased/", JSON.stringify(ticket),
+      return this.http.post<ITicket>("http://localhost:8080/tickets/save/1", JSON.stringify(ticket),
        {headers : new HttpHeaders({ 'Content-Type': 'application/json' })})
       .pipe(catchError((e) => {
         return throwError(e);

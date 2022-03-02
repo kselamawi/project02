@@ -88,11 +88,12 @@ export class MainPageComponent implements OnInit {
     this.ticket.owner.id = 1;
 
 
+    for (let i = 0; i < ticketAmount; i++){
     this.ticketService.createTickets(this.ticket)
       .subscribe((data) => {
         console.log(data);
-      })
-
+      });
+    }
   
 
   }

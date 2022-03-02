@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IPurchase } from '../interfaces/ipurchase';
 import { ITicket } from '../interfaces/ITicket';
-import { TicketServiceService} from '../services/ticket-service';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
 import { NgForOf } from '@angular/common';
+import { TicketServiceService } from './ticket-service.service';
 
 
 @Injectable({

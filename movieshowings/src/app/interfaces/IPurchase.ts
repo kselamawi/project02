@@ -15,5 +15,7 @@ export interface IPurchase {
   showTimeDate: string;
   timeslot: string;
   user?: IUser;
+  addToPurchase?: boolean;
+  numberTickets: number;
 
 }

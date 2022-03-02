@@ -10,9 +10,6 @@ import { IPurchase } from 'src/app/interfaces/ipurchase';
 import { Router, NavigationExtras } from '@angular/router';
 import { LocalStorageService } from 'src/app/services/local-storage-services.service'
 
-interface IPurchaseModel extends IPurchase {
-  addToPurchase: boolean;
-}
 @Component({
   selector: 'purchase',
   templateUrl: './purchase.component.html',
@@ -45,19 +42,19 @@ export class PurchaseComponent implements OnInit {
   ticketMovieName: String = "";
   ticketPrice: Number = 0;
   ticketQuantity: Number = 0;
-  ticketDateAndTime: Date = new Date(); //date and time of movie showing
+  ticketDateAndTime: String = ""; //date and time of movie showing
 
   purchaseID: number = 0;
   purchaseTotalAmt: Number = 0;
   purchasedDate: Date = new Date(); //get current date
 
-  ticketsForPurchase: IPurchaseModel[] = [];
+  ticketsForPurchase: IPurchase[] = [];
 
 
   //transporter = nodemailer.createTransport();
 
 
-  handleChecked(purchase: IPurchaseModel) {
+  handleChecked(purchase: IPurchase) {
     console.log("called handleChecked");
     console.log(purchase);
     purchase.addToPurchase = !purchase.addToPurchase;
@@ -156,15 +153,15 @@ export class PurchaseComponent implements OnInit {
 
     //this.ticketInfo = $event;
 
-    this.ticketsForPurchase = PurchaseService.getSavedTickets(); //add saved tickets to array of tickets for purchase
+    this.ticketsForPurchase = this.purchaseService.getSavedTickets(); //add saved tickets to array of tickets for purchase
 
-    num:number = 0;
+    var num:number = 0;
 
-    while(num <= ticketsForPurchase.length){
-     this.ticketMovieName = ticketsForPurchase[num].movieName;
-     this.ticketPrice = ticketsForPurchase[num].pricePerTicket;
-     this.ticketQuantity = ticketsForPurchase[num].numberTickets;
-     this.ticketDateAndTime = ticketsForPurchase[num].showingDateAndTime;
+    while(num <= this.ticketsForPurchase.length){
+     this.ticketMovieName = this.ticketsForPurchase[num].movieTitle;
+     this.ticketPrice = this.ticketsForPurchase[num].price;
+     this.ticketQuantity = this.ticketsForPurchase[num].numberTickets;
+     this.ticketDateAndTime = this.ticketsForPurchase[num].showTimeDate;
     }
   }
 

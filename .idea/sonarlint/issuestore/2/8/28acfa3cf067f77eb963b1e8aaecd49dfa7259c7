@@ -1,0 +1,6 @@
+
+V	java:S125&"<This block of commented-out lines of code should be removed.(«Œ•ùÿÿÿÿ
+[
+java:S4684E"@Replace this persistent entity with a simple POJO or DTO object.(”Åùãûÿÿÿÿ
+k	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§ûîıÿÿÿÿ
+f	java:S117:"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™Ì’œ

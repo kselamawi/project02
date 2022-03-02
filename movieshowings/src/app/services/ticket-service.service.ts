@@ -11,6 +11,9 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class TicketServiceService {
+  static getTickets(): import("../interfaces/ipurchase").IPurchase[] {
+      throw new Error('Method not implemented.');
+  }
 
   subject:Subject<ITicket[]> = new Subject<ITicket[]>();
 

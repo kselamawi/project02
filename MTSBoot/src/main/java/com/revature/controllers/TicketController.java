@@ -43,21 +43,13 @@ import java.util.List;
         public Ticket getTicketByGenre(@PathVariable("genre") String genre){
             return ts.getTicketByGenre(genre);
         }
-        @GetMapping("/releaseDate")
-        @ResponseBody
-        public Ticket getTicketByReleaseDate(@PathVariable("releaseDate") Date releaseDate){
-            return ts.getTicketByReleaseDate(releaseDate);
-        }
+
         @GetMapping("/movie_title")
         @ResponseBody
         public Ticket getTicketByName(@PathVariable("movie_title")String movie_title){
             return ts.getTicketByName(movie_title);
         }
-        @GetMapping("/Show_Time_Date")
-        @ResponseBody
-        public  Ticket getTicketByShowTimeDate(@PathVariable("Show_Time_Variable") Date Show_Time_Date){
-            return ts.getTicketByShowTimeDate(Show_Time_Date);
-        }
+
         @GetMapping("/price")
         @ResponseBody
         public Ticket getTicketByPrice(@PathVariable("price") double price){
@@ -67,6 +59,18 @@ import java.util.List;
         @PostMapping("/purchased")
         @ResponseBody
         public Ticket createTicket(@RequestBody Ticket ticket) {
+            System.out.println(ticket);
+            return ts.createTicket(ticket);
+        }
+
+        @PostMapping("/save/{id}")
+        @ResponseBody
+        public Ticket saveTicket(@RequestBody Ticket ticket, @PathVariable int id) {
+            System.out.println(ticket);
+
+            User user = new User();
+            user.setId(id);
+            ticket.setOwner(user);
             return ts.createTicket(ticket);
         }
 

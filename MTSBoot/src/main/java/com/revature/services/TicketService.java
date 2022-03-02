@@ -36,9 +36,7 @@ public class TicketService {
 //            return tr.getById(id);
 //        }
 //
-        public Ticket getTicketByReleaseDate(Date releaseDate){
-            return tr.getByReleaseDate(releaseDate);
-        }
+
 
         public Ticket getTicketByGenre(String genre){
             return tr.getByGenre(genre);
@@ -47,10 +45,7 @@ public class TicketService {
         public Ticket getTicketByName(String movie_title){
             return tr.getByMovieTitle(movie_title);
         }
-        public Ticket getTicketByShowTimeDate( Date Show_Time_Date){
-            return  tr.getByShowTimeDate(Show_Time_Date);
 
-        }
         public Ticket getTicketByPrice(double price){
             return tr.getTicketByPrice(price);
         }

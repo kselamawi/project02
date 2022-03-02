@@ -20,6 +20,8 @@ export class LoginComponent implements OnInit {
     //connect to userService
     this.userService.login(this.email, this.password)
     .subscribe(data => {
+      document.cookie = `id=` + data.id;
+      
       let email2 = "";
       let password2 = "";
       if(data.email) {

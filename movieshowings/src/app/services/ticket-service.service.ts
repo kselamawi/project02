@@ -4,6 +4,8 @@ import { ITicket } from '../interfaces/ITicket';
 import { catchError } from 'rxjs';
 import { Observable, throwError } from 'rxjs';
 import { Subject } from 'rxjs';
+import { HttpHeaders } from '@angular/common/http';
+import { tick } from '@angular/core/testing';
 
 
 
@@ -38,5 +40,15 @@ export class TicketServiceService {
       });
       
   }
+
+
+
+    createTickets(ticket:ITicket, id:String): Observable<ITicket> {
+      return this.http.post<ITicket>("http://localhost:8080/tickets/save/" + id + "/", JSON.stringify(ticket),
+       {headers : new HttpHeaders({ 'Content-Type': 'application/json' })})
+      .pipe(catchError((e) => {
+        return throwError(e);
+      }));
+       }
 
 }

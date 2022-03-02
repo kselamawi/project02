@@ -15,10 +15,6 @@ import java.util.List;
 
         Ticket getByMovieTitle(String movie_title);
 
-        Ticket getByReleaseDate(java.util.Date releaseDate);
-
-        Ticket getByShowTimeDate(Date show_time_date);
-
         Ticket getTicketByPrice(double price);
 //
         List<Ticket> findAllByOwner(User user);

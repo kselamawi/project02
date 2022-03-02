@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad944271-0c46-47a3-aa31-5e2f36cbd485" name="Changes" comment="added JavaMail EmailService, and sendEmailConfirmation function in Purchase.java">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/1/015d46336194c76b1b72a21977f59c5f0d364eb0" beforeDir="false" />
+<<<<<<< HEAD
+    <list default="true" id="8a4b731f-4793-482d-a002-1920fb6d5074" name="Changes" comment="" />
+=======
+    <list default="true" id="ad944271-0c46-47a3-aa31-5e2f36cbd485" name="Changes" comment="updated main files">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1abe9cafed11e6f05fe98588f7d80b5c708043de" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/7/27f8ae6eec456a4ba64d2a37bd651489ed99fca9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/d/3d0f6ad8694e280cfbed410cfe8f8ce930ac8a1f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/6/463dd7e4ad93ca6faeca736365f35d8a2fd239e4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5ee627d5515c2119f64ee6307be00bc32bc1ce4b" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/f/5f6ec6e91c1cfe2ace624aa0fc8b1c862a281c6f" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/b/7b05492d35a2b14a8e19e1c6dd32951236c2d765" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/5/c57b6eedc6dcef5196dd0c9f7bd382b06d03d8db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/1/910b2d6b36847a87d0bc8315e28ccde2ac8015b4" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f616c20162e03e27a33cb4540ab50e64ce6bff09" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -20,6 +24,7 @@
       <change beforePath="$PROJECT_DIR$/movieshowings/.vs/movieshowings/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/.vs/movieshowings/v17/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movieshowings/.vs/slnx.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/.vs/slnx.sqlite" afterDir="false" />
     </list>
+>>>>>>> bc97e0a5411f546e6ccc00ca47c344fbd58825ba
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,14 +62,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -174,14 +171,7 @@
       <option name="project" value="LOCAL" />
       <updated>1646154488686</updated>
     </task>
-    <task id="LOCAL-00006" summary="added JavaMail EmailService, and sendEmailConfirmation function in Purchase.java">
-      <created>1646163222963</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1646163222963</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -200,7 +190,6 @@
     <MESSAGE value="..." />
     <MESSAGE value="added Amy's files" />
     <MESSAGE value="updated main files" />
-    <MESSAGE value="added JavaMail EmailService, and sendEmailConfirmation function in Purchase.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="added JavaMail EmailService, and sendEmailConfirmation function in Purchase.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated main files" />
   </component>
 </project>

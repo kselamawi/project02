@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ITicket } from '../interfaces/ITicket';
 import { catchError } from 'rxjs';
 import { Observable, throwError } from 'rxjs';
+import { Subject } from 'rxjs';
 
 
 
@@ -10,6 +11,8 @@ import { Observable, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class TicketServiceService {
+
+  subject:Subject<ITicket[]> = new Subject<ITicket[]>();
 
   tickets: ITicket[] = [];
 
@@ -31,6 +34,7 @@ export class TicketServiceService {
       })
       ).subscribe((data) => {
         this.tickets = data;
+        this.subject.next(data);
       });
       
   }

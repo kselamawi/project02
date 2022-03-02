@@ -1,11 +1,13 @@
-import { ITicket as ITicketModel } from 'src/app/interfaces/ITicket';
+import { ITicket } from 'src/app/interfaces/ITicket';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
-import { LocalStorageService} from 'src/app/services/local-storage-services.service'
+// import { LocalStorageService} from 'src/app/services/local-storage-services.service'
+import { TicketServiceService } from 'src/app/services/ticket-service.service';
+import { SetAndGetTicketsService } from 'src/app/services/set-and-get-tickets.service';
 
 // checkbox boolean interface
-interface ITicket extends ITicketModel {
-  addToPurchase: boolean;
+interface ITicketAddBool extends ITicket {
+  checked: boolean;
 }
 
 @Component({
@@ -15,56 +17,62 @@ interface ITicket extends ITicketModel {
 })
 export class SavedTicketsComponent implements OnInit {
 
-  @Output() goToPurchasePage = new EventEmitter();
+  // @Output() goToPurchasePage = new EventEmitter();
 
-  tickets: ITicket[] = [
-    {
-    id: 1,
-    price: 15.32,
-    movieTitle: "Titanic",
-    genre: "something here",
-    releaseDate: "1/1/1999",
-    showTimeDate: "2/28/22",
-    timeslot: "8:00pm",
-    addToPurchase: false,
-    },
-    {
-      id: 2,
-      price: 50.32,
-      movieTitle: "Titanic",
-      genre: "something here",
-      releaseDate: "1/1/1999",
-      showTimeDate: "2/28/22",
-      timeslot: "12:00pm",
-      addToPurchase: false,
-      }
+  tickets: ITicketAddBool[] = [
+    // {
+    // price: 8.32,
+    // movieTitle: "Titanic",
+    // genre: "something here",
+    // releaseDate: "1/1/1999",
+    // showTimeDate: "2/28/22",
+    // timeslot: "8:00pm",
+    // checked: false,
+    // },
+    // {
+    //   price: 8.32,
+    //   movieTitle: "Titanic",
+    //   genre: "something here",
+    //   releaseDate: "1/1/1999",
+    //   showTimeDate: "2/28/22",
+    //   timeslot: "12:00am",
+    //   checked: false,
+    //   }
   ];
 
   //setting initial select all to false
   selectAllTicketsState: boolean = false;
 
-  constructor(private router: Router, private localStore: LocalStorageService ) { }
+  constructor(private router: Router, private ts: TicketServiceService, private set: SetAndGetTicketsService) { }
 
   ngOnInit(): void {
+    this.ts.getTickets();
+    this.ts.subject.subscribe((data: ITicket[]) => {
+      this.tickets = data.map(item => {
+        return {...item, checked: false}
+      });
+    });
 
   }
 
-  handleChecked(ticket: ITicket) {
+  handleChecked(ticket: ITicketAddBool) {
     console.log(ticket);
-    ticket.addToPurchase = !ticket.addToPurchase;
+    ticket.checked = !ticket.checked;
   }
 
   selectAllTickets() {
     this.selectAllTicketsState = !this.selectAllTicketsState;
     this.tickets.forEach(item => {
-      item.addToPurchase = this.selectAllTicketsState;
+      item.checked = this.selectAllTicketsState;
     })
   }
 
   submitToPurchasePage() {
-    const selectedTickets = this.tickets.filter(item => item.addToPurchase);
-    this.localStore.setItem('tickets', JSON.stringify(selectedTickets));
-    this.router.navigate(["/purchase-page"]);
+    const selectedTickets = this.tickets.filter(item => item.checked);
+    // this.localStore.setItem('tickets', JSON.stringify(selectedTickets));
+    this.set.setSelectedTickets(selectedTickets);
+
+    this.router.navigate(["/purchase"]);
 
   //   const selectedTickets = this.tickets.filter(item => item.addToPurchase);
   //   const navigationExtras: NavigationExtras = {

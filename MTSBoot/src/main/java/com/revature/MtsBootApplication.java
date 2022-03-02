@@ -10,6 +10,7 @@ public class MtsBootApplication {
 	public static void main(String[] args) {
 
 		SpringApplication.run(MtsBootApplication.class, args);
+
 	}
 
 }

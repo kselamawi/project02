@@ -1,6 +1,7 @@
 package com.revature.controllers;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.exceptions.NotAValidLogin;
 import com.revature.models.User;
 import com.revature.repository.UserRepository;
@@ -16,10 +17,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 @Controller
 @RequestMapping("/users")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*")
 public class UserController {
 
     private UserService us;
@@ -67,15 +69,23 @@ public class UserController {
 
     //This is used to login a user.
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody User u, HttpServletResponse response) throws NotAValidLogin {
-        System.out.println(u.getEmail() + " " +u.getPassword());
+    @ResponseBody
+    public User login(@RequestBody User u, HttpServletResponse response) throws NotAValidLogin {
+
+        System.out.println(u.getEmail() + " " + u.getPassword());
         User test = us.login(u);
+
+        System.out.println(test);
+        //Testing if the user exists.
         if(test != null){
+            //If the user exists, return a cookie with their ID and set it's expiration to 7 days.
             Cookie cookie = new Cookie("id", ""+test.getId());
+            cookie.setMaxAge(7 * 24 * 60 * 60);
+            cookie.setPath("/");
             response.addCookie(cookie);
-            return new ResponseEntity<String>("YES", HttpStatus.OK);
+            return test;
         }
-        return new ResponseEntity<>("Wrong login information", HttpStatus.FORBIDDEN);
+        return test;
     }
 
     //THis is used to log a user out.

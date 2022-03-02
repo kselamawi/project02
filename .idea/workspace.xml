@@ -4,10 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a4b731f-4793-482d-a002-1920fb6d5074" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+<<<<<<< HEAD
+    <list default="true" id="8a4b731f-4793-482d-a002-1920fb6d5074" name="Changes" comment="" />
+=======
+    <list default="true" id="ad944271-0c46-47a3-aa31-5e2f36cbd485" name="Changes" comment="updated main files">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1abe9cafed11e6f05fe98588f7d80b5c708043de" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/7/27f8ae6eec456a4ba64d2a37bd651489ed99fca9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/6/463dd7e4ad93ca6faeca736365f35d8a2fd239e4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5ee627d5515c2119f64ee6307be00bc32bc1ce4b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/f/5f6ec6e91c1cfe2ace624aa0fc8b1c862a281c6f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/b/7b05492d35a2b14a8e19e1c6dd32951236c2d765" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/1/910b2d6b36847a87d0bc8315e28ccde2ac8015b4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f616c20162e03e27a33cb4540ab50e64ce6bff09" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/models/Purchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/models/Purchase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/services/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/services/EmailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movieshowings/.vs/movieshowings/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/.vs/movieshowings/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movieshowings/.vs/slnx.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/.vs/slnx.sqlite" afterDir="false" />
     </list>
+>>>>>>> bc97e0a5411f546e6ccc00ca47c344fbd58825ba
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,8 +52,32 @@
       </state>
     </system>
   </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="origin/nabi" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Jeremiah-Grimes" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -49,17 +90,88 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/MTSBoot" />
+  </component>
+  <component name="RunManager" selected="Application.EmailService">
+    <configuration name="EmailService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.revature.services.EmailService" />
+      <module name="MTSBoot.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revature.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MtsBootApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.revature.MtsBootApplication" />
+      <module name="MTSBoot.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revature.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.EmailService" />
+        <item itemvalue="Application.MtsBootApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8a4b731f-4793-482d-a002-1920fb6d5074" name="Changes" comment="" />
+      <changelist id="ad944271-0c46-47a3-aa31-5e2f36cbd485" name="Changes" comment="updated main files" />
       <created>1645653083618</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1645653083618</updated>
     </task>
+    <task id="LOCAL-00001" summary="...">
+      <created>1646090688113</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1646090688113</updated>
+    </task>
+    <task id="LOCAL-00002" summary="got front end to compile but still doesn't look right">
+      <created>1646091815093</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1646091815093</updated>
+    </task>
+    <task id="LOCAL-00003" summary="...">
+      <created>1646154202753</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1646154202753</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added Amy's files">
+      <created>1646154331085</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1646154331085</updated>
+    </task>
+    <task id="LOCAL-00005" summary="updated main files">
+      <created>1646154488686</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1646154488686</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -72,5 +184,12 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="got front end to compile but still doesn't look right" />
+    <MESSAGE value="..." />
+    <MESSAGE value="added Amy's files" />
+    <MESSAGE value="updated main files" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated main files" />
   </component>
 </project>

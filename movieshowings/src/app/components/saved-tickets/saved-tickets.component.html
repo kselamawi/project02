@@ -14,7 +14,7 @@
                             Select All
                         </label>
                     </th>
-                    <th scope="col">Ticket Id</th>
+                    <!-- <th scope="col">Ticket Id</th> -->
                     <th scope="col">Movie</th>
                     <th scope="col">Genre</th>
                     <th scope="col">ReleaseDate</th>
@@ -25,8 +25,8 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let ticket of tickets">
-                        <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="handleChecked(ticket)" [checked]="ticket.addToPurchase"></td>
-                        <td>{{ticket.id}}</td>
+                        <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="handleChecked(ticket)" [checked]="ticket.checked"></td>
+                        <!-- <td>{{ticket.id}}</td> -->
                         <td>{{ticket.movieTitle}}</td>
                         <td>{{ticket.genre}}</td>
                         <td>{{ticket.releaseDate}}</td>

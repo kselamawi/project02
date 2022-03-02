@@ -6,6 +6,10 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/MTSBoot.main.iml" filepath="$PROJECT_DIR$/.idea/modules/MTSBoot.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/MTSBoot.test.iml" filepath="$PROJECT_DIR$/.idea/modules/MTSBoot.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Project02.iml" filepath="$PROJECT_DIR$/.idea/Project02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Project2.iml" filepath="$PROJECT_DIR$/.idea/modules/Project2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Project2.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Project2.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Project2.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Project2.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Project2.app.test.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Project2.app.test.iml" />
     </modules>
   </component>
 </project>

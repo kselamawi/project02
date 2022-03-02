@@ -4,6 +4,8 @@ import { ITicket } from '../interfaces/ITicket';
 import { catchError } from 'rxjs';
 import { Observable, throwError } from 'rxjs';
 import { Subject } from 'rxjs';
+import { HttpHeaders } from '@angular/common/http';
+
 
 
 
@@ -11,6 +13,9 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class TicketServiceService {
+  // static getTickets(): import("../interfaces/ipurchase").IPurchase[] {
+  //     throw new Error('Method not implemented.');
+  // }
 
   subject:Subject<ITicket[]> = new Subject<ITicket[]>();
 
@@ -38,5 +43,15 @@ export class TicketServiceService {
       });
       
   }
+
+
+
+    createTickets(ticket:ITicket, id:String): Observable<ITicket> {
+      return this.http.post<ITicket>("http://localhost:8080/tickets/save/" + id + "/", JSON.stringify(ticket),
+       {headers : new HttpHeaders({ 'Content-Type': 'application/json' })})
+      .pipe(catchError((e) => {
+        return throwError(e);
+      }));
+       }
 
 }

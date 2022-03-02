@@ -31,10 +31,10 @@ Expected Ticket Object from server:
 export interface ITicket {
     id: number;
     price: number;
-    movieTitle: string;
-    genre: string;
+    movieTitle?: string;
+    genre?: string;
     releaseDate: string;
     showTimeDate: string;
     timeslot: string;
-    user?: IUser;
+    owner: IUser;
 }

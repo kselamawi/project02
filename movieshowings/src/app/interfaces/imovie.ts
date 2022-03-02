@@ -8,18 +8,18 @@ export class IMovie implements IMovie {
 
 export interface IMovieDetail{
     id?:number,
-    title?:String,
-    releaseState?:String,
-    image?:String,
-    plot?:String,
-    genres?:String
+    title?:string,
+    releaseState?:string,
+    image?:string,
+    plot?:string,
+    genres?:string
 }
 
 export class IMovieDetail implements IMovieDetail {
     id?: number | undefined;
-    title?: String | undefined;
-    releaseState?: String | undefined;
-    image?: String | undefined;
-    plot?: String | undefined;
-    genres?: String | undefined;
+    title?: string;
+    releaseState?: string | undefined;
+    image?: string | undefined;
+    plot?: string | undefined;
+    genres?: string | undefined;
 }

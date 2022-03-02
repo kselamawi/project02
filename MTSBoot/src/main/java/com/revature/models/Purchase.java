@@ -1,10 +1,11 @@
 package com.revature.models;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.revature.services.EmailService;
 
 import javax.persistence.*;
 import javax.persistence.Table;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.Date;
@@ -23,7 +24,7 @@ public class Purchase {
 
     @ManyToOne() //removed @CascadeType.All
     @JoinColumn(name="owner")
-//    @JsonIgnore
+    @JsonIgnore
     private User owner;
 
     @OneToMany(mappedBy = "purchase", cascade = CascadeType.ALL)
@@ -38,9 +39,6 @@ public class Purchase {
 //        this.owner = user;
     }
 
-    public void sendEmailConfirmation(String smtpServer, String to, String from, String subject, String body){
-        EmailService.send(smtpServer, to, from, subject, body);
-    }
 
     public int getPurchaseId() {
         return purchaseId;

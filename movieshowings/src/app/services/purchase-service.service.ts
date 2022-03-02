@@ -5,6 +5,7 @@ import { ITicket } from '../interfaces/ITicket';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
+import { NgForOf } from '@angular/common';
 
 
 @Injectable({
@@ -25,8 +26,14 @@ export class PurchaseService {
     userID: 0
   }
 
-  addTotal(purchaseID: Number) {
-
+  //Add total of all ticket prices inside purchases array
+  addTotal(purchases: IPurchase[]) {
+    var num: number = 0;
+    var sum: number = 0;
+    while(num <= purchases.length) {
+      sum += purchases[num].price;
+    }
+    return sum;
   }
 
   //userID will have the tickets saved to it

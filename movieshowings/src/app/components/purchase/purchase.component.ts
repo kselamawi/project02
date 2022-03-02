@@ -82,6 +82,7 @@ export class PurchaseComponent implements OnInit {
   sendPurchase() {
     const selectedTickets = this.ticketsForPurchase.filter(item => item.addToPurchase);
     this.localStore.setItem('ticketsForPurchase', JSON.stringify(selectedTickets)); //this adds to array selectedTickets in local storage
+    this.purchaseService.addTotal(selectedTickets);
     this.purchaseService.doPurchase(selectedTickets);
 
     const message = {
@@ -92,7 +93,7 @@ export class PurchaseComponent implements OnInit {
         this.purchasedDate + ". Enjoy your movie!",
     }
 
-    // this.transporter.sendMail(message); //hopefully this sends email to this.userEmail
+    this.transporter.sendMail(message); //hopefully this sends email to this.userEmail
 
 
     alert("Thank you for your purchase. Enjoy your movie!")

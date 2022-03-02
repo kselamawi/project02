@@ -17,7 +17,7 @@ export interface IMovieDetail{
 
 export class IMovieDetail implements IMovieDetail {
     id?: number | undefined;
-    title?: String | undefined;
+    title?: String;
     releaseState?: String | undefined;
     image?: String | undefined;
     plot?: String | undefined;

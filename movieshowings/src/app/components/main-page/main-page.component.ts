@@ -1,6 +1,8 @@
+import { getInstructionStatements } from '@angular/compiler/src/render3/view/util';
 import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { IMovie, IMovieDetail } from 'src/app/interfaces/imovie';
+import { ITicket } from 'src/app/interfaces/ITicket';
 import { MovieServiceService } from 'src/app/services/movie-service.service';
 
 @Component({
@@ -21,15 +23,32 @@ export class MainPageComponent implements OnInit {
   //Movie object
   movieList: IMovie = new IMovie();
 
-
-
   movie:IMovieDetail = {
     title:"",
     releaseState:"",
-    image:""
+    image:"",
+    genres:"",
+  }
+
+  ticketList: ITicket[] = [];
+
+  movieName = "";
+
+  ticket: ITicket = {
+    price: 15.99,
+    movieTitle: "",
+    genre: "",
+    releaseDate:"",
+    showTimeDate:"",
+    timeslot:"",
   }
 
 
+  //We need to be able to populate a ticket object to send to our back end. 
+  saveTickets(pageMovie:IMovieDetail){
+    console.log("saveTickets function called");
+    console.log(pageMovie.title);
+  }
 
   getMovies(){
 
@@ -38,11 +57,7 @@ export class MainPageComponent implements OnInit {
       console.log(data);
       
       this.movieList = data;
-      console.log(this.movieList);
 
-      this.movie.title = this.movieList.items[0].title;
-      this.movie.releaseState = this.movieList.items[0].releaseState;
-      this.movie.image = this.movieList.items[0].image;
     });
 
   }

@@ -23,7 +23,7 @@ public class Purchase {
 
     @ManyToOne(fetch=FetchType.LAZY) //removed @CascadeType.All
     @JoinColumn(name="owner")
-//    @JsonIgnore
+    @JsonIgnore
     private User owner;
 
     @OneToMany(mappedBy = "purchase", cascade = CascadeType.ALL)

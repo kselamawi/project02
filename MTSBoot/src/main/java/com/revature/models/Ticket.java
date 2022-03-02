@@ -32,10 +32,12 @@ public class Ticket {
 
     @ManyToOne(fetch =FetchType.LAZY)
     @JoinColumn(name="purchase")
+    @JsonIgnore
     public Purchase purchase;
     
     @ManyToOne(fetch =FetchType.LAZY)
     @JoinColumn(name="owner")
+    @JsonIgnore
     private User owner;  //unique, null.
 
     public Ticket() {

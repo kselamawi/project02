@@ -2,29 +2,26 @@
 
 
 <div class="container" *ngFor="let movie of movieList.items">
-    <div class="card" style="width: 50rem;">
+    <div class="card" style="width: 25rem;">
         <h2 class="card-title">{{movie.title}} - Airing {{movie.releaseState}}</h2>
         <img class="card-img"src="{{movie.image}}">
-            <select class="">
-                <option>Day</option>
-                <option value="1">Monday</option>
-                <option value="2">Tuesday</option>
-                <option value="3">Wednesday</option>
-                <option value="4">Thursday</option>
-                <option value="5">Friday</option>
-            </select>
-            <select class="">
-                <option>Time</option>
-                <option>5:00PM</option>
-                <option>8:00PM</option>
-                <option>10:00PM</option>
-            </select>
-            <select class="">
-                <option>Amount</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-            </select>
-            <button class="btn btn-primary" (click)="saveTickets(movie)">Save Ticket</button>    </div>
+            <div class="row-4">
+                <label for="ticketDay" class="row-sm-2">Movie Day:</label>
+                <select class="row-2"name="ticketDay" [(ngModel)]="ticketDay">
+                    <option *ngFor="let day of ticketDays" [ngValue]="day">{{day.name}}</option>
+                </select>
+            </div>
+            <div>
+                <label for="ticketTime" class="row-2">Show Time:</label>
+                <select class="row-2"name="ticketDay" [(ngModel)]="ticketTime">
+                    <option *ngFor="let time of ticketTimes" [ngValue]="time">{{time.name}}</option>
+                </select>
+            </div>
+            <div>
+                <label for="ticketDay" class="">Ticket Amounts:</label>
+                <select class="row-2"name="ticketDay" [(ngModel)]="ticketAmount">
+                    <option *ngFor="let amount of ticketAmounts" [ngValue]="amount">{{amount.id}}</option>
+                </select>
+            </div>
+            <button class="btn btn-primary" (click)="saveTickets(movie, ticketDay, ticketTime, ticketAmount)">Save Ticket</button>    </div>
 </div>

@@ -67,6 +67,7 @@ import java.util.List;
         @PostMapping("/purchased")
         @ResponseBody
         public Ticket createTicket(@RequestBody Ticket ticket) {
+            System.out.println(ticket);
             return ts.createTicket(ticket);
         }
 

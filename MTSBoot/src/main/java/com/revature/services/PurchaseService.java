@@ -9,13 +9,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import java.util.Date;
 import java.util.List;
+import java.util.Properties;
+
+import javax.mail.*;
+import javax.mail.internet.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.revature.services.EmailService;
+import java.util.Properties;
 
 @Service
 @Transactional
 public class PurchaseService {
     private PurchaseRepository pr;
+    private EmailService es;
     private TicketRepository tr;
 
     public PurchaseService() {}

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IPurchase } from '../interfaces/ipurchase';
 import { ITicket } from '../interfaces/ITicket';
+import { TicketServiceService} from '../services/ticket-service';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
@@ -24,6 +25,11 @@ export class PurchaseService {
   purchaseItem = {
     purchaseID: 0,
     userID: 0
+  }
+
+  getSavedTickets(){
+    savedTickets: IPurchase[]; //not sure if we can save ITicket[] into IPurchase[]
+    return savedTickets = TicketServiceService.getTickets();
   }
 
   //Add total of all ticket prices inside purchases array

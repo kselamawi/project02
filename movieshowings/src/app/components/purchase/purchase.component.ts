@@ -82,7 +82,8 @@ export class PurchaseComponent implements OnInit {
   sendPurchase() {
     const selectedTickets = this.ticketsForPurchase.filter(item => item.addToPurchase);
     this.localStore.setItem('ticketsForPurchase', JSON.stringify(selectedTickets)); //this adds to array selectedTickets in local storage
-    this.purchaseService.addTotal(selectedTickets);
+    this.purchaseTotalAmt = this.purchaseService.addTotal(selectedTickets);
+    console.log("Total: $" + this.purchaseTotalAmt);
     this.purchaseService.doPurchase(selectedTickets);
 
     const message = {
@@ -102,11 +103,11 @@ export class PurchaseComponent implements OnInit {
     this.purchasedDate = new Date();
 
     this.router.navigate(["/purchase"]);
-    
+
     //   const selectedTickets = this.tickets.filter(item => item.addToPurchase);
     //   const navigationExtras: NavigationExtras = {
     //     state: {
-    //       selectedTickets 
+    //       selectedTickets
     //     }
     //   };
     //   this.router.navigate(["/user-page"], navigationExtras );
@@ -145,18 +146,24 @@ export class PurchaseComponent implements OnInit {
     */
 
   //get the information from when the tickets were saved to user account
-  getTicketInfoFromSaveTickets($event: any): void{
+  getTicketInfoFromSaveTickets() {
     console.log("called getTicketInfoFromSaveTickets");
-    console.log($event);
+    //console.log($event);
 
-    this.ticketInfo = $event;
+    //this.ticketInfo = $event;
 
-    this.ticketMovieName = this.ticketInfo.movieName;
-    this.ticketPrice = this.ticketInfo.pricePerTicket;
-    this.ticketQuantity = this.ticketInfo.numberTickets;
-    this.ticketDateAndTime = this.ticketInfo.showingDateAndTime;
+    this.ticketsForPurchase = PurchaseService.getSavedTickets(); //add saved tickets to array of tickets for purchase
+
+    num:number = 0;
+
+    while(num <= ticketsForPurchase.length){
+     this.ticketMovieName = ticketsForPurchase[num].movieName;
+     this.ticketPrice = ticketsForPurchase[num].pricePerTicket;
+     this.ticketQuantity = ticketsForPurchase[num].numberTickets;
+     this.ticketDateAndTime = ticketsForPurchase[num].showingDateAndTime;
+    }
   }
-  
+
   /* I guess I don't need this anymore either...
   sendPurchase2(): void {
 
@@ -182,7 +189,7 @@ export class PurchaseComponent implements OnInit {
 
   }
   */
-  
+
 
 }
 

@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.sql.Date;
 
+import javax.mail.*;
+
 @Entity
 @Table(name="purchases")
 public class Purchase {
@@ -39,8 +41,13 @@ public class Purchase {
 
     }
 
-    public static void sendEmailConfirmation(String smtpServer, String to, String from, String subject, String body){
-        EmailService.send(smtpServer, to, from, subject, body);
+    public void sendEmailConfirmation(String smtpServer, String to, String from, String subject, String body){
+        MimeMessage message=new MimeMessage(session);
+        message.setFrom(new InternetAddress("sonoojaiswal@sssit.org"));
+        message.addRecipient(Message.RecipientType.To,
+                new InternetAddress("sonoojaiswal@javatpoint.com"));
+        message.setHeader("Hi, everyone");
+        message.setText("Hi, This mail is to inform you...");
     }
 
     public int getPurchaseId() {

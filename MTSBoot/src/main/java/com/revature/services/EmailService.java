@@ -1,64 +1,45 @@
 package com.revature.services;
-import com.revature.models.Purchase;
-
+import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
-import java.util.*;
+import javax.activation.*;
 
-/*
-Borrowed from:
-https://www.infoworld.com/article/2075785/javamail-quick-start.html#:~:text=JavaMail%20quick%20start%201%20Setup.%20If%20you%20use,introduced%20the%20javax.mail.Part%20interface%20implemented%20by%20javax.mail.Message.%20
- */
+public class EmailService
+{
+    String smtpServer;
+    String to;
+    String from;
+    String subject;
+    String body;
 
-public class EmailService {
-
-    public static void main(String args[]) {
-        try {
-            String smtpServer = args[0];
-            String to = args[1];
-            String from = args[2];
-            String subject = args[3];
-            String body = args[4];
-            //send(smtpServer, to, from, subject, body);
-            send("smtp.office365.com", "jeremiah.grimes@revature.net",
-                    "germygrimes@gmail.com", "testing java mail", "test test test");
-        } catch (Exception e) {
-            System.out.println("Usage: smtpServer toAddress fromAddress subjectText bodyText");
-        }
-        System.exit(0);
+    EmailService(String smtpServer, String to, String from, String subject, String body) {
+        this.smtpServer = smtpServer;
+        this.to = to;
+        this.from = from;
+        this.subject = subject;
+        this.body = body;
     }
 
-    /**
-    * "send" method to send the message.
-    */
-    public static void send(String smtpServer, String to, String from, String subject, String body){
+    public void send(){
+        String host = "localhost";//or IP address
+
+        //Get the session object
+        Properties properties = System.getProperties();
+        properties.setProperty("smtp.gmail.com", host);
+        Session session = Session.getDefaultInstance(properties);
+
+        //compose the message
         try{
-            Properties props = System.getProperties();
-            // -- Attaching to default Session, or we could start a new one --
-            props.put("mail.smtp.host", smtpServer);
-            Session session = Session.getDefaultInstance(props, null);
-            // -- Create a new message --
-            Message msg = new MimeMessage(session);
-            // -- Set the FROM and TO fields --
-            msg.setFrom(new InternetAddress(from));
-            msg.setRecipients(Message.RecipientType.TO,
-            InternetAddress.parse(to, false));
-            // -- We could include CC recipients too --
-            // if (cc != null)
-            // msg.setRecipients(Message.RecipientType.CC
-            // ,InternetAddress.parse(cc, false));
-            // -- Set the subject and body text --
-            msg.setSubject(subject);
-            msg.setText(body);
-            // -- Set some other header information --
-            msg.setHeader("email", "jeremiah.grimes@revature.net");
-            msg.setHeader("password", "WeeWeeRoof12*");
-            msg.setSentDate(new Date());
-            // -- Send the message --
-            Transport.send(msg);
-            System.out.println("Message sent OK.");
-        } catch (Exception e){
-            e.printStackTrace();
-        }
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(from));
+            message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));
+            message.setSubject(subject);
+            message.setText(body);
+
+            // Send message
+            Transport.send(message);
+            System.out.println("message sent successfully....");
+
+        }catch (MessagingException mex) {mex.printStackTrace();}
     }
-}
+}  

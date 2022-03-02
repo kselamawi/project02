@@ -41,7 +41,7 @@ public class EmailService
         List<Ticket> tickets = ps.getPurchaseById(userId).getTickets();
 
         body = "Thank you, " + u.getFirst() + "for your purchase of " + tickets.size() + "tickets to see " +
-                tickets.get(0).getMovieTitle() + "on " + tickets.get(0).getShowTimeDate() + ". Enjoy the movie!";
+                tickets.get(0).getMovieTitle() + "on " + tickets.get(0).getShowTime() + ". Enjoy the movie!";
     }
 
     public void send(){

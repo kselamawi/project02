@@ -59,4 +59,11 @@ export class PurchaseService {
       }))
   }
 
+  emailConfirmation(String smtpServer, String to, String from, String subject, String body): void {
+      return this.http.post<String, String, String, String>("http://localhost:8080/purchase/email")
+        .pipe(catchError((e) => {
+          return throwError(e);
+        }))
+  }
+
 }

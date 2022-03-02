@@ -65,5 +65,10 @@ public class PurchaseController {
         return true;
     }
 
+    @PostMapping("/email")
+    @ResponseBody
+    public void emailConfirmation(@RequestBody String smtpServer, String to, String from, String subject, String body){
+        ps.sendEmailConfirmation(smtpServer, to, from, subject, body);
+    }
 
 }

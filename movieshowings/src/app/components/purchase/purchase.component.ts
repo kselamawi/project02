@@ -58,11 +58,13 @@ export class PurchaseComponent implements OnInit {
 
 
   handleChecked(purchase: IPurchaseModel) {
+    console.log("called handleChecked");
     console.log(purchase);
     purchase.addToPurchase = !purchase.addToPurchase;
   }
 
   selectAllTickets() {
+    console.log("called selectAllTickets");
     this.selectAllTicketsState = !this.selectAllTicketsState;
     this.ticketsForPurchase.forEach(item => {
       item.addToPurchase = this.selectAllTicketsState;
@@ -80,6 +82,7 @@ export class PurchaseComponent implements OnInit {
     }
 
   sendPurchase() {
+    console.log("called sendPurchase");
     const selectedTickets = this.ticketsForPurchase.filter(item => item.addToPurchase);
     this.localStore.setItem('ticketsForPurchase', JSON.stringify(selectedTickets)); //this adds to array selectedTickets in local storage
     this.purchaseTotalAmt = this.purchaseService.addTotal(selectedTickets);
@@ -102,7 +105,7 @@ export class PurchaseComponent implements OnInit {
     this.purchaseTotalAmt = 0;
     this.purchasedDate = new Date();
 
-    this.router.navigate(["/purchase"]);
+    this.router.navigate(["/main-page"]);
 
     //   const selectedTickets = this.tickets.filter(item => item.addToPurchase);
     //   const navigationExtras: NavigationExtras = {

@@ -1,17 +1,12 @@
 package com.revature.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.revature.services.EmailService;
-
 
 import javax.persistence.*;
 import javax.persistence.Table;
-import javax.mail.*;
-import javax.mail.internet.*;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.sql.Date;
-import java.util.Properties;
 
 @Entity
 @Table(name="purchases")
@@ -42,23 +37,6 @@ public class Purchase {
 //        this.owner = user;
     }
 
-    public void sendEmailConfirmation(String smtpServer, String to, String from, String subject, String body){
-        //EmailService.send(smtpServer, to, from, subject, body);
-        Properties properties=new Properties();
-        //fill all the information like host name etc.
-        Session session=Session.getInstance(properties,null);
-
-        MimeMessage message=new MimeMessage(session);
-        try {
-            message.setFrom(new InternetAddress(from));
-            message.setText(body);
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-            message.setHeader(subject, subject);
-            Transport.send(message);
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        }
-    }
 
     public int getPurchaseId() {
         return purchaseId;

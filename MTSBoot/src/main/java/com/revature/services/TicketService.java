@@ -1,7 +1,10 @@
 package com.revature.services;
 
+import com.revature.models.Purchase;
 import com.revature.models.Ticket;
+import com.revature.models.User;
 import com.revature.repository.TicketRepository;
+import com.revature.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -14,24 +17,25 @@ import java.util.List;
 @Transactional
 public class TicketService {
         private TicketRepository tr;
+        private UserRepository ur;
 
         @Autowired
         public TicketService(TicketRepository tr){
             this.tr =tr;
         }
-
-        public TicketService(){
-        }
-
-        // Here we're adding 'Sort' parameter specifying the property name and direction by which we want to sort.
-        public List<Ticket> getAllTickets(){
-            return tr.findAll(Sort.by(Sort.Direction.ASC,"releaseDate"));
-        }
-
-        public Ticket getTicketsById(int id) {
-            return tr.getById(id);
-        }
-
+//
+//        public TicketService(){
+//        }
+//
+//        // Here we're adding 'Sort' parameter specifying the property name and direction by which we want to sort.
+//        public List<Ticket> getAllTickets(){
+//            return tr.findAll(Sort.by(Sort.Direction.ASC,"releaseDate"));
+//        }
+////
+//        public Ticket getTicketsById(int id) {
+//            return tr.getById(id);
+//        }
+//
         public Ticket getTicketByReleaseDate(Date releaseDate){
             return tr.getByReleaseDate(releaseDate);
         }
@@ -54,5 +58,13 @@ public class TicketService {
         public Ticket createTicket(Ticket ticket) {
             return tr.save(ticket);
         }
+
+        public List<Ticket> getAllTickets() {
+            return tr.findAll();
+        }
+        public List<Ticket> getTicketsByUser(User user){
+            return tr.findAllByOwner(user);
+        }
+
     }
 

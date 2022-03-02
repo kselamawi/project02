@@ -1,6 +1,7 @@
 package com.revature.services;
 
 import com.revature.exceptions.NotAValidLogin;
+import com.revature.models.Ticket;
 import com.revature.models.User;
 import com.revature.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,5 +48,7 @@ public class UserService {
     public void updateUser(User u){
         ur.save(u);
     }
+
+
 
 }

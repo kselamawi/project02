@@ -25,7 +25,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let ticket of tickets">
-                        <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="handleChecked(ticket)" [checked]="ticket.addToPurchase"></td>
+                        <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="handleChecked(ticket)" [checked]="ticket.checked"></td>
                         <!-- <td>{{ticket.id}}</td> -->
                         <td>{{ticket.movieTitle}}</td>
                         <td>{{ticket.genre}}</td>

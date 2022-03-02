@@ -27,7 +27,7 @@ export class TicketServiceService {
   constructor(private http:HttpClient) { }
 
   getTickets(): void{
-    this.http.get<ITicket[]>("http://localhost:8080/saved-tickets")
+    this.http.get<ITicket[]>("http://localhost:8080/tickets/")
     .pipe(
       catchError((e)=> {
         return throwError(e);

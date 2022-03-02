@@ -6,7 +6,7 @@ import { UserPageComponent } from './components/user-page/user-page.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SavedTicketsComponent } from './components/saved-tickets/saved-tickets.component';
 import { PurchaseComponent } from './components/purchase/purchase.component';
-// import { MainPageComponent } from './components/main-page/main-page.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
 
 const routes = 
     [
@@ -16,7 +16,7 @@ const routes =
         {path: 'user-page', component: UserPageComponent},
         {path:'saved-tickets', component: SavedTicketsComponent},
         {path: 'purchase', component: PurchaseComponent},
-        // {path: 'main-page', component: MainPageComponent}
+        {path: 'main-page', component: MainPageComponent}
     ]
 
 @NgModule({

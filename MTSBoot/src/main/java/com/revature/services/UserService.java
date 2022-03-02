@@ -1,6 +1,7 @@
 package com.revature.services;
 
 import com.revature.exceptions.NotAValidLogin;
+import com.revature.models.Ticket;
 import com.revature.models.User;
 import com.revature.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +39,6 @@ public class UserService {
 
     public User login(User user) throws NotAValidLogin {
         User info = ur.findUserByEmail(user.getEmail());
-        System.out.println(info.getPassword() + user.getPassword());
         if(info!= null && info.getPassword().equals(user.getPassword())){
             return info;
         }
@@ -48,5 +48,7 @@ public class UserService {
     public void updateUser(User u){
         ur.save(u);
     }
+
+
 
 }

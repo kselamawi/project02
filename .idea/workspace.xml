@@ -4,6 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="8a4b731f-4793-482d-a002-1920fb6d5074" name="Changes" comment="" />
+=======
     <list default="true" id="ad944271-0c46-47a3-aa31-5e2f36cbd485" name="Changes" comment="updated main files">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1abe9cafed11e6f05fe98588f7d80b5c708043de" beforeDir="false" />
@@ -21,6 +24,7 @@
       <change beforePath="$PROJECT_DIR$/movieshowings/.vs/movieshowings/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/.vs/movieshowings/v17/.suo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movieshowings/.vs/slnx.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/.vs/slnx.sqlite" afterDir="false" />
     </list>
+>>>>>>> bc97e0a5411f546e6ccc00ca47c344fbd58825ba
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

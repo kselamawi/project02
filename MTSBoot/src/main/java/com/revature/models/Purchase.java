@@ -21,7 +21,7 @@ public class Purchase {
     @Column(name="purchase_date", nullable = false)
     private Date purchaseDate;
 
-    @ManyToOne(fetch=FetchType.LAZY) //removed @CascadeType.All
+    @ManyToOne() //removed @CascadeType.All
     @JoinColumn(name="owner")
 //    @JsonIgnore
     private User owner;
@@ -35,7 +35,7 @@ public class Purchase {
     public Purchase(int id, Date purchaseDate, User user) {
         this.purchaseId = id;
         this.purchaseDate = purchaseDate;
-        this.owner = user;
+//        this.owner = user;
     }
 
     public void sendEmailConfirmation(String smtpServer, String to, String from, String subject, String body){
@@ -67,11 +67,11 @@ public class Purchase {
         this.owner = owner;
     }
 
-    //    public List<Ticket> getTickets() {
-//        return tickets;
-//    }
+        public List<Ticket> getTickets() {
+        return tickets;
+    }
 
-//    public void setTickets(List<Ticket> tickets) {
-//        this.tickets = tickets;
-//    }
+    public void setTickets(List<Ticket> tickets) {
+        this.tickets = tickets;
+    }
 }

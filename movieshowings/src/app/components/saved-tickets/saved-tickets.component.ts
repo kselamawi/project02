@@ -1,10 +1,11 @@
-import { ITicket as ITicketModel } from 'src/app/interfaces/ITicket';
+import { ITicket } from 'src/app/interfaces/ITicket';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
-import { LocalStorageService} from 'src/app/services/local-storage-services.service'
+// import { LocalStorageService} from 'src/app/services/local-storage-services.service'
+import { TicketServiceService } from 'src/app/services/ticket-service.service';
 
 // checkbox boolean interface
-interface ITicket extends ITicketModel {
+interface ITicketAddBool extends ITicket {
   addToPurchase: boolean;
 }
 
@@ -17,7 +18,7 @@ export class SavedTicketsComponent implements OnInit {
 
   // @Output() goToPurchasePage = new EventEmitter();
 
-  tickets: ITicket[] = [
+  tickets: ITicketAddBool[] = [
     {
     price: 15.32,
     movieTitle: "Titanic",
@@ -41,13 +42,19 @@ export class SavedTicketsComponent implements OnInit {
   //setting initial select all to false
   selectAllTicketsState: boolean = false;
 
-  constructor(private router: Router, private localStore: LocalStorageService ) { }
+  constructor(private router: Router, private ts: TicketServiceService ) { }
 
   ngOnInit(): void {
+    this.ts.getTickets();
+    this.ts.subject.subscribe((data: ITicket[]) => {
+      this.tickets = data.map(item => {
+        return {...item, addToPurchase: false}
+      });
+    });
 
   }
 
-  handleChecked(ticket: ITicket) {
+  handleChecked(ticket: ITicketAddBool) {
     console.log(ticket);
     ticket.addToPurchase = !ticket.addToPurchase;
   }
@@ -61,7 +68,7 @@ export class SavedTicketsComponent implements OnInit {
 
   submitToPurchasePage() {
     const selectedTickets = this.tickets.filter(item => item.addToPurchase);
-    this.localStore.setItem('tickets', JSON.stringify(selectedTickets));
+    // this.localStore.setItem('tickets', JSON.stringify(selectedTickets));
     this.router.navigate(["/purchase"]);
 
   //   const selectedTickets = this.tickets.filter(item => item.addToPurchase);

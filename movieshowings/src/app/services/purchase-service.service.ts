@@ -28,8 +28,8 @@ export class PurchaseService {
   }
 
   getSavedTickets(){
-    savedTickets: IPurchase[]; //not sure if we can save ITicket[] into IPurchase[]
-    return savedTickets = TicketServiceService.getTickets();
+    var savedTickets: IPurchase[]; 
+    return savedTickets = TicketServiceService.getTickets(); //not sure if we can save ITicket[] into IPurchase[]
   }
 
   //Add total of all ticket prices inside purchases array
@@ -57,13 +57,7 @@ export class PurchaseService {
       .pipe(catchError((e) => {
         return throwError(e);
       }))
-  }
-
-  emailConfirmation(String smtpServer, String to, String from, String subject, String body): void {
-      return this.http.post<String, String, String, String>("http://localhost:8080/purchase/email")
-        .pipe(catchError((e) => {
-          return throwError(e);
-        }))
+    //backend will send email using info stored in db when purchase is made
   }
 
 }

@@ -89,6 +89,7 @@ export class PurchaseComponent implements OnInit {
     console.log("Total: $" + this.purchaseTotalAmt);
     this.purchaseService.doPurchase(selectedTickets);
 
+    /*
     const message = {
       from: "sender@MovieTheater.com",
       to: this.userEmail,
@@ -96,8 +97,8 @@ export class PurchaseComponent implements OnInit {
       text: "Thank you for your purchase! A purchase of " + this.purchaseTotalAmt + " was made on " +
         this.purchasedDate + ". Enjoy your movie!",
     }
-
-    this.transporter.sendMail(message); //hopefully this sends email to this.userEmail
+    */
+    //this.transporter.sendMail(message); //hopefully this sends email to this.userEmail
 
 
     alert("Thank you for your purchase. Enjoy your movie!")

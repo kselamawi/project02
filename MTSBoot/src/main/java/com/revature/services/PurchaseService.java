@@ -29,6 +29,7 @@ import java.util.Properties;
 @Transactional
 public class PurchaseService {
     private PurchaseRepository pr;
+    private EmailService es;
     private TicketRepository tr;
 
     public PurchaseService() {}
@@ -57,23 +58,6 @@ public class PurchaseService {
        pr.delete(purchase);
     }
 
-    public void sendEmailConfirmation(String smtpServer, String to, String from, String subject, String body){
-        //EmailService.send(smtpServer, to, from, subject, body);
-        Properties properties=new Properties();
-        //fill all the information like host name etc.
-        Session session=Session.getInstance(properties,null);
-
-        MimeMessage message=new MimeMessage(session);
-        try {
-            message.setFrom(new InternetAddress(from));
-            message.setText(body);
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-            message.setHeader(subject, subject);
-            Transport.send(message);
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        }
-    }
 
 
 //    public List<Ticket> getAllTicketsByPurchase(Purchase purchase) {

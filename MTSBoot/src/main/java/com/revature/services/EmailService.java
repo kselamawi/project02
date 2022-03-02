@@ -1,4 +1,6 @@
 package com.revature.services;
+import com.revature.models.*;
+
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
@@ -6,11 +8,16 @@ import javax.activation.*;
 
 public class EmailService
 {
-    String smtpServer;
+    String smtpServer = "smtp.gmail.com";
     String to;
-    String from;
-    String subject;
+    String from = "germygrimes@gmail.com";
+    String subject = "Thank You For Your Purchase!";
     String body;
+    int userId;
+    User u;
+    PurchaseService ps;
+
+    EmailService(){}
 
     EmailService(String smtpServer, String to, String from, String subject, String body) {
         this.smtpServer = smtpServer;
@@ -20,7 +27,25 @@ public class EmailService
         this.body = body;
     }
 
+    //smtpServer and from should always be the same, so don't need them
+    EmailService(String to, String body) {
+        this.to = to;
+        this.body = body;
+    }
+
+    public void getEmailInfo(){
+        to = u.getEmail();
+    }
+
+    public void setBody() {
+        List<Ticket> tickets = ps.getPurchaseById(userId).getTickets();
+
+        body = "Thank you, " + u.getFirst() + "for your purchase of " + tickets.size() + "tickets to see " +
+                tickets.get(0).getMovieTitle() + "on " + tickets.get(0).getShowTimeDate() + ". Enjoy the movie!";
+    }
+
     public void send(){
+        setBody();
         String host = "localhost";//or IP address
 
         //Get the session object

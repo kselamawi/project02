@@ -21,11 +21,15 @@
 }
 
 body {
-  background-image: url();
-  background-color: green;
+  background-color: #063332;
   align-items: center;
-  padding: 100px;
-  margin: auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin: 0;
+ }
+
+ html, body {
+   height: 100%;
  }
 
 .btn {
@@ -36,8 +40,8 @@ body {
 
 .btn-primary {
   color: white;
-  background-color: crimson;
-  border-color: brown;
+  background-color: #b78534;
+  border-color: #efc570;
 }
 
 .btn-block {

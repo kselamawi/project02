@@ -1,7 +1,10 @@
 package com.revature.controllers;
 
+import com.revature.models.Purchase;
 import com.revature.models.Ticket;
+import com.revature.models.User;
 import com.revature.services.TicketService;
+import com.revature.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -14,13 +17,15 @@ import java.util.List;
     public class TicketController {
 
         private TicketService ts;
+        private UserService us;
         // no arg constructor
         public TicketController(){
 
         }
         @Autowired
-        public TicketController(TicketService ts){
-            this.ts =ts;
+        public TicketController(TicketService ts, UserService us){
+            this.ts = ts;
+            this.us = us;
         }
         // mapping our methods to controller URI
         @GetMapping("/")
@@ -28,11 +33,11 @@ import java.util.List;
         public List<Ticket> getAllTickets(){
             return ts.getAllTickets();
         }
-        @GetMapping("/id")
-        @ResponseBody
-        public Ticket getTicketById(@PathVariable("id") int id){
-            return ts.getTicketsById(id);
-        }
+//        @GetMapping("/id")
+//        @ResponseBody
+//        public Ticket getTicketById(@PathVariable("id") int id){
+//            return ts.getTicketsById(id);
+//        }
         @GetMapping("/genre")
         @ResponseBody
         public Ticket getTicketByGenre(@PathVariable("genre") String genre){
@@ -63,6 +68,14 @@ import java.util.List;
         @ResponseBody
         public Ticket createTicket(@RequestBody Ticket ticket) {
             return ts.createTicket(ticket);
+        }
+
+        @GetMapping("/{id}")
+        @ResponseBody
+        public List<Ticket> getTicketsByOwner(@PathVariable("id")int id) {
+            User user = us.getUserById(id);
+
+            return ts.getTicketsByUser(user);
         }
 
 

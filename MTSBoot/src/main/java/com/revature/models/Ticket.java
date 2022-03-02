@@ -30,11 +30,11 @@ public class Ticket {
     @Column(name="ReleaseDate",nullable = false)
     private  Date releaseDate;
 
-    @ManyToOne(fetch =FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name="purchase")
     @JsonIgnore
     public Purchase purchase;
-    
+
     @ManyToOne(fetch =FetchType.LAZY)
     @JoinColumn(name="owner")
     @JsonIgnore
@@ -143,6 +143,7 @@ public class Ticket {
                 ", owner=" + owner +
                 '}';
     }
+
 }
 
 

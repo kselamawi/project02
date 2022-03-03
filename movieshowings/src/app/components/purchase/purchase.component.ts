@@ -18,7 +18,7 @@ import { SetAndGetTicketsService } from '../../services/set-and-get-tickets.serv
 })
 export class PurchaseComponent implements OnInit {
 
-  @Output() purchase = new EventEmitter();
+ // @Output() purchase = new EventEmitter();
 
   selectAllTicketsState: boolean = false;
 
@@ -47,26 +47,67 @@ export class PurchaseComponent implements OnInit {
 
   ticketsForPurchase: ITicket[] = [];
 
+  purchase: IPurchase = {
+    price: 0,
+    ticket: [],
+    owner: {
+      id: "",
+      email: "",
+      password: ""
+    },
+  }
+
   purchaseTotalAmt: number = 0;
 
  
 
   getTheSelectedTickets() {
     this.ticketsForPurchase = this.get.getSelectedTickets();
-    console.log(this.get.getSelectedTickets());
+    console.log(this.ticketsForPurchase);
+
+    //add up the total to display on the page
+    this.addTotal();
+    console.log("Total: $" + this.purchaseTotalAmt);
+  }
+
+  addTotal() {
+    var num: number = 0;
+    var sum: number = 0;
+    while (num < this.ticketsForPurchase.length) {
+      sum += this.ticketsForPurchase[num].price;
+      num++
+    }
+    
+    this.purchaseTotalAmt =  this.purchase.price = sum;
+  }
+
+  getCookie(cname: any) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
   }
 
   sendPurchase() {
+    this.purchase.ticket = this.ticketsForPurchase;
+    this.purchase.owner.id = this.getCookie("id");
     console.log("called sendPurchase");
-/*
-    this.purchaseTotalAmt = this.purchaseService.addTotal(this.ticketsForPurchase);
-    console.log("Total: $" + this.purchaseTotalAmt);
+    console.log(this.purchase);
 
-    this.purchaseService.doPurchase(this.ticketsForPurchase);
-    */
+    this.purchaseService.doPurchase(this.purchase);
+    
     alert("Thank you for your purchase. Enjoy your movie!")
 
-    this.router.navigate(["/main-page"]);
+    //this.router.navigate(["/main-page"]);
 
     //   const selectedTickets = this.tickets.filter(item => item.addToPurchase);
     //   const navigationExtras: NavigationExtras = {

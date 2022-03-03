@@ -33,8 +33,7 @@ export interface ITicket {
     price: number;
     movieTitle?: string;
     genre?: string;
-    releaseDate: string;
-    showTimeDate: string;
-    timeslot: string;
+    showTime: string;
+    showTimeSlot: string;
     owner?: IUser;
 }

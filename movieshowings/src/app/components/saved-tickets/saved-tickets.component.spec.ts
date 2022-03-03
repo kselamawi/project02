@@ -49,4 +49,14 @@ describe('SavedTicketsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  //should call get tickets in TicketService when initialized
+  it('should call getTickets in TicketService at oninit', () => {
+    let service = fixture.debugElement.injector.get(TicketServiceService);
+    let serviceSpy = spyOn(service, 'getTickets').and.callThrough();
+
+    component.ngOnInit();
+
+    expect(serviceSpy).toHaveBeenCalled();
+    })
 });

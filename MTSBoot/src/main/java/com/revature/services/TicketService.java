@@ -51,7 +51,14 @@ public class TicketService {
         }
 
         public Ticket createTicket(Ticket ticket) {
-            return tr.save(ticket);
+            Ticket newTicket = new Ticket();
+            newTicket.setOwner(ticket.getOwner());
+            newTicket.setMovieTitle(ticket.getMovieTitle());
+            newTicket.setGenre(ticket.getGenre());
+            newTicket.setShowTimeSlot(ticket.getShowTimeSlot());
+            newTicket.setShowTime(ticket.getShowTime());
+            newTicket.setPrice(ticket.getPrice());
+            return tr.save(newTicket);
         }
 
         public List<Ticket> getAllTickets() {

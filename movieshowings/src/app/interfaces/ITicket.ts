@@ -29,7 +29,7 @@ Expected Ticket Object from server:
 // }
 
 export interface ITicket {
-    id?: number;
+    id: number;
     price: number;
     movieTitle?: string;
     genre?: string;

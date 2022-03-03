@@ -28,7 +28,7 @@ public class Ticket {
     private ShowTimeSlot showTimeSlot;
 
     @Column(name="ShowTime")
-    private TimeSlot showTime;
+    private TimeSlots showTime;
 
     @ManyToOne()
     @JoinColumn(name="purchase")
@@ -43,7 +43,7 @@ public class Ticket {
     public Ticket() {
     }
 
-    public Ticket(int id, String movieTitle, double price, String genre, ShowTimeSlot showTimeSlot, TimeSlot showTime, Purchase purchase, User owner) {
+    public Ticket(int id, String movieTitle, double price, String genre, ShowTimeSlot showTimeSlot, TimeSlots showTime, Purchase purchase, User owner) {
         this.id = id;
         this.movieTitle = movieTitle;
         this.price = price;
@@ -108,11 +108,11 @@ public class Ticket {
         this.showTimeSlot = showTimeSlot;
     }
 
-    public TimeSlot getShowTime() {
+    public TimeSlots getShowTime() {
         return showTime;
     }
 
-    public void setShowTime(TimeSlot showTime) {
+    public void setShowTime(TimeSlots showTime) {
         this.showTime = showTime;
     }
 

@@ -1,0 +1,29 @@
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .wrapper > div {
+    line-height: 45px;
+    /* height: 15px; */
+    margin: 5px;
+    width:25rem;
+  }
+
+  .card {
+      background-color: #2a6460;
+      /* color: #0c1f1e; */
+  }
+
+.card-title {
+    height: 100px;
+}
+
+.our-btn {
+    background-color: #0c1f1e;
+    
+}
+.our-btn:hover {
+    color: white;
+}

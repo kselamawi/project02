@@ -1,7 +1,5 @@
 package com.revature.models;
-
-public enum TimeSlot {
+public enum TimeSlots {
     HOURS,
-    MINUTES,
-
+    MINUTES
 }

@@ -5,10 +5,10 @@ import { EmailValidator } from '@angular/forms';
 import { UpdateUserComponent } from '../update-user/update-user.component';
 import { PurchaseService } from 'src/app/services/purchase-service.service';
 import { ITicket } from 'src/app/interfaces/ITicket';
-import { IPurchase } from 'src/app/interfaces/ipurchase';
+import { IPurchase } from 'src/app/interfaces/IPurchase';
 
 import { Router, NavigationExtras } from '@angular/router';
-import { LocalStorageService } from 'src/app/services/local-storage-services.service'
+// import { LocalStorageService } from 'src/app/services/local-storage-services.service'
 
 @Component({
   selector: 'purchase',
@@ -28,7 +28,7 @@ export class PurchaseComponent implements OnInit {
   }
 
    // constructor() { }
-  constructor(private purchaseService: PurchaseService, private router: Router, private localStore: LocalStorageService) { }
+  constructor(private purchaseService: PurchaseService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -81,7 +81,7 @@ export class PurchaseComponent implements OnInit {
   sendPurchase() {
     console.log("called sendPurchase");
     const selectedTickets = this.ticketsForPurchase.filter(item => item.addToPurchase);
-    this.localStore.setItem('ticketsForPurchase', JSON.stringify(selectedTickets)); //this adds to array selectedTickets in local storage
+    // this.localStore.setItem('ticketsForPurchase', JSON.stringify(selectedTickets)); //this adds to array selectedTickets in local storage
     this.purchaseTotalAmt = this.purchaseService.addTotal(selectedTickets);
     console.log("Total: $" + this.purchaseTotalAmt);
     this.purchaseService.doPurchase(selectedTickets);
@@ -147,23 +147,23 @@ export class PurchaseComponent implements OnInit {
     */
 
   //get the information from when the tickets were saved to user account
-  getTicketInfoFromSaveTickets() {
-    console.log("called getTicketInfoFromSaveTickets");
-    //console.log($event);
+  // getTicketInfoFromSaveTickets() {
+  //   console.log("called getTicketInfoFromSaveTickets");
+  //   //console.log($event);
 
-    //this.ticketInfo = $event;
+  //   //this.ticketInfo = $event;
 
-    this.ticketsForPurchase = this.purchaseService.getSavedTickets(); //add saved tickets to array of tickets for purchase
+  //   this.ticketsForPurchase = this.purchaseService.getSavedTickets(); //add saved tickets to array of tickets for purchase
 
-    var num:number = 0;
+  //   var num:number = 0;
 
-    while(num <= this.ticketsForPurchase.length){
-     this.ticketMovieName = this.ticketsForPurchase[num].movieTitle;
-     this.ticketPrice = this.ticketsForPurchase[num].price;
-     this.ticketQuantity = this.ticketsForPurchase[num].numberTickets;
-     this.ticketDateAndTime = this.ticketsForPurchase[num].showTimeDate;
-    }
-  }
+  //   while(num <= this.ticketsForPurchase.length){
+  //    this.ticketMovieName = this.ticketsForPurchase[num].movieTitle;
+  //    this.ticketPrice = this.ticketsForPurchase[num].price;
+  //    this.ticketQuantity = this.ticketsForPurchase[num].numberTickets;
+  //    this.ticketDateAndTime = this.ticketsForPurchase[num].showTimeDate;
+  //   }
+  // }
 
   /* I guess I don't need this anymore either...
   sendPurchase2(): void {

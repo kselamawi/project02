@@ -1,27 +1,41 @@
 <div class="container-fluid">
+    <div class="form-container">
 
-    <h2 class="col-3" >Update Information</h2>
+        <form>
+            <hr>
 
-    <form>
+            <h2 class="col-3" >Update Information</h2>
+
         <div class="row-1">
             <label class="col-1" for="firstName">First Name:</label>
             <input class="col-2" type="text" name="firstName" [(ngModel)]="showFirst">
         </div>
 
-        <div class="row-1">
-            <label class="col-1" for="lastName">Last Name:</label>
-            <input class="col-2" type="text" name="lastName"  [(ngModel)]="showLast">
-        </div>
 
-        <div class="row-1">
-            <label class="col-1" for="email">Email:</label>
-            <input class="col-2" type="email" name="email"  [(ngModel)]="showEmail">
-        </div>
+            <h2>Update Information</h2>
+            <div class="form-group">
+                <label class="" for="firstName">First Name:</label>
+                <input class="form-control" type="text" name="firstName" [(ngModel)]="showFirst">
+            </div>
 
-        <div class="row-1">
-            <label class="col-1" for="password">Password:</label>
-            <input class="col-2" type="password" name="password"  [(ngModel)]="showPassword">
-        </div>
-    </form>
+            <div class="row-1">
+                <label class="" for="lastName">Last Name:</label>
+                <input class="form-control" type="text" name="lastName"  [(ngModel)]="showLast">
+            </div>
 
-    <button class="col-sm-3" (click)="updateUser()">Update Information</button>
+            <div class="row-1">
+                <label class="" for="email">Email:</label>
+                <input class="form-control" type="email" name="email"  [(ngModel)]="showEmail">
+            </div>
+
+            <div class="row-1">
+                <label class="" for="password">Password:</label>
+                <input class="form-control" type="password" name="password"  [(ngModel)]="showPassword">
+            </div>
+        </form>
+
+        <br>
+
+    <button class="btn btn-log btn-block our-btn" (click)="updateUser()">Update Information</button>
+    </div>
+</div>

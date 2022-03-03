@@ -48,8 +48,8 @@ export class SavedTicketsComponent implements OnInit {
   ngOnInit(): void {
     this.ts.getTickets();
     this.ts.subject.subscribe((data: ITicket[]) => {
-      this.tickets = data.map(item => {
-        return {...item, checked: false}
+      this.tickets = data.map(item => { //array map function, returns new array because we need the checked: false (unchecked by default)
+        return {...item, checked: false} //check is not a part of ITicket but we need it because of checkboxes ...item copies items (spread operator)
       });
     });
 

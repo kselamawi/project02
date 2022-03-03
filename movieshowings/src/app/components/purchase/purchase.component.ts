@@ -18,7 +18,7 @@ import { SetAndGetTicketsService } from '../../services/set-and-get-tickets.serv
 })
 export class PurchaseComponent implements OnInit {
 
-  @Output() purchase = new EventEmitter();
+ // @Output() purchase = new EventEmitter();
 
   selectAllTicketsState: boolean = false;
 
@@ -47,6 +47,10 @@ export class PurchaseComponent implements OnInit {
 
   ticketsForPurchase: ITicket[] = [];
 
+  purchase: IPurchase = {
+    price: 0,
+  }
+
   purchaseTotalAmt: number = 0;
 
  
@@ -54,16 +58,28 @@ export class PurchaseComponent implements OnInit {
   getTheSelectedTickets() {
     this.ticketsForPurchase = this.get.getSelectedTickets();
     console.log(this.get.getSelectedTickets());
+
+    //add up the total to display on the page
+    this.addTotal();
+    console.log("Total: $" + this.purchaseTotalAmt);
+  }
+
+  addTotal() {
+    var num: number = 0;
+    var sum: number = 0;
+    while (num <= this.ticketsForPurchase.length) {
+      sum += this.ticketsForPurchase[num].price;
+      num++
+    }
+    
+    this.purchaseTotalAmt =  this.purchase.price = sum;
   }
 
   sendPurchase() {
     console.log("called sendPurchase");
-/*
-    this.purchaseTotalAmt = this.purchaseService.addTotal(this.ticketsForPurchase);
-    console.log("Total: $" + this.purchaseTotalAmt);
 
     this.purchaseService.doPurchase(this.ticketsForPurchase);
-    */
+    
     alert("Thank you for your purchase. Enjoy your movie!")
 
     this.router.navigate(["/main-page"]);

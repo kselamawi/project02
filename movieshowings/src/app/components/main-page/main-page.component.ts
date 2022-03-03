@@ -82,7 +82,7 @@ export class MainPageComponent implements OnInit {
 
 
   //We need to be able to populate a ticket object to send to our back end.
-  saveTickets(pageMovie:IMovieDetail, ticketDay:any, ticketTime:any, ticketAmount:any){
+  saveTickets(pageMovie:IMovieDetail, ticketDay: any, ticketTime: any, ticketAmount:any){
     console.log("saveTickets function called");
     console.log(pageMovie.title);
     console.log(ticketDay);

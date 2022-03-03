@@ -54,18 +54,24 @@ export class MainPageComponent implements OnInit {
     {id: 3, name: "3"}
     ];
 
+    ticketInfo = [
+      this.ticketDays,
+      this.ticketTimes,
+      this.ticketAmounts
+    ];
+  
+
   ticketTime = null;
   ticketDay = null;
   ticketAmount = null;
 
   ticket: ITicket = {
-    id: 1,
     price: 15.99,
     movieTitle: "",
     genre: "",
-    showTimeDate:"",
-    releaseDate:"",
-    timeslot:"",
+    showTime:"",
+   // releaseDate:"",
+    showTimeSlot:"",
     owner:{
       id: 0,
       email:"",
@@ -73,9 +79,9 @@ export class MainPageComponent implements OnInit {
     },
   }
 
-  
 
-  //We need to be able to populate a ticket object to send to our back end. 
+
+  //We need to be able to populate a ticket object to send to our back end.
   saveTickets(pageMovie:IMovieDetail, ticketDay:any, ticketTime:any, ticketAmount:any){
     console.log("saveTickets function called");
     console.log(pageMovie.title);
@@ -86,7 +92,6 @@ export class MainPageComponent implements OnInit {
     //Setting up our ticket to send back
     this.ticket.movieTitle = pageMovie.title;
     this.ticket.genre = pageMovie.genres;
-    // this.ticket.owner.id = 1;
 
     let id = this.getCookie("id");
 
@@ -96,7 +101,7 @@ export class MainPageComponent implements OnInit {
         console.log(data);
       });
     }
-  
+
 
   }
 
@@ -105,13 +110,13 @@ export class MainPageComponent implements OnInit {
     this.movieService.getMovies()
     .subscribe((data) => {
       console.log(data);
-      
+
       this.movieList = data;
 
     });
 
   }
-  
+
 
   getCookie(cname:any) {
     let name = cname + "=";

@@ -5,8 +5,7 @@ import { catchError } from 'rxjs';
 import { Observable, throwError } from 'rxjs';
 import { Subject } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
-import { UserService } from './user.service';
-
+import { tick } from '@angular/core/testing';
 
 
 
@@ -14,9 +13,9 @@ import { UserService } from './user.service';
   providedIn: 'root'
 })
 export class TicketServiceService {
-  // static getTickets(): import("../interfaces/ipurchase").IPurchase[] {
-  //     throw new Error('Method not implemented.');
-  // }
+  static getTickets(): import("../interfaces/IPurchase").IPurchase[] {
+      throw new Error('Method not implemented.');
+  }
 
   subject:Subject<ITicket[]> = new Subject<ITicket[]>();
 
@@ -29,12 +28,11 @@ export class TicketServiceService {
   //   showtime_date: "",
   //   timeslot: "",
   // }
-  
-  constructor(private http:HttpClient, private us: UserService) { }
+
+  constructor(private http:HttpClient) { }
 
   getTickets(): void{
-    console.log(this.us.user);
-    this.http.get<ITicket[]>(`http://localhost:8080/tickets/save/${this.us.user.id}`)
+    this.http.get<ITicket[]>("http://localhost:8080/tickets/")
     .pipe(
       catchError((e)=> {
         return throwError(e);
@@ -43,7 +41,7 @@ export class TicketServiceService {
         this.tickets = data;
         this.subject.next(data);
       });
-      
+
   }
 
 

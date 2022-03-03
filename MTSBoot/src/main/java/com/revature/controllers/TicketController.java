@@ -66,8 +66,6 @@ import java.util.List;
         @PostMapping("/save/{id}")
         @ResponseBody
         public Ticket saveTicket(@RequestBody Ticket ticket, @PathVariable int id) {
-            System.out.println(ticket);
-
             User user = new User();
             user.setId(id);
             ticket.setOwner(user);

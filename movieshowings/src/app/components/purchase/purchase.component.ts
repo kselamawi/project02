@@ -5,11 +5,11 @@ import { EmailValidator } from '@angular/forms';
 import { UpdateUserComponent } from '../update-user/update-user.component';
 import { PurchaseService } from 'src/app/services/purchase-service.service';
 import { ITicket } from 'src/app/interfaces/ITicket';
-import { IPurchase } from 'src/app/interfaces/IPurchase';
-import { SetAndGetTicketsService } from 'src/app/services/set-and-get-tickets.service';
 
 import { Router, NavigationExtras } from '@angular/router';
-// import { LocalStorageService } from 'src/app/services/local-storage-services.service'
+import { IPurchase } from '../../interfaces/IPurchase';
+import { SetAndGetTicketsService } from '../../services/set-and-get-tickets.service';
+//import { LocalStorageService } from 'src/app/services/local-storage-services.service'
 
 @Component({
   selector: 'purchase',
@@ -29,82 +29,42 @@ export class PurchaseComponent implements OnInit {
   }
 
    // constructor() { }
-  constructor(private purchaseService: PurchaseService, private router: Router, private get: SetAndGetTicketsService ) { }
+  constructor(private purchaseService: PurchaseService, private router: Router, private get: SetAndGetTicketsService) { }
 
   ngOnInit(): void {
-
-    this.get.getSelectedTickets();
+    this.getTheSelectedTickets();
+    console.log(this.getTheSelectedTickets());
   }
 
-  userID: number = 0;
-  userFirst: String = "";
-  userLast: String = "";
-  userEmail: String = "";
-  userPassword: String = "";
-
-  ticketMovieName: String = "";
-  ticketPrice: Number = 0;
-  ticketQuantity: Number = 0;
-  ticketDateAndTime: String = ""; //date and time of movie showing
-
-  purchaseID: number = 0;
-  purchaseTotalAmt: Number = 0;
-  purchasedDate: Date = new Date(); //get current date
-
-  ticketsForPurchase: IPurchase[] = [];
-
-
-  //transporter = nodemailer.createTransport();
-
-
-  handleChecked(purchase: IPurchase) {
-    console.log("called handleChecked");
-    console.log(purchase);
-    purchase.addToPurchase = !purchase.addToPurchase;
+  ticket: ITicket = {
+    id: 0,
+    price: 0,
+    movieTitle: "",
+    genre: "",
+    showTime: "",
+    showTimeSlot: "",
   }
 
-  selectAllTickets() {
-    console.log("called selectAllTickets");
-    this.selectAllTicketsState = !this.selectAllTicketsState;
-    this.ticketsForPurchase.forEach(item => {
-      item.addToPurchase = this.selectAllTicketsState;
-    })
+  ticketsForPurchase: ITicket[] = [];
+
+  purchaseTotalAmt: number = 0;
+
+ 
+
+  getTheSelectedTickets() {
+    this.ticketsForPurchase = this.get.getSelectedTickets();
+    console.log(this.get.getSelectedTickets());
   }
-
-  //constructor(private router: Router, private localStore: LocalStorageService) { }
-
-
-  ticketInfo = {
-    movieName: "",
-    pricePerTicket: 0,
-    numberTickets: 0,
-    showingDateAndTime: new Date()
-    }
 
   sendPurchase() {
     console.log("called sendPurchase");
-    const selectedTickets = this.ticketsForPurchase.filter(item => item.addToPurchase);
-    // this.localStore.setItem('ticketsForPurchase', JSON.stringify(selectedTickets)); //this adds to array selectedTickets in local storage
-    this.purchaseTotalAmt = this.purchaseService.addTotal(selectedTickets);
+/*
+    this.purchaseTotalAmt = this.purchaseService.addTotal(this.ticketsForPurchase);
     console.log("Total: $" + this.purchaseTotalAmt);
-    this.purchaseService.doPurchase(selectedTickets);
 
-    /*
-    const message = {
-      from: "sender@MovieTheater.com",
-      to: this.userEmail,
-      subject: "Purchase Confirmation",
-      text: "Thank you for your purchase! A purchase of " + this.purchaseTotalAmt + " was made on " +
-        this.purchasedDate + ". Enjoy your movie!",
-    }
+    this.purchaseService.doPurchase(this.ticketsForPurchase);
     */
-    //this.transporter.sendMail(message); //hopefully this sends email to this.userEmail
-
-
     alert("Thank you for your purchase. Enjoy your movie!")
-
-    this.purchaseTotalAmt = 0;
-    this.purchasedDate = new Date();
 
     this.router.navigate(["/main-page"]);
 
@@ -122,6 +82,7 @@ export class PurchaseComponent implements OnInit {
   /* I guess I don't need this function anymore...
     onSubmit(): void {
         console.log(this.ticketInfo);
+
         //connect to purchaseService
         this.purchaseService.purchase(this.purchaseID, this.userID)
             .subscribe(data => {
@@ -137,6 +98,7 @@ export class PurchaseComponent implements OnInit {
                 if (data.purchaseID) {
                 purchaseID = data.purchaseID;
                 }
+
                 this.purchaseService.ticket = {
                     movieName: movieName2,
                     price: tPrice,
@@ -147,28 +109,12 @@ export class PurchaseComponent implements OnInit {
     }
     */
 
-  //get the information from when the tickets were saved to user account
-  getSelectedTickets() {
-    console.log("called getTicketInfoFromSaveTickets");
-    //console.log($event);
-
-    //this.ticketInfo = $event;
-
-    this.get.getSelectedTickets(); //add saved tickets to array of tickets for purchase
-
-    // var num:number = 0;
-
-    // while(num <= this.ticketsForPurchase.length){
-    //  this.ticketMovieName = this.ticketsForPurchase[num].movieTitle;
-    //  this.ticketPrice = this.ticketsForPurchase[num].price;
-    //  this.ticketQuantity = this.ticketsForPurchase[num].numberTickets;
-    //  this.ticketDateAndTime = this.ticketsForPurchase[num].showTimeDate;
-    // }
-  }
-
   /* I guess I don't need this anymore either...
   sendPurchase2(): void {
+
     this.purchaseService.purchase(this.purchaseID, this.userID);
+
+
     const message = {
       from: "sender@MovieTheater.com",
       to: this.userEmail,
@@ -176,12 +122,19 @@ export class PurchaseComponent implements OnInit {
       text: "Thank you for your purchase! A purchase of " + this.purchaseTotalAmt + " was made on " +
         this.purchasedDate + ". Enjoy your movie!",
     }
+
    // this.transporter.sendMail(message); //hopefully this sends email to this.userEmail
+
+
     alert("Thank you for your purchase. Enjoy your movie!")
+
     this.purchaseTotalAmt = 0;
     this.purchasedDate = new Date();
+
+
   }
   */
 
 
 }
+

@@ -73,7 +73,7 @@ export class MainPageComponent implements OnInit {
    // releaseDate:"",
     showTimeSlot:"",
     owner:{
-      id: 0,
+      id: "",
       email:"",
       password:""
     },

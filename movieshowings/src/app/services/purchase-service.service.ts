@@ -5,8 +5,6 @@ import { ITicket } from '../interfaces/ITicket';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
-import { NgForOf } from '@angular/common';
-import { TicketServiceService } from './ticket-service.service';
 
 
 @Injectable({
@@ -46,22 +44,20 @@ export class PurchaseService {
     return sum;
   }
 
-  //userID will have the tickets saved to it
-  purchase(purchaseID: number, userID: number ): Observable<ITicket> {
-    return this.http.post<ITicket>("http://localhost:8080/purchase", JSON.stringify({ userID }), { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })
+
+
+
+
+
+  doPurchase(purchase: IPurchase): Observable<IPurchase> {
+    console.log("hello");
+    return this.http.get<IPurchase>("http://localhost:8080/purchase/" ) 
       .pipe(catchError((e) => {
         return throwError(e);
-      }))
-  }
-
-  constructor(private http: HttpClient) { }
-
-  doPurchase(ticket: ITicket[]): Observable<ITicket> {
-    return this.http.post<ITicket>("http://localhost:8080/purchase", JSON.stringify({ ticket }), { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })
-      .pipe(catchError((e) => {
-        return throwError(e);
-      }))
+      }));
     //backend will send email using info stored in db when purchase is made
   }
 
+
+  constructor(private http: HttpClient) { }
 }

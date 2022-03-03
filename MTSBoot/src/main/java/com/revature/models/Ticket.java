@@ -24,10 +24,10 @@ public class Ticket {
     @Column(name="genre")
     private String genre;
 
-    @Column(name="ShowTimeSlot")
+    @Column(name="showTimeSlot")
     private String showTimeSlot;
 
-    @Column(name="ShowTime")
+    @Column(name="showTime")
     private String showTime;
 
     @ManyToOne()

@@ -63,9 +63,8 @@ export class MainPageComponent implements OnInit {
     price: 15.99,
     movieTitle: "",
     genre: "",
-    showTimeDate:"",
-    releaseDate:"",
-    timeslot:"",
+    showTime:"",
+    showTimeSlot:"",
     owner:{
       id: 0,
       email:"",
@@ -78,17 +77,22 @@ export class MainPageComponent implements OnInit {
   //We need to be able to populate a ticket object to send to our back end. 
   saveTickets(pageMovie:IMovieDetail, ticketDay:any, ticketTime:any, ticketAmount:any){
     console.log("saveTickets function called");
-    console.log(pageMovie.title);
-    console.log(ticketDay);
-    console.log(ticketTime);
-    console.log(ticketAmount);
+    if(this.getCookie("id") == null){
+      alert("Please login to save a ticket");
+      window.location.href = "/login";
+    }
+
+  
 
     //Setting up our ticket to send back
     this.ticket.movieTitle = pageMovie.title;
     this.ticket.genre = pageMovie.genres;
-    this.ticket.owner.id = 1;
+    this.ticket.showTime = ticketDay.name;
+    this.ticket.showTimeSlot = ticketTime.name;
 
     let id = this.getCookie("id");
+
+    console.log(this.ticket);
 
     for (let i = 0; i < ticketAmount.id; i++){
     this.ticketService.createTickets(this.ticket, id)

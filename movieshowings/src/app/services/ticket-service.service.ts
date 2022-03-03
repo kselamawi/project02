@@ -28,7 +28,7 @@ export class TicketServiceService {
   //   showtime_date: "",
   //   timeslot: "",
   // }
-  
+
   constructor(private http:HttpClient) { }
 
   getTickets(): void{
@@ -41,7 +41,7 @@ export class TicketServiceService {
         this.tickets = data;
         this.subject.next(data);
       });
-      
+
   }
 
 

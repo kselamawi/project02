@@ -12,25 +12,25 @@ public class Ticket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name="ticket_id")
     private int id;
 
     @Column(name = "movie_title",nullable = false)
     private String movieTitle;
 
-    @Column(name="price")
+    @Column(name="price", nullable = false)
     private double price;
 
-    @Column(name="genre",nullable = false)
-    private  String genre;
+    @Column(name="genre")
+    private String genre;
 
-    @Column(name="ShowTimeSlot")
-    private ShowTimeSlot showTimeSlot;
+    @Column(name="showTimeSlot")
+    private String showTimeSlot;
 
-    @Column(name="ShowTime")
-    private TimeSlot showTime;
+    @Column(name="showTime")
+    private String showTime;
 
-    @ManyToOne()
+    @ManyToOne(fetch =FetchType.LAZY)
     @JoinColumn(name="purchase")
     @JsonIgnore
     public Purchase purchase;
@@ -43,7 +43,8 @@ public class Ticket {
     public Ticket() {
     }
 
-    public Ticket(int id, String movieTitle, double price, String genre, ShowTimeSlot showTimeSlot, TimeSlot showTime, Purchase purchase, User owner) {
+
+    public Ticket(int id, String movieTitle, double price, String genre, String showTimeSlot, String showTime, Purchase purchase, User owner) {
         this.id = id;
         this.movieTitle = movieTitle;
         this.price = price;
@@ -52,20 +53,6 @@ public class Ticket {
         this.showTime = showTime;
         this.purchase = purchase;
         this.owner = owner;
-    }
-
-    @Override
-    public String toString() {
-        return "Ticket{" +
-                "id=" + id +
-                ", movieTitle='" + movieTitle + '\'' +
-                ", price=" + price +
-                ", genre='" + genre + '\'' +
-                ", showTimeSlot=" + showTimeSlot +
-                ", showTime=" + showTime +
-                ", purchase=" + purchase +
-                ", owner=" + owner +
-                '}';
     }
 
     public int getId() {
@@ -100,19 +87,19 @@ public class Ticket {
         this.genre = genre;
     }
 
-    public ShowTimeSlot getShowTimeSlot() {
+    public String getShowTimeSlot() {
         return showTimeSlot;
     }
 
-    public void setShowTimeSlot(ShowTimeSlot showTimeSlot) {
+    public void setShowTimeSlot(String showTimeSlot) {
         this.showTimeSlot = showTimeSlot;
     }
 
-    public TimeSlot getShowTime() {
+    public String getShowTime() {
         return showTime;
     }
 
-    public void setShowTime(TimeSlot showTime) {
+    public void setShowTime(String showTime) {
         this.showTime = showTime;
     }
 

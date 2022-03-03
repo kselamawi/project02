@@ -1,12 +1,21 @@
-.nav-bar {
-    background-color: black;
-    overflow: hidden;
+.navbar {
+    height: 200px;
+    background-color: #0c1f1e;
   }
+  /* #0c1f1e
+  #2a6460 */
   
-  .nav-bar a {
-    float: left;
-    color: white;
-    text-align: center;
+  .navbar a {
+    float: right;
     padding: 10px 10px;
-    font-size: 15px;
+    font-size: 25px;
+    color: #f7e7c6
+  }
+
+  .bar-img {
+    width: 35rem;
+  }
+
+  .btn-margin {
+    margin: 15px;
   }

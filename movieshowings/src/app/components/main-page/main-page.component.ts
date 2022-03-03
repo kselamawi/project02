@@ -72,9 +72,9 @@ export class MainPageComponent implements OnInit {
     },
   }
 
-  
 
-  //We need to be able to populate a ticket object to send to our back end. 
+
+  //We need to be able to populate a ticket object to send to our back end.
   saveTickets(pageMovie:IMovieDetail, ticketDay:any, ticketTime:any, ticketAmount:any){
     console.log("saveTickets function called");
     console.log(pageMovie.title);
@@ -94,7 +94,7 @@ export class MainPageComponent implements OnInit {
         console.log(data);
       });
     }
-  
+
 
   }
 
@@ -103,13 +103,13 @@ export class MainPageComponent implements OnInit {
     this.movieService.getMovies()
     .subscribe((data) => {
       console.log(data);
-      
+
       this.movieList = data;
 
     });
 
   }
-  
+
 
   getCookie(cname:any) {
     let name = cname + "=";

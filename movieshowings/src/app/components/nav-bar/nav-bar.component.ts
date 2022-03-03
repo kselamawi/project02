@@ -8,18 +8,20 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
+  showLogin: boolean = true;
 
   constructor(private router: Router, private us: UserService) { }
 
   ngOnInit(): void {
-    this.us.user$.subscribe(user=> {
-      if (user) this.showLogin = false;
-      else this.showLogin = true;
+    this.us.user$.subscribe(user => {
+      console.log("HERE", user);
+      if (user) {
+        this.showLogin = false;
+      } else {
+        this.showLogin = true;
+      }
     })
   }
-
-  showLogin: boolean = true;
-
 
   navigateLogin():void{
     this.router.navigate(['login']);

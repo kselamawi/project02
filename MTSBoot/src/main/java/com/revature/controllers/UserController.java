@@ -84,7 +84,7 @@ public class UserController {
             response.addCookie(cookie);
             return test;
         }
-        return test;
+        return u;
     }
 
     //THis is used to log a user out.
@@ -97,5 +97,7 @@ public class UserController {
 
         return new ResponseEntity<>("User has been logged out.", HttpStatus.OK);
     }
+
+
 
 }

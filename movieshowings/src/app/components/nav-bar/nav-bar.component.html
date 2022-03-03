@@ -12,12 +12,14 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link" href="#">Home</a>
-        <a class="nav-item nav-link" href="#">View Account Info</a>
-        <a class="nav-item nav-link" href="#">View Saved Tickets</a>
-        <a class="nav-item nav-link" href="#">Cart</a>
+        <a class="nav-item nav-link" href="./main-page">Home</a>
+        <a class="nav-item nav-link" href="./user-page">View Account Info</a>
+        <a class="nav-item nav-link" href="./saved-tickets">View Saved Tickets</a>
+        <a class="nav-item nav-link" href="./purchase">Cart</a>
         
       </div>
+      
+      <button class="our-btn btn-margin" (click)="navigateLogin()" *ngIf[hidden]>Login</button>
     </div>
     
   </nav>

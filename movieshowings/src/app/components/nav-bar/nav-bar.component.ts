@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'nav-bar',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+
+  //if using button only
+  navigateLogin():void{
+    this.router.navigate(['login']);
+  }
+  // navigateHome():void{
+  //   this.router.navigate(['main-page']);
+  // }
+  // navigateAccount():void{
+  //   this.router.navigate(['user-page']);
+  // }
+  // navigateTickets():void{
+  //   this.router.navigate(['saved-tickets']);
+  // }
+  // navigatePurchase():void{
+  //   this.router.navigate(['purchase']);
+  // }
 
 }

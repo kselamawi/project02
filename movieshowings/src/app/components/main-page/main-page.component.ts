@@ -86,7 +86,7 @@ export class MainPageComponent implements OnInit {
     //Setting up our ticket to send back
     this.ticket.movieTitle = pageMovie.title;
     this.ticket.genre = pageMovie.genres;
-    this.ticket.owner.id = 1;
+    // this.ticket.owner.id = 1;
 
     let id = this.getCookie("id");
 

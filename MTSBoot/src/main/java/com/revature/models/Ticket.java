@@ -21,14 +21,14 @@ public class Ticket {
     @Column(name="price")
     private double price;
 
-    @Column(name="genre",nullable = false)
-    private  String genre;
+    @Column(name="genre")
+    private String genre;
 
     @Column(name="ShowTimeSlot")
-    private ShowTimeSlot showTimeSlot;
+    private String showTimeSlot;
 
     @Column(name="ShowTime")
-    private TimeSlots showTime;
+    private String showTime;
 
     @ManyToOne()
     @JoinColumn(name="purchase")
@@ -43,7 +43,8 @@ public class Ticket {
     public Ticket() {
     }
 
-    public Ticket(int id, String movieTitle, double price, String genre, ShowTimeSlot showTimeSlot, TimeSlots showTime, Purchase purchase, User owner) {
+
+    public Ticket(int id, String movieTitle, double price, String genre, String showTimeSlot, String showTime, Purchase purchase, User owner) {
         this.id = id;
         this.movieTitle = movieTitle;
         this.price = price;
@@ -52,20 +53,6 @@ public class Ticket {
         this.showTime = showTime;
         this.purchase = purchase;
         this.owner = owner;
-    }
-
-    @Override
-    public String toString() {
-        return "Ticket{" +
-                "id=" + id +
-                ", movieTitle='" + movieTitle + '\'' +
-                ", price=" + price +
-                ", genre='" + genre + '\'' +
-                ", showTimeSlot=" + showTimeSlot +
-                ", showTime=" + showTime +
-                ", purchase=" + purchase +
-                ", owner=" + owner +
-                '}';
     }
 
     public int getId() {
@@ -100,19 +87,19 @@ public class Ticket {
         this.genre = genre;
     }
 
-    public ShowTimeSlot getShowTimeSlot() {
+    public String getShowTimeSlot() {
         return showTimeSlot;
     }
 
-    public void setShowTimeSlot(ShowTimeSlot showTimeSlot) {
+    public void setShowTimeSlot(String showTimeSlot) {
         this.showTimeSlot = showTimeSlot;
     }
 
-    public TimeSlots getShowTime() {
+    public String getShowTime() {
         return showTime;
     }
 
-    public void setShowTime(TimeSlots showTime) {
+    public void setShowTime(String showTime) {
         this.showTime = showTime;
     }
 

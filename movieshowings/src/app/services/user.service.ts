@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, Subject } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -41,6 +42,13 @@ export class UserService {
     }))
   }
 
+
+    getUser(id:string){
+      return this.http.get<IUser>("http://localhost:8080/users/" + id + "/")
+      .pipe(catchError((e) => {
+        return throwError(e);
+      }))
+    }
 
     //shouldn't this and login return an observable since there's multiple values?
     update(user:IUser): Observable<IUser> {

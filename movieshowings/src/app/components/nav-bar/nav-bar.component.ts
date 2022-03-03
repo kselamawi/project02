@@ -23,7 +23,9 @@ export class NavBarComponent implements OnInit {
     })
   }
 
-  
+  showLogin: boolean = true;
+
+
   navigateLogin():void{
     this.router.navigate(['login']);
   }

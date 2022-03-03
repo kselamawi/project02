@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
         id: data.id
       };
       
+      this.userService.user$.next(this.userService.user);
 
     });
 

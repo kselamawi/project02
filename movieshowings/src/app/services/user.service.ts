@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { IUser } from '../interfaces/IUser';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs';
+import { catchError, Subject } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
@@ -21,6 +21,8 @@ export class UserService {
     email: "",
     password: ""
   }
+
+  user$: Subject<IUser> = new Subject();
 
   //shouldn't this and login return an observable since there's multiple values?
   register(user: IUser): Observable<IUser> {

@@ -20,8 +20,12 @@ export class LoginComponent implements OnInit {
     //connect to userService
     this.userService.login(this.email, this.password)
     .subscribe(data => {
-      document.cookie = `id=` + data.id;
-      
+      if(data == null){
+        alert("Invalid login, please try again");
+        window.location.href="/login";
+      } else {
+        document.cookie = `id=` + data.id;
+      }
       let email2 = "";
       let password2 = "";
       if(data.email) {
@@ -36,6 +40,7 @@ export class LoginComponent implements OnInit {
         id: data.id
       };
 
+      window.location.href="/main-page";
 
     })
 
@@ -47,4 +52,20 @@ export class LoginComponent implements OnInit {
 
   }
 
+
+  getCookie(cname:any) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
 }

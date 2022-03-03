@@ -16,6 +16,11 @@ export class UserPageComponent implements OnInit {
   constructor(private userService:UserService) { }
 
   ngOnInit(): void {
+    this.getCurrentInfo();
+  }
+  
+  ngOnChanges(): void {
+    this.getCurrentInfo();
   }
 
   showFirst?:String = "";
@@ -37,6 +42,21 @@ export class UserPageComponent implements OnInit {
     this.hide = !this.hide;
   }
 
+  getCurrentInfo(){
+    if(!this.getCookie("id")){
+      alert("Please login to access this page");
+      window.location.href="/login";
+    }
+    let id = this.getCookie("id");
+    this.userService.getUser(id)
+    .subscribe((data => {
+      this.showFirst = data.first;
+      this.showLast = data.last;
+      this.showEmail = data.email;
+      this.showPassword = data.password;
+    }));
+  }
+
   getUserFromUpdateUser($event: any):void{
     console.log("called getUserfromUpdateUser");
     console.log($event);
@@ -46,6 +66,9 @@ export class UserPageComponent implements OnInit {
 
     this.userService.update(this.userInfo)
     .subscribe((data) => {
+      if(data == null){
+        alert("Error, could not change information.");
+      }
       console.log(data);
       
     })
@@ -61,6 +84,20 @@ export class UserPageComponent implements OnInit {
 
   }
 
-
+  getCookie(cname:any) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
 
 }

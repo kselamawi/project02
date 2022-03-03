@@ -20,24 +20,24 @@ export class SavedTicketsComponent implements OnInit {
   // @Output() goToPurchasePage = new EventEmitter();
 
   tickets: ITicketAddBool[] = [
-    // {
-    // price: 8.32,
-    // movieTitle: "Titanic",
-    // genre: "something here",
-    // releaseDate: "1/1/1999",
-    // showTimeDate: "2/28/22",
-    // timeslot: "8:00pm",
-    // checked: false,
-    // },
-    // {
-    //   price: 8.32,
-    //   movieTitle: "Titanic",
-    //   genre: "something here",
-    //   releaseDate: "1/1/1999",
-    //   showTimeDate: "2/28/22",
-    //   timeslot: "12:00am",
-    //   checked: false,
-    //   }
+     {
+     price: 8.32,
+     movieTitle: "Titanic",
+     genre: "something here",
+  //   releaseDate: "1/1/1999",
+     showTime: "2/28/22",
+     showTimeSlot: "8:00pm",
+     checked: false,
+     },
+     {
+       price: 8.32,
+       movieTitle: "Titanic",
+       genre: "something here",
+   //    releaseDate: "1/1/1999",
+       showTime: "2/28/22",
+       showTimeSlot: "12:00am",
+       checked: false,
+       }
   ];
 
   //setting initial select all to false
@@ -48,8 +48,8 @@ export class SavedTicketsComponent implements OnInit {
   ngOnInit(): void {
     this.ts.getTickets();
     this.ts.subject.subscribe((data: ITicket[]) => {
-      this.tickets = data.map(item => {
-        return {...item, checked: false}
+      this.tickets = data.map(item => { //array map function, returns new array because we need the checked: false (unchecked by default)
+        return {...item, checked: false} //check is not a part of ITicket but we need it because of checkboxes ...item copies items (spread operator)
       });
     });
 

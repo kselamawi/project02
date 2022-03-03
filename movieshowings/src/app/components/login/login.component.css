@@ -12,6 +12,14 @@
     margin: auto;
 }
 
+.alink {
+    padding: 20px;
+    font-size: 16px;
+}
+.alink:hover {
+    color: #b78534;
+}
+
 /* .text-center {
     text-align: center!important;
   }

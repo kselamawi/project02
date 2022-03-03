@@ -1,9 +1,9 @@
 
-LWeb:BoldAndItalicTagsCheck"!Replace this <b> tag by <strong>.(½Æ—Çşÿÿÿÿ
-GWeb:BoldAndItalicTagsCheck"!Replace this <b> tag by <strong>.(®„üÖ
-LWeb:BoldAndItalicTagsCheck"!Replace this <b> tag by <strong>.(¾¿ˆ™øÿÿÿÿ
-GWeb:BoldAndItalicTagsCheck"!Replace this <b> tag by <strong>.(Ü‚Îä
-LWeb:BoldAndItalicTagsCheck	"!Replace this <b> tag by <strong>.(”Šêúÿÿÿÿ
-GWeb:BoldAndItalicTagsCheck
-"!Replace this <b> tag by <strong>.(çµ³ñ
-LWeb:BoldAndItalicTagsCheck"!Replace this <b> tag by <strong>.(ÄÎË½øÿÿÿÿ
+PWeb:AvoidCommentedOutCodeCheck"Remove this commented out code.(ê²ÇÚ8åá­‹õ/
+NWeb:BoldAndItalicTagsCheck"!Replace this <b> tag by <strong>.(œ¥íƒ8çá­‹õ/
+UWeb:AvoidCommentedOutCodeCheck"Remove this commented out code.(‹òá¤ıÿÿÿÿ8êá­‹õ/
+TWeb:TableWithoutCaptionCheck!" Add a description to this table.(­ã’Òÿÿÿÿÿ8ìá­‹õ/
+OWeb:AvoidCommentedOutCodeCheck%"Remove this commented out code.(öıG8íá­‹õ/
+PWeb:AvoidCommentedOutCodeCheck&"Remove this commented out code.(åûåĞ8îá­‹õ/
+OWeb:AvoidCommentedOutCodeCheck9"Remove this commented out code.(ŒÓ8ğá­‹õ/
+SWeb:BoldAndItalicTagsCheck="!Replace this <b> tag by <strong>.(ç˜Øèûÿÿÿÿ8óá­‹õ/

@@ -19,7 +19,8 @@
         
       </div>
       
-      <button class="btn btn-log btn-block our-btn btn-margin" (click)="navigateLogin()">Login</button>
+      <button class="btn btn-log btn-block our-btn btn-margin" (click)="navigateLogin()" *ngIf="showLogin">Login</button>
+      <button class="btn btn-log btn-block our-btn btn-margin" (click)="navigateLogin()" *ngIf="!showLogin">Logout</button>
     </div>
     
   </nav>

@@ -21,7 +21,7 @@
 <body>
   <div class="container-fluid2">
     <div id="purchase-container">
-      <h3 id="userFirst"><b>Welcome </b> {{userFirst}}</h3>
+      <h3 id="userFirst"><b>Purchase Your Tickets </b> </h3>
       <!--
     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="selectAllTickets()">
     <label class="form-check-label" for="flexCheckDefault">
@@ -36,12 +36,10 @@
 
               <!--<th scope="col">-->
               <!--</th>-->
-              <th scope="col">Ticket Id</th>
               <th scope="col">Movie</th>
               <th scope="col">Genre</th>
-              <th scope="col">ReleaseDate</th>
               <th scope="col">Price</th>
-              <th scope="col">Showtime Date</th>
+              <th scope="col">ShowDate</th>
               <th scope="col">Timeslot</th>
             </tr>
           </thead>
@@ -49,7 +47,6 @@
             <tr *ngFor="let ticket of ticketsForPurchase">
               <td>{{ticket.movieTitle}}</td>
               <td>{{ticket.genre}}</td>
-              <td>{{ticket.releaseDate}}</td>
               <td>{{ticket.price}}</td>
               <td>{{ticket.showTimeDate}}</td>
               <td>{{ticket.timeslot}}</td>
@@ -57,8 +54,8 @@
           </tbody>
           <br>
         </table>
-        <p id="userEmail"><b>A confirmation email will be sent to :</b> {{userEmail}}</p>
-        <a href="mailto:{{userEmail}}">Confirmation of Purchase E-mail</a>
+       <!-- <p id="userEmail"><b>A confirmation email will be sent to :</b> {{userEmail}}</p>
+        <a href="mailto:{{userEmail}}">Confirmation of Purchase E-mail</a>-->
       </div>
     </div>
       <input type="submit" class="purchase-btn" value="Purchase" (click)="sendPurchase()" />

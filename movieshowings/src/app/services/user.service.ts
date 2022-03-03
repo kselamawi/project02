@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,8 @@ export class UserService {
     email: "",
     password: ""
   }
+
+  user$:Subject<IUser> = new Subject();
 
   //shouldn't this and login return an observable since there's multiple values?
   register(user: IUser): Observable<IUser> {

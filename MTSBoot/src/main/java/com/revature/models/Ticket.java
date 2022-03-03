@@ -21,7 +21,7 @@ public class Ticket {
     @Column(name="price")
     private double price;
 
-    @Column(name="genre",nullable = false)
+    @Column(name="genre")
     private String genre;
 
     @Column(name="ShowTimeSlot")

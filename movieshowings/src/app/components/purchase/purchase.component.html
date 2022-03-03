@@ -30,43 +30,44 @@
   </label>
     -->
       <input type="submit" class="select-all-btn" value="Select All" (click)="selectAllTickets()" />
+<div class="purchase-container">
+        <div class="table-container">
+          <table class="table table-hover">
+            <thead>
+              <tr>
 
-      <div class="table-container">
-        <table class="table table-hover">
-          <thead>
-            <tr>
-
-              <!--<th scope="col">-->
-              <!--</th>-->
-              <th scope="col">Ticket Id</th>
-              <th scope="col">Movie</th>
-              <th scope="col">Genre</th>
-              <th scope="col">ReleaseDate</th>
-              <th scope="col">Price</th>
-              <th scope="col">Showtime Date</th>
-              <th scope="col">Timeslot</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let purchase of ticketsForPurchase">
-              <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="handleChecked(purchase)" [checked]="purchase.addToPurchase"></td>
-              <td>{{purchase.ticketID}}</td>
-              <td>{{purchase.movieTitle}}</td>
-              <td>{{purchase.genre}}</td>
-              <td>{{purchase.releaseDate}}</td>
-              <td>{{purchase.price}}</td>
-              <td>{{purchase.showTimeDate}}</td>
-              <td>{{purchase.timeslot}}</td>
-            </tr>
-          </tbody>
-          <br>
-        </table>
-        <p id="userEmail"><b>A confirmation email will be sent to :</b> {{userEmail}}</p>
-        <a href="mailto:{{userEmail}}">Confirmation of Purchase E-mail</a>
+                <!--<th scope="col">-->
+                <!--</th>-->
+                <th scope="col">Ticket Id</th>
+                <th scope="col">Movie</th>
+                <th scope="col">Genre</th>
+                <th scope="col">ReleaseDate</th>
+                <th scope="col">Price</th>
+                <th scope="col">Showtime Date</th>
+                <th scope="col">Timeslot</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let purchase of ticketsForPurchase">
+                <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="handleChecked(purchase)" [checked]="purchase.addToPurchase"></td>
+                <td>{{purchase.ticketID}}</td>
+                <td>{{purchase.movieTitle}}</td>
+                <td>{{purchase.genre}}</td>
+                <td>{{purchase.releaseDate}}</td>
+                <td>{{purchase.price}}</td>
+                <td>{{purchase.showTimeDate}}</td>
+                <td>{{purchase.timeslot}}</td>
+              </tr>
+            </tbody>
+            <br>
+          </table>
+          <p id="userEmail"><b>A confirmation email will be sent to :</b> {{userEmail}}</p>
+          <a href="mailto:{{userEmail}}">Confirmation of Purchase E-mail</a>
+        </div>
       </div>
+            <input type="submit" class="purchase-btn" value="Purchase" (click)="sendPurchase()" />
     </div>
-          <input type="submit" class="purchase-btn" value="Purchase" (click)="sendPurchase()" />
-  </div>
+</div>
 
 
 </body>

@@ -59,6 +59,7 @@ export class MainPageComponent implements OnInit {
   ticketAmount = null;
 
   ticket: ITicket = {
+    id: 1,
     price: 15.99,
     movieTitle: "",
     genre: "",

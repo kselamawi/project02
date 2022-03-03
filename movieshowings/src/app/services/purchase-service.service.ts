@@ -27,10 +27,6 @@ export class PurchaseService {
     userID: 0
   }
 
-  getSavedTickets(){
-    var savedTickets: IPurchase[]; 
-    return savedTickets = TicketServiceService.getTickets(); //not sure if we can save ITicket[] into IPurchase[]
-  }
 
   //Add total of all ticket prices inside purchases array
   addTotal(purchases: IPurchase[]) {
@@ -50,7 +46,7 @@ export class PurchaseService {
       }))
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private ts: TicketServiceService) { }
 
   doPurchase(purchases: IPurchase[]): Observable<IPurchase> {
     return this.http.post<IPurchase>("http://localhost:8080/purchase", JSON.stringify({ purchases }), { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })

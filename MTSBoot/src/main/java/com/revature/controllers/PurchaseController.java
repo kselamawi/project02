@@ -15,7 +15,7 @@ import java.util.List;
 
 
 @Controller
-@RequestMapping(value="/purchase")
+@RequestMapping("/purchase")
 @CrossOrigin("*")
 public class PurchaseController {
     private UserService us;

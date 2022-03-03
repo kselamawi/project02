@@ -13,7 +13,7 @@ import { tick } from '@angular/core/testing';
   providedIn: 'root'
 })
 export class TicketServiceService {
-  static getTickets(): import("../interfaces/ipurchase").IPurchase[] {
+  static getTickets(): import("../interfaces/IPurchase").IPurchase[] {
       throw new Error('Method not implemented.');
   }
 

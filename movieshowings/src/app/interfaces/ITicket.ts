@@ -36,5 +36,5 @@ export interface ITicket {
     releaseDate: string;
     showTimeDate: string;
     timeslot: string;
-    owner: IUser;
+    owner?: IUser;
 }

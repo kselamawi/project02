@@ -28,23 +28,27 @@ export class PurchaseService {
   }
 
   getSavedTickets(){
-    var savedTickets: IPurchase[]; 
+    var savedTickets: ITicket[]; 
     return savedTickets = TicketServiceService.getTickets(); //not sure if we can save ITicket[] into IPurchase[]
   }
 
+  selectedTickets: ITicket[] = [];
+
+  
+
   //Add total of all ticket prices inside purchases array
-  addTotal(purchases: IPurchase[]) {
+  addTotal(ticket: ITicket[]) {
     var num: number = 0;
     var sum: number = 0;
-    while(num <= purchases.length) {
-      sum += purchases[num].price;
+    while(num <= ticket.length) {
+      sum += ticket[num].price;
     }
     return sum;
   }
 
   //userID will have the tickets saved to it
-  purchase(purchaseID: number, userID: number ): Observable<IPurchase> {
-    return this.http.post<IPurchase>("http://localhost:8080/purchase", JSON.stringify({ userID }), { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })
+  purchase(purchaseID: number, userID: number ): Observable<ITicket> {
+    return this.http.post<ITicket>("http://localhost:8080/purchase", JSON.stringify({ userID }), { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })
       .pipe(catchError((e) => {
         return throwError(e);
       }))
@@ -52,8 +56,8 @@ export class PurchaseService {
 
   constructor(private http: HttpClient) { }
 
-  doPurchase(purchases: IPurchase[]): Observable<IPurchase> {
-    return this.http.post<IPurchase>("http://localhost:8080/purchase", JSON.stringify({ purchases }), { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })
+  doPurchase(ticket: ITicket[]): Observable<ITicket> {
+    return this.http.post<ITicket>("http://localhost:8080/purchase", JSON.stringify({ ticket }), { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })
       .pipe(catchError((e) => {
         return throwError(e);
       }))

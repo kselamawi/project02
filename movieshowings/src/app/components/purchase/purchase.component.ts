@@ -5,10 +5,11 @@ import { EmailValidator } from '@angular/forms';
 import { UpdateUserComponent } from '../update-user/update-user.component';
 import { PurchaseService } from 'src/app/services/purchase-service.service';
 import { ITicket } from 'src/app/interfaces/ITicket';
-import { IPurchase } from 'src/app/interfaces/ipurchase';
 
 import { Router, NavigationExtras } from '@angular/router';
-import { LocalStorageService } from 'src/app/services/local-storage-services.service'
+import { IPurchase } from '../../interfaces/IPurchase';
+import { SetAndGetTicketsService } from '../../services/set-and-get-tickets.service';
+//import { LocalStorageService } from 'src/app/services/local-storage-services.service'
 
 @Component({
   selector: 'purchase',
@@ -28,9 +29,10 @@ export class PurchaseComponent implements OnInit {
   }
 
    // constructor() { }
-  constructor(private purchaseService: PurchaseService, private router: Router, private localStore: LocalStorageService) { }
+  constructor(private purchaseService: PurchaseService, private router: Router, private get: SetAndGetTicketsService) { }
 
   ngOnInit(): void {
+    this.getSelectedTickets();
   }
 
   userID: number = 0;
@@ -48,25 +50,23 @@ export class PurchaseComponent implements OnInit {
   purchaseTotalAmt: Number = 0;
   purchasedDate: Date = new Date(); //get current date
 
-  ticketsForPurchase: IPurchase[] = [];
+  ticket: ITicket = {
+    id: 0,
+    price: 0,
+    movieTitle: "",
+    genre: "",
+    releaseDate: "",
+    showTimeDate: "",
+    timeslot: "",
+  }
+
+  ticketsForPurchase: ITicket[] = [];
 
 
   //transporter = nodemailer.createTransport();
 
 
-  handleChecked(purchase: IPurchase) {
-    console.log("called handleChecked");
-    console.log(purchase);
-    purchase.addToPurchase = !purchase.addToPurchase;
-  }
 
-  selectAllTickets() {
-    console.log("called selectAllTickets");
-    this.selectAllTicketsState = !this.selectAllTicketsState;
-    this.ticketsForPurchase.forEach(item => {
-      item.addToPurchase = this.selectAllTicketsState;
-    })
-  }
 
   //constructor(private router: Router, private localStore: LocalStorageService) { }
 
@@ -78,13 +78,19 @@ export class PurchaseComponent implements OnInit {
     showingDateAndTime: new Date()
     }
 
+  getSelectedTickets() {
+    this.ticketsForPurchase = this.get.getSelectedTickets();
+  }
+
   sendPurchase() {
     console.log("called sendPurchase");
-    const selectedTickets = this.ticketsForPurchase.filter(item => item.addToPurchase);
-    this.localStore.setItem('ticketsForPurchase', JSON.stringify(selectedTickets)); //this adds to array selectedTickets in local storage
-    this.purchaseTotalAmt = this.purchaseService.addTotal(selectedTickets);
-    console.log("Total: $" + this.purchaseTotalAmt);
-    this.purchaseService.doPurchase(selectedTickets);
+    //const selectedTickets = this.ticketsForPurchase.filter(item => item.addToPurchase);
+    //this.localStore.setItem('ticketsForPurchase', JSON.stringify(selectedTickets)); //this adds to array selectedTickets in local storage
+   
+
+   // this.purchaseTotalAmt = this.purchaseService.addTotal(this.ticketsForPurchase);
+    //console.log("Total: $" + this.purchaseTotalAmt);
+    //this.purchaseService.doPurchase(this.ticketsForPurchase);
 
     /*
     const message = {
@@ -158,9 +164,9 @@ export class PurchaseComponent implements OnInit {
     var num:number = 0;
 
     while(num <= this.ticketsForPurchase.length){
-     this.ticketMovieName = this.ticketsForPurchase[num].movieTitle;
+    // this.ticketMovieName = this.ticketsForPurchase[num].movieTitle;
      this.ticketPrice = this.ticketsForPurchase[num].price;
-     this.ticketQuantity = this.ticketsForPurchase[num].numberTickets;
+     //this.ticketQuantity = this.ticketsForPurchase[num].numberTickets;
      this.ticketDateAndTime = this.ticketsForPurchase[num].showTimeDate;
     }
   }

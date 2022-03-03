@@ -22,14 +22,12 @@
   <div class="container-fluid2">
     <div id="purchase-container">
       <h3 id="userFirst"><b>Welcome </b> {{userFirst}}</h3>
-      <h2>Select tickets for purchase</h2>
       <!--
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="selectAllTickets()">
-  <label class="form-check-label" for="flexCheckDefault">
-    Select All
-  </label>
-    -->
-      <input type="submit" class="select-all-btn" value="Select All" (click)="selectAllTickets()" />
+    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="selectAllTickets()">
+    <label class="form-check-label" for="flexCheckDefault">
+      Select All
+    </label>
+      -->
 
       <div class="table-container">
         <table class="table table-hover">
@@ -48,15 +46,13 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let purchase of ticketsForPurchase">
-              <td><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" (click)="handleChecked(purchase)" [checked]="purchase.addToPurchase"></td>
-              <td>{{purchase.ticketID}}</td>
-              <td>{{purchase.movieTitle}}</td>
-              <td>{{purchase.genre}}</td>
-              <td>{{purchase.releaseDate}}</td>
-              <td>{{purchase.price}}</td>
-              <td>{{purchase.showTimeDate}}</td>
-              <td>{{purchase.timeslot}}</td>
+            <tr *ngFor="let ticket of ticketsForPurchase">
+              <td>{{ticket.movieTitle}}</td>
+              <td>{{ticket.genre}}</td>
+              <td>{{ticket.releaseDate}}</td>
+              <td>{{ticket.price}}</td>
+              <td>{{ticket.showTimeDate}}</td>
+              <td>{{ticket.timeslot}}</td>
             </tr>
           </tbody>
           <br>
@@ -65,7 +61,7 @@
         <a href="mailto:{{userEmail}}">Confirmation of Purchase E-mail</a>
       </div>
     </div>
-          <input type="submit" class="purchase-btn" value="Purchase" (click)="sendPurchase()" />
+      <input type="submit" class="purchase-btn" value="Purchase" (click)="sendPurchase()" />
   </div>
 
 

@@ -20,24 +20,24 @@ export class SavedTicketsComponent implements OnInit {
   // @Output() goToPurchasePage = new EventEmitter();
 
   tickets: ITicketAddBool[] = [
-    // {
-    // price: 8.32,
-    // movieTitle: "Titanic",
-    // genre: "something here",
-    // releaseDate: "1/1/1999",
-    // showTimeDate: "2/28/22",
-    // timeslot: "8:00pm",
-    // checked: false,
-    // },
-    // {
-    //   price: 8.32,
-    //   movieTitle: "Titanic",
-    //   genre: "something here",
-    //   releaseDate: "1/1/1999",
-    //   showTimeDate: "2/28/22",
-    //   timeslot: "12:00am",
-    //   checked: false,
-    //   }
+     {
+     price: 8.32,
+     movieTitle: "Titanic",
+     genre: "something here",
+     releaseDate: "1/1/1999",
+     showTimeDate: "2/28/22",
+     timeslot: "8:00pm",
+     checked: false,
+     },
+     {
+       price: 8.32,
+       movieTitle: "Titanic",
+       genre: "something here",
+       releaseDate: "1/1/1999",
+       showTimeDate: "2/28/22",
+       timeslot: "12:00am",
+       checked: false,
+       }
   ];
 
   //setting initial select all to false

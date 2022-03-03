@@ -72,7 +72,7 @@ import java.util.List;
             return ts.createTicket(ticket);
         }
 
-        @GetMapping("/{id}")
+        @GetMapping("/save/{id}")
         @ResponseBody
         public List<Ticket> getTicketsByOwner(@PathVariable("id")int id) {
             User user = us.getUserById(id);

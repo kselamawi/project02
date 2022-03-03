@@ -38,5 +38,8 @@ export class NavBarComponent implements OnInit {
   navigatePurchase():void{
     this.router.navigate(['purchase']);
   }
+  navigateLogout():void{
+    this.router.navigate(['main-page']);
+  }
 
 }

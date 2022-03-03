@@ -40,6 +40,13 @@ export class UserService {
   }
 
 
+    getUser(id:string){
+      return this.http.get<IUser>("http://localhost:8080/users/" + id + "/")
+      .pipe(catchError((e) => {
+        return throwError(e);
+      }))
+    }
+
     //shouldn't this and login return an observable since there's multiple values?
     update(user:IUser): Observable<IUser> {
       return this.http.put<IUser>("http://localhost:8080/users/1/update", JSON.stringify(user),

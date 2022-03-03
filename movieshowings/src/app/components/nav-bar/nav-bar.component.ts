@@ -14,6 +14,7 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.us.user$.subscribe(user => {
+      console.log("HERE", user);
       if (user) {
         this.showLogin = false;
       } else {

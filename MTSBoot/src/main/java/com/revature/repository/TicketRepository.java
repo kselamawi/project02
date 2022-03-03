@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.List;
 
 @Repository
-    public interface TicketRepository extends JpaRepository<Ticket,Integer> {
+    public interface TicketRepository extends JpaRepository<Ticket, Integer> {
         Ticket getByGenre(String genre);
 
         Ticket getByMovieTitle(String movie_title);

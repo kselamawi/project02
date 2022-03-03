@@ -77,7 +77,7 @@ export class MainPageComponent implements OnInit {
   //We need to be able to populate a ticket object to send to our back end. 
   saveTickets(pageMovie:IMovieDetail, ticketDay:any, ticketTime:any, ticketAmount:any){
     console.log("saveTickets function called");
-    if(this.getCookie("id") == null){
+    if(!this.getCookie("id")){
       alert("Please login to save a ticket");
       window.location.href = "/login";
     }

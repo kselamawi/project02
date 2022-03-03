@@ -12,13 +12,13 @@ public class Ticket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name="ticket_id")
     private int id;
 
     @Column(name = "movie_title",nullable = false)
     private String movieTitle;
 
-    @Column(name="price")
+    @Column(name="price", nullable = false)
     private double price;
 
     @Column(name="genre")
@@ -30,7 +30,7 @@ public class Ticket {
     @Column(name="showTime")
     private String showTime;
 
-    @ManyToOne()
+    @ManyToOne(fetch =FetchType.LAZY)
     @JoinColumn(name="purchase")
     @JsonIgnore
     public Purchase purchase;

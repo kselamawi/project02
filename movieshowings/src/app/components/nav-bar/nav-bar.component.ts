@@ -13,21 +13,21 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  //if using button only
+  
   navigateLogin():void{
     this.router.navigate(['login']);
   }
-  // navigateHome():void{
-  //   this.router.navigate(['main-page']);
-  // }
-  // navigateAccount():void{
-  //   this.router.navigate(['user-page']);
-  // }
-  // navigateTickets():void{
-  //   this.router.navigate(['saved-tickets']);
-  // }
-  // navigatePurchase():void{
-  //   this.router.navigate(['purchase']);
-  // }
+  navigateHome():void{
+    this.router.navigate(['main-page']);
+  }
+  navigateAccount():void{
+    this.router.navigate(['user-page']);
+  }
+  navigateTickets():void{
+    this.router.navigate(['saved-tickets']);
+  }
+  navigatePurchase():void{
+    this.router.navigate(['purchase']);
+  }
 
 }

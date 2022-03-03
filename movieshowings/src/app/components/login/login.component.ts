@@ -32,7 +32,8 @@ export class LoginComponent implements OnInit {
       }
       this.userService.user = {
         email: email2,
-        password: password2
+        password: password2,
+        id: data.id
       };
       
 

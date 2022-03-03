@@ -5,7 +5,7 @@
   /* #0c1f1e
   #2a6460 */
   
-  .navbar a {
+  .navbar span{
     float: right;
     padding: 10px 10px;
     font-size: 25px;
@@ -19,3 +19,8 @@
   .btn-margin {
     margin: 15px;
   }
+
+  .navbar span:hover {
+    color: #8bc5a7;
+    cursor: pointer;
+}

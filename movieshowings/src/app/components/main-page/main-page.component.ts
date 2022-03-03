@@ -62,9 +62,9 @@ export class MainPageComponent implements OnInit {
     price: 15.99,
     movieTitle: "",
     genre: "",
-    showTimeDate:"",
-    releaseDate:"",
-    timeslot:"",
+    showTime:"",
+   // releaseDate:"",
+    showTimeSlot:"",
     owner:{
       id: 0,
       email:"",

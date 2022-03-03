@@ -26,12 +26,12 @@ export class PurchaseService {
     purchaseID: 0,
     userID: 0
   }
-
+  /*
   getSavedTickets(){
-    var savedTickets: ITicket[]; 
-    return savedTickets = TicketServiceService.getTickets(); //not sure if we can save ITicket[] into IPurchase[]
+    var savedTickets: ITicket[] = []; 
+    return savedTickets = this.get.getSelectedTickets(); //not sure if we can save ITicket[] into IPurchase[]
   }
-
+  */
   selectedTickets: ITicket[] = [];
 
   

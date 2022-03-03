@@ -41,21 +41,15 @@ export class PurchaseComponent implements OnInit {
     price: 0,
     movieTitle: "",
     genre: "",
-    releaseDate: "",
-    showTimeDate: "",
-    timeslot: "",
+    showTime: "",
+    showTimeSlot: "",
   }
 
   ticketsForPurchase: ITicket[] = [];
 
   purchaseTotalAmt: number = 0;
 
-  ticketInfo = {
-    movieName: "",
-    pricePerTicket: 0,
-    numberTickets: 0,
-    showingDateAndTime: new Date()
-    }
+ 
 
   getTheSelectedTickets() {
     this.ticketsForPurchase = this.get.getSelectedTickets();

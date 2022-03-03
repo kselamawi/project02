@@ -63,8 +63,8 @@ export class MainPageComponent implements OnInit {
     ];
   
 
-  ticketTime = null;
-  ticketDay = null;
+  ticketTime = "";
+  ticketDay = "";
   ticketAmount = null;
 
   ticket: ITicket = {
@@ -83,11 +83,6 @@ export class MainPageComponent implements OnInit {
 
   purchaseTickets(pageMovie:IMovieDetail, ticketDay:any, ticketTime:any, ticketAmount:any){
     console.log("Purchase Tickets has been called");
-    
-
-    
-
-
   }
 
 
@@ -102,8 +97,9 @@ export class MainPageComponent implements OnInit {
     //Setting up our ticket to send back
     this.ticket.movieTitle = pageMovie.title;
     this.ticket.genre = pageMovie.genres;
-    this.ticket.showTime = ticketDay;
-    this.ticket.showTimeSlot = ticketTime;
+    this.ticket.showTime = ticketDay.name;
+    this.ticket.showTimeSlot = ticketTime.name;
+    console.log(this.ticket);
 
     let id = this.getCookie("id");
 

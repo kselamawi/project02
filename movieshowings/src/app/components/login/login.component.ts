@@ -35,9 +35,9 @@ export class LoginComponent implements OnInit {
         password: password2,
         id: data.id
       };
-      
 
-    });
+
+    })
 
   }
 

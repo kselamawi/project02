@@ -54,6 +54,13 @@ export class MainPageComponent implements OnInit {
     {id: 3, name: "3"}
     ];
 
+    ticketInfo = [
+      this.ticketDays,
+      this.ticketTimes,
+      this.ticketAmounts
+    ];
+  
+
   ticketTime = null;
   ticketDay = null;
   ticketAmount = null;

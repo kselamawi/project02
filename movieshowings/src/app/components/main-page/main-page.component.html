@@ -6,19 +6,19 @@
             <img class="card-img"src="{{movie.image}}">
                 <div class="row-4">
                     <label for="ticketDay" class="row-sm-2">Movie Day:</label>
-                    <select class="row-2"name="ticketDay" [(ngModel)]="ticketDay">
+                    <select class="form-select form-select-sm"name="ticketDay" [(ngModel)]="ticketDay">
                         <option *ngFor="let day of ticketDays" [ngValue]="day">{{day.name}}</option>
                     </select>
                 </div>
                 <div>
                     <label for="ticketTime" class="row-2">Show Time:</label>
-                    <select class="row-2"name="ticketDay" [(ngModel)]="ticketTime">
+                    <select class="form-select form-select-sm"name="ticketDay" [(ngModel)]="ticketTime">
                         <option *ngFor="let time of ticketTimes" [ngValue]="time">{{time.name}}</option>
                     </select>
                 </div>
                 <div>
                     <label for="ticketDay" class="">Ticket Amounts:</label>
-                    <select class="row-2"name="ticketDay" [(ngModel)]="ticketAmount">
+                    <select class="form-select form-select-sm"name="ticketDay" [(ngModel)]="ticketAmount">
                         <option *ngFor="let amount of ticketAmounts" [ngValue]="amount">{{amount.id}}</option>
                     </select>
                 </div>

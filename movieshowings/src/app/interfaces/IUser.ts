@@ -1,7 +1,7 @@
 import { IPurchase } from "../interfaces/IPurchase";
 
 export interface IUser {
-    id?: number;
+    id?: string;
     first?: string;
     last?: string;
     email: string;

@@ -51,6 +51,7 @@ export class LoginComponent implements OnInit {
 
   }
 
+  
 
   getCookie(cname:any) {
     let name = cname + "=";

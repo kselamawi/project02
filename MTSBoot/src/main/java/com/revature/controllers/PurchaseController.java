@@ -68,7 +68,7 @@ public class PurchaseController {
 
     @GetMapping("/price")
     @ResponseBody
-    public int getPrice(@RequestBody int id) {
+    public double getPrice(@RequestBody int id) {
         return ps.getPrice(id);
     }
 }

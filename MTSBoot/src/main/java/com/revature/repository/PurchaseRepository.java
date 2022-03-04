@@ -14,7 +14,7 @@ public interface PurchaseRepository extends JpaRepository<Purchase, Integer> {
     List<Purchase> findAllByOwner(User user);
    // Purchase save(Purchase purchase);
       Purchase getById(int id);
-      int getPurchasePriceById(int id);
+      double getPurchasePriceById(int id);
    // void delete(Purchase purchase);
       List<Ticket> getAllTicketsById(int id);
 //    List<Ticket> findAllTicketsByPurchase(Purchase purchase);

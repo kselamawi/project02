@@ -26,7 +26,7 @@ public class PurchaseService {
         this.pr = pr;
     }
 
-    public Purchase createPurchase(int price, List<Ticket> ticket, User owner) {
+    public Purchase createPurchase(double price, List<Ticket> ticket, User owner) {
         Purchase purchase = new Purchase(price, ticket, owner);
         return pr.save(purchase);
     }
@@ -37,7 +37,7 @@ public class PurchaseService {
 
     //get total cost
 
-    public int getPrice(int id) {
+    public double getPrice(int id) {
         return pr.getPurchasePriceById(id);
     }
 

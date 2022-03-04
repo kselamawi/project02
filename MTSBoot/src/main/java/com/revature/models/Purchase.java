@@ -26,7 +26,7 @@ public class Purchase {
     private Date purchaseDate;
 
     @Column(name="purchase_price", nullable = false)
-    private int purchasePrice;
+    private double purchasePrice;
 
     @ManyToOne() //removed @CascadeType.All
     @JoinColumn(name="owner")
@@ -50,18 +50,18 @@ public class Purchase {
         this.owner = user;
     }
 
-    public Purchase(int price, List<Ticket> ticket, User owner) {
+    public Purchase(double price, List<Ticket> ticket, User owner) {
         this.purchasePrice = price;
         this.tickets = ticket;
         this.owner = owner;
     }
 
 
-    public void setPrice(int price){
+    public void setPrice(double price){
         this.purchasePrice = price;
     }
 
-    public int getPrice(Purchase purchase){
+    public double getPrice(Purchase purchase){
         return purchase.purchasePrice;
     }
 

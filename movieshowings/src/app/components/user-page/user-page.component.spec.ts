@@ -5,6 +5,7 @@ import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {UserService} from '../../services/user.service';
 import {Subject} from 'rxjs';
 import {IUser} from '../../interfaces/IUser';
+import { UpdateUserComponent } from '../update-user/update-user.component';
 
 class MockUserService {
   user: Subject<IUser[]> = new Subject<IUser[]>(); 
@@ -29,7 +30,7 @@ describe('UserPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserPageComponent ],
+      declarations: [ UserPageComponent, UpdateUserComponent ],
       imports: [RouterTestingModule, HttpClientTestingModule]
     })
     .compileComponents();

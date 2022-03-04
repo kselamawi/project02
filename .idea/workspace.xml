@@ -5,28 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad944271-0c46-47a3-aa31-5e2f36cbd485" name="Changes" comment="updated main files">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_13_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_junit_jupiter_junit_jupiter_api_5_7_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_mockito_mockito_core_4_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_projectlombok_lombok_1_18_20.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_junit_jupiter_junit_jupiter_api_5_8_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_junit_jupiter_junit_jupiter_engine_5_8_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_junit_jupiter_junit_jupiter_engine_5_7_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_mockito_mockito_core_4_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/MTSBoot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/MTSBoot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/MTSBoot.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/MTSBoot.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/MTSBoot.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/MTSBoot.test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MTSBoot/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/MTSBoot/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/models/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/models/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/services/PurchaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/services/PurchaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MTSBoot/src/test/java/com/revature/services/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MTSBoot/src/test/java/com/revature/services/UserServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

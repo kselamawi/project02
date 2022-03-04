@@ -38,7 +38,6 @@ public class UserServiceTest {
 
         assertEquals(userService.createNewUser("solomon@email.com", "solomon", "kahsai", "password"), user);
     }
-
     //2
     @Test
     public void getAllUsers() {
@@ -47,7 +46,6 @@ public class UserServiceTest {
 
         assertEquals(userService.getAllUsers(), userList);
     }
-
     //3
     @Test
     public void getUserById() {
@@ -56,7 +54,6 @@ public class UserServiceTest {
 
         assertEquals(userService.getUserById(anyInt()), user);
     }
-
     //4
     @Test
     public void updateUser() {

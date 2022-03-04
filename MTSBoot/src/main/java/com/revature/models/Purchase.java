@@ -36,6 +36,10 @@ public class Purchase {
     @OneToMany(mappedBy = "purchase")
     private List<Ticket> tickets = new ArrayList<Ticket>();
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
     public Purchase() {}
 
     public Purchase(int id, Date purchaseDate, User user) {

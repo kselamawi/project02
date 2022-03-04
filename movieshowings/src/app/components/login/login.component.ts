@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
         password: password2,
         id: data.id
       }
-
+        
     this.userService.user$.next(this.userService.user);
     this.router.navigate(["/main-page"]);
     }

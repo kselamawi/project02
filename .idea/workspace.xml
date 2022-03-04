@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad944271-0c46-47a3-aa31-5e2f36cbd485" name="Changes" comment="updated main files">
-      <change beforePath="$PROJECT_DIR$/MTSBoot/src/test/java/com/revature/services/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/MTSBoot/src/test/java/com/revature/services/UserServiceTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="ad944271-0c46-47a3-aa31-5e2f36cbd485" name="Changes" comment="updated main files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

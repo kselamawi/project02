@@ -3,13 +3,14 @@ package com.revature.controllers;
 import com.revature.models.Purchase;
 import com.revature.models.Ticket;
 import com.revature.models.User;
+import com.revature.services.PurchaseService;
 import com.revature.services.TicketService;
 import com.revature.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
     @Controller
     @RequestMapping("/tickets")
@@ -18,14 +19,16 @@ import java.util.List;
 
         private TicketService ts;
         private UserService us;
+        private PurchaseService ps;
         // no arg constructor
         public TicketController(){
 
         }
         @Autowired
-        public TicketController(TicketService ts, UserService us){
+        public TicketController(TicketService ts, UserService us, PurchaseService ps){
             this.ts = ts;
             this.us = us;
+            this.ps = ps;
         }
 
 
@@ -84,10 +87,17 @@ import java.util.List;
 
         @GetMapping("/save/{id}")
         @ResponseBody
-        public List<Ticket> getTicketsByOwner(@PathVariable("id")int id) {
+        public List<Ticket> getTicketsByOwner(@PathVariable("id") int id) {
             User user = us.getUserById(id);
-
-            return ts.getTicketsByUser(user);
+            List<Ticket> userTickets = ts.getTicketsByUser(user);
+            List<Ticket> unpurchasedTickets = new ArrayList<Ticket>();
+            for(int i = 0; i < userTickets.size(); i++ ) {
+                Ticket ticket = userTickets.get(i);
+                if(ticket.purchase == null) {
+                    unpurchasedTickets.add(ticket);
+                }
+            }
+            return unpurchasedTickets;
         }
 
 

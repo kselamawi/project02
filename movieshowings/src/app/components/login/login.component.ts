@@ -37,7 +37,6 @@ export class LoginComponent implements OnInit {
         email: email2,
         password: password2,
         id: data.id
-
       }
         
     this.userService.user$.next(this.userService.user);

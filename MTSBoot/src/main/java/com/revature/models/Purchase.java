@@ -36,7 +36,6 @@ public class Purchase {
     @OneToMany(mappedBy = "purchase", cascade = CascadeType.MERGE)
     private List<Ticket> tickets = new ArrayList<Ticket>();
 
-
     public Purchase() {}
 
     public Purchase(int id, Date purchaseDate, double purchasePrice, User owner, List<Ticket> tickets) {

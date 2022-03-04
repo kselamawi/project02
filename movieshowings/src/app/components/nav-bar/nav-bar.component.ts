@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
+
 @Component({
   selector: 'nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -43,6 +44,7 @@ export class NavBarComponent implements OnInit {
       this.us.user$.next({
        email:"", password:""
       });
+      
     });
   }
 

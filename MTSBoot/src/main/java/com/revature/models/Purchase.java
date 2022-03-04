@@ -28,6 +28,7 @@ public class Purchase {
     private User owner;
 
     @OneToMany(mappedBy = "purchase", cascade = CascadeType.ALL)
+    @Column(name="ticket_id")
     private List<Ticket> tickets = new ArrayList<>();
 
 
@@ -65,7 +66,7 @@ public class Purchase {
         this.owner = owner;
     }
 
-        public List<Ticket> getTickets() {
+    public List<Ticket> getTickets() {
         return tickets;
     }
 

@@ -78,7 +78,7 @@ export class PurchaseComponent implements OnInit {
       sum += this.ticketsForPurchase[num].price;
       num++
     }
-    
+    num = parseInt((Math.round(num * 100) / 100).toFixed(2));
     this.purchaseTotalAmt =  this.purchase.price = sum;
   }
 

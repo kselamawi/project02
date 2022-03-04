@@ -3,6 +3,7 @@ package com.revature.controllers;
 import com.revature.models.Purchase;
 import com.revature.models.Ticket;
 import com.revature.models.User;
+import com.revature.repository.PurchaseRepository;
 import com.revature.services.PurchaseService;
 import com.revature.services.TicketService;
 import com.revature.services.UserService;
@@ -22,6 +23,7 @@ public class PurchaseController {
     private UserService us;
     private PurchaseService ps;
     private TicketService ts;
+    private PurchaseRepository pr;
 
     public PurchaseController(){}
 
@@ -32,9 +34,12 @@ public class PurchaseController {
         this.ts = ts;
     }
 
-    @PostMapping("/")
+    @PostMapping("/{ownerId}")
     @ResponseBody
-    public Purchase createPurchase(@RequestBody Purchase purchase) {
+    public Purchase createPurchase(@RequestBody Purchase purchase, String ownerId) {
+
+        purchase.setOwner(us.getUserById(Integer.parseInt(ownerId)));
+       // pr.setOwner(us.getUserById(Integer.parseInt(ownerId)));
         System.out.println(purchase);
 
         //How do I "unsave" ticket now that it has been purchased?

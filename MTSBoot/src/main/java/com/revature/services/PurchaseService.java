@@ -50,6 +50,11 @@ public class PurchaseService {
     public Purchase getPurchaseById(int id) {
         return pr.getById(id);
     }
+/*
+    public void setPurchaseId(int id) {
+        pr.setId(id);
+    }
+*/
 
     //get total cost
 

@@ -90,6 +90,7 @@ public class Purchase {
         this.owner = owner;
     }
 
+
     public List<Ticket> getTickets() {
         return tickets;
     }

@@ -51,7 +51,7 @@ export class PurchaseService {
 
   doPurchase(purchase: IPurchase): Observable<IPurchase> {
     console.log("hello");
-    return this.http.get<IPurchase>("http://localhost:8080/purchase/" ) 
+    return this.http.post<IPurchase>("http://localhost:8080/purchase/", JSON.stringify(purchase), { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })
       .pipe(catchError((e) => {
         return throwError(e);
       }));

@@ -1,6 +1,0 @@
-
-S	java:S106"9Replace this use of System.out or System.err by a logger.(¤‚Ñ•ûÿÿÿÿ
-š
-java:S1130("Remove the declaration of thrown exception 'com.revature.exceptions.NotAValidLogin', as it cannot be thrown from method's body.(½’øûúÿÿÿÿ
-R
-java:S1128"7Remove this unused import 'com.revature.models.Ticket'.(ÿ €ıÿÿÿÿ

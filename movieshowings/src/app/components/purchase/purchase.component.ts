@@ -100,6 +100,10 @@ export class PurchaseComponent implements OnInit {
   sendPurchase() {
     this.purchase.ticket = this.ticketsForPurchase;
     this.purchase.owner.id = this.getCookie("id");
+    this.purchase.owner.email = this.getCookie("email");
+    this.purchase.owner.password = this.getCookie("password");
+
+
     console.log("called sendPurchase");
     console.log(this.purchase);
 

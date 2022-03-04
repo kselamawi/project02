@@ -5,25 +5,12 @@ import com.revature.models.Ticket;
 import com.revature.models.User;
 import com.revature.repository.PurchaseRepository;
 import com.revature.repository.TicketRepository;
+import com.revature.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import java.util.Date;
 import java.util.List;
-import java.util.Properties;
-
-import javax.mail.*;
-import javax.mail.internet.*;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.revature.services.EmailService;
-import java.util.Properties;
 
 @Service
 @Transactional
@@ -35,13 +22,12 @@ public class PurchaseService {
     public PurchaseService() {}
 
     @Autowired
-    public PurchaseService(PurchaseRepository pr) {
-
+    public PurchaseService(PurchaseRepository pr){
         this.pr = pr;
     }
 
-    public Purchase createPurchase(int purchaseId, Date purchaseDate, User user) {
-        Purchase purchase = new Purchase(purchaseId, (java.sql.Date) purchaseDate, user);
+    public Purchase createPurchase(double price, List<Ticket> ticket, User owner) {
+        Purchase purchase = new Purchase(price, ticket, owner);
         return pr.save(purchase);
     }
 
@@ -49,6 +35,11 @@ public class PurchaseService {
         return pr.getById(id);
     }
 
+    //get total cost
+
+    public double getPrice(int id) {
+        return pr.getPurchasePriceById(id);
+    }
 
     public List<Purchase> getPurchasesByUser(User user){
         return pr.findAllByOwner(user);
@@ -60,9 +51,9 @@ public class PurchaseService {
 
 
 
-//    public List<Ticket> getAllTicketsByPurchase(Purchase purchase) {
-//        return tr.findAllTicketsByPurchase(purchase);
-//    }
+    public List<Ticket> getTickets(int id) {
+        return pr.getAllTicketsById(id);
+    }
 
 
 }

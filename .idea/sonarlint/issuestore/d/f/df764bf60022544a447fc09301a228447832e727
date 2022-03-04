@@ -1,6 +1,0 @@
-
-Q	java:S125"<This block of commented-out lines of code should be removed.(éÏÔ¼
-<
-java:S1068"&Remove this unused "ur" private field.(•¯”ü
-f	java:S117/"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ê–¬
-f	java:S1172"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³í‘µ

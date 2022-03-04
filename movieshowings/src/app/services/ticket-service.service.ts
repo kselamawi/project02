@@ -47,19 +47,20 @@ export class TicketServiceService {
 
 
   createTickets(ticket:ITicket, id:String): Observable<ITicket> {
-      return this.http.post<ITicket>("http://localhost:8080/tickets/save/" + id, JSON.stringify(ticket),
-       {headers : new HttpHeaders({ 'Content-Type': 'application/json' })})
-      .pipe(catchError((e) => {
-        return throwError(e);
-      }));
-       }
+    return this.http.post<ITicket>("http://localhost:8080/tickets/save/" + id, JSON.stringify(ticket),
+      {headers : new HttpHeaders({ 'Content-Type': 'application/json' })})
+    .pipe(catchError((e) => {
+      return throwError(e);
+    }));
+  }
 
 
   updateTickets(ticket:ITicket, purchaseID:String, ownerID:String): Observable<ITicket> {
-      return this.http.post<ITicket>("http://localhost:8080/tickets/update/" + purchaseID + "/" + ownerID, JSON.stringify(ticket),
-       {headers : new HttpHeaders({ 'Content-Type': 'application/json' })})
-      .pipe(catchError((e) => {          return throwError(e);
-      }));
-       }
+    return this.http.post<ITicket>("http://localhost:8080/tickets/update/" + purchaseID + "/" + ownerID, JSON.stringify(ticket),
+     {headers : new HttpHeaders({ 'Content-Type': 'application/json' })})
+    .pipe(catchError((e) => {          return throwError(e);
+    }));
+     }
+
 
 }

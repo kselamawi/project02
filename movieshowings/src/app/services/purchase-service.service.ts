@@ -33,6 +33,7 @@ export class PurchaseService {
     while(num <= ticket.length) {
       sum += ticket[num].price;
     }
+    sum = Math.round(sum * 100) / 100;
     return sum;
   }
 

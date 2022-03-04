@@ -48,6 +48,7 @@ export class PurchaseComponent implements OnInit {
   ticketsForPurchase: ITicket[] = [];
 
   purchase: IPurchase = {
+    id: 0,
     price: 0,
     ticket: [],
     owner: {
@@ -77,7 +78,7 @@ export class PurchaseComponent implements OnInit {
       sum += this.ticketsForPurchase[num].price;
       num++
     }
-    
+    num = parseInt((Math.round(num * 100) / 100).toFixed(2));
     this.purchaseTotalAmt =  this.purchase.price = sum;
   }
 
@@ -99,11 +100,18 @@ export class PurchaseComponent implements OnInit {
 
   sendPurchase() {
     this.purchase.ticket = this.ticketsForPurchase;
+    //set owner info
     this.purchase.owner.id = this.getCookie("id");
+    this.purchase.owner.email = this.getCookie("email");
+    this.purchase.owner.password = this.getCookie("password");
+
+
     console.log("called sendPurchase");
     console.log(this.purchase);
 
-    this.purchaseService.doPurchase(this.purchase);
+    this.purchaseService.doPurchase(this.purchase, this.purchase.owner.id);
+   // this.purchaseService.doPurchase(this.purchase);
+
     
     alert("Thank you for your purchase. Enjoy your movie!")
 

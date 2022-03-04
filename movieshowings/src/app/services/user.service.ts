@@ -41,6 +41,12 @@ export class UserService {
     }))
   }
 
+  logout(): Observable<any> {
+    return this.http.get("http://localhost:8080/users/logout", { responseType: 'text' })
+    .pipe(catchError((e) => {
+      return throwError(e);
+    }))
+  }
 
     getUser(id:string){
       return this.http.get<IUser>("http://localhost:8080/users/" + id + "/")

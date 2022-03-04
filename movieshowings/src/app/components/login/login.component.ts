@@ -37,8 +37,9 @@ export class LoginComponent implements OnInit {
         email: email2,
         password: password2,
         id: data.id
-      }
 
+      }
+        
     this.userService.user$.next(this.userService.user);
     this.router.navigate(["/main-page"]);
     }
@@ -53,8 +54,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private userService:UserService, private router: Router){ }
 
-  getCookie(cname:any) {
-    let name = cname + "=";
+  getCookie(c_name:any) {
+    let name = c_name + "=";
     let decodedCookie = decodeURIComponent(document.cookie);
     let ca = decodedCookie.split(';');
     for(let i = 0; i <ca.length; i++) {

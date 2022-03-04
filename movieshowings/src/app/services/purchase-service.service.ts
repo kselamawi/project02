@@ -12,25 +12,17 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class PurchaseService {
 
-  ticket = {
-    movieName: "",
-    price: 0,
-    quantity: 0,
-    show_date_and_time: ""
-  }
+ 
 
   //can have many tickets on diff dates part of purchase. But all have same purchase date and 1 total cost.
-  purchaseItem = {
-    purchaseID: 0,
-    userID: 0
-  }
+
   /*
   getSavedTickets(){
     var savedTickets: ITicket[] = []; 
     return savedTickets = this.get.getSelectedTickets(); //not sure if we can save ITicket[] into IPurchase[]
   }
   */
-  selectedTickets: ITicket[] = [];
+  
 
   
 
@@ -44,11 +36,7 @@ export class PurchaseService {
     return sum;
   }
 
-
-
-
-
-
+  
   doPurchase(purchase: IPurchase, id:String): Observable<IPurchase> {
     console.log("inside doPurchase()");
     return this.http.post<IPurchase>("http://localhost:8080/purchase/" + id, JSON.stringify(purchase), { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })
@@ -57,7 +45,17 @@ export class PurchaseService {
       }));
     //backend will send email using info stored in db when purchase is made
   }
+  
 
-
+  /*
+  doPurchase(purchase: IPurchase): Observable<IPurchase> {
+    console.log("inside doPurchase()");
+    return this.http.post<IPurchase>("http://localhost:8080/purchase/", JSON.stringify(purchase), { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })
+      .pipe(catchError((e) => {
+        return throwError(e);
+      }));
+    //backend will send email using info stored in db when purchase is made
+  }
+  */
   constructor(private http: HttpClient) { }
 }

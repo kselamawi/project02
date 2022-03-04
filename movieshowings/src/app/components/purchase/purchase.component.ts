@@ -110,6 +110,8 @@ export class PurchaseComponent implements OnInit {
     console.log(this.purchase);
 
     this.purchaseService.doPurchase(this.purchase, this.purchase.owner.id);
+   // this.purchaseService.doPurchase(this.purchase);
+
     
     alert("Thank you for your purchase. Enjoy your movie!")
 

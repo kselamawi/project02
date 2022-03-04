@@ -34,13 +34,10 @@ public class Purchase {
     private User owner;
 
     @OneToMany(mappedBy = "purchase", cascade = CascadeType.ALL)
-<<<<<<< HEAD
     @Column(name="ticket_id")
-    private List<Ticket> tickets = new ArrayList<>();
-=======
     private List<Ticket> tickets = new ArrayList<Ticket>();
 
->>>>>>> origin/main
+
 
 
     public Purchase() {}
@@ -91,10 +88,6 @@ public class Purchase {
         this.owner = owner;
     }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/main
     public List<Ticket> getTickets() {
         return tickets;
     }

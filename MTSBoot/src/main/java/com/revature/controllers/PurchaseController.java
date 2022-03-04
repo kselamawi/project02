@@ -3,6 +3,7 @@ package com.revature.controllers;
 import com.revature.models.Purchase;
 import com.revature.models.Ticket;
 import com.revature.models.User;
+import com.revature.repository.PurchaseRepository;
 import com.revature.services.PurchaseService;
 import com.revature.services.TicketService;
 import com.revature.services.UserService;
@@ -10,17 +11,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 
 @Controller
-@RequestMapping(value="/purchase")
+@RequestMapping("/purchase")
 @CrossOrigin("*")
 public class PurchaseController {
     private UserService us;
     private PurchaseService ps;
     private TicketService ts;
+    private PurchaseRepository pr;
 
     public PurchaseController(){}
 
@@ -28,15 +31,34 @@ public class PurchaseController {
     public PurchaseController(PurchaseService ps, UserService us, TicketService ts) {
         this.ps = ps;
         this.us = us;
+        this.ts = ts;
     }
 
+  /*
     @PostMapping("/")
     @ResponseBody
     public Purchase createPurchase(@RequestBody Purchase purchase) {
-        java.util.Date utilDate = new java.util.Date();
-        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
-        purchase.setPurchaseDate(sqlDate);
-        return ps.createPurchase(purchase.getPurchaseId(), purchase.getPurchaseDate(), purchase.getOwner());
+        System.out.println("Made it to back end! Inside createPurchase");
+
+        User owner = new User();
+     //   owner.setId(id);
+        purchase.setOwner(owner);
+        return ps.createPurchase(purchase);
+
+    }
+*/
+
+    @PostMapping("/{ownerId}")
+    @ResponseBody
+    public Purchase createPurchase(@RequestBody Purchase purchase, @PathVariable("ownerId")String ownerId) {
+        System.out.println("Made it to back end! Inside createPurchase");
+        purchase.setOwner(us.getUserById(Integer.parseInt(ownerId)));
+       // pr.setOwner(us.getUserById(Integer.parseInt(ownerId)));
+        System.out.println(purchase);
+
+        //How do I "unsave" ticket now that it has been purchased?
+
+        return ps.createPurchase(purchase);
     }
 
 
@@ -65,5 +87,9 @@ public class PurchaseController {
         return true;
     }
 
-
+    @GetMapping("/price")
+    @ResponseBody
+    public double getPrice(@RequestBody int id) {
+        return ps.getPrice(id);
+    }
 }

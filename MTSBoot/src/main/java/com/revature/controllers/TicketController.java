@@ -36,7 +36,8 @@ import java.util.List;
 //        @GetMapping("/id")
 //        @ResponseBody
 //        public Ticket getTicketById(@PathVariable("id") int id){
-//            return ts.getTicketsById(id);
+//            User user = new User
+//            return ts.getTicketsByUser(id);
 //        }
         @GetMapping("/genre")
         @ResponseBody
@@ -72,7 +73,7 @@ import java.util.List;
             return ts.createTicket(ticket);
         }
 
-        @GetMapping("/{id}")
+        @GetMapping("/save/{id}")
         @ResponseBody
         public List<Ticket> getTicketsByOwner(@PathVariable("id")int id) {
             User user = us.getUserById(id);

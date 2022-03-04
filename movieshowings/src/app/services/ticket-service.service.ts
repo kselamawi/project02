@@ -5,6 +5,7 @@ import { catchError } from 'rxjs';
 import { Observable, throwError } from 'rxjs';
 import { Subject } from 'rxjs';
 import { HttpHeaders } from '@angular/common/http';
+import { UserService } from './user.service';
 
 
 
@@ -29,10 +30,11 @@ export class TicketServiceService {
   //   timeslot: "",
   // }
   
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private us: UserService) { }
 
   getTickets(): void{
-    this.http.get<ITicket[]>("http://localhost:8080/tickets/")
+    console.log(this.us.user);
+    this.http.get<ITicket[]>(`http://localhost:8080/tickets/save/${this.us.user.id}`)
     .pipe(
       catchError((e)=> {
         return throwError(e);
@@ -47,7 +49,7 @@ export class TicketServiceService {
 
 
     createTickets(ticket:ITicket, id:String): Observable<ITicket> {
-      return this.http.post<ITicket>("http://localhost:8080/tickets/save/" + id + "/", JSON.stringify(ticket),
+      return this.http.post<ITicket>("http://localhost:8080/tickets/save/" + id, JSON.stringify(ticket),
        {headers : new HttpHeaders({ 'Content-Type': 'application/json' })})
       .pipe(catchError((e) => {
         return throwError(e);

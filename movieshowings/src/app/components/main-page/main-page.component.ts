@@ -1,9 +1,11 @@
 import { getInstructionStatements } from '@angular/compiler/src/render3/view/util';
 import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 import { IMovie, IMovieDetail } from 'src/app/interfaces/imovie';
 import { ITicket } from 'src/app/interfaces/ITicket';
 import { MovieServiceService } from 'src/app/services/movie-service.service';
+import { SetAndGetTicketsService } from 'src/app/services/set-and-get-tickets.service';
 import { TicketServiceService } from 'src/app/services/ticket-service.service';
 
 @Component({
@@ -13,7 +15,7 @@ import { TicketServiceService } from 'src/app/services/ticket-service.service';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor(private movieService:MovieServiceService, private ticketService:TicketServiceService) { }
+  constructor(private router:AppRoutingModule, private movieService:MovieServiceService, private ticketService:TicketServiceService, private get:SetAndGetTicketsService) { }
 
   ngOnInit(): void {
     this.getMovies();
@@ -54,46 +56,52 @@ export class MainPageComponent implements OnInit {
     {id: 3, name: "3"}
     ];
 
-  ticketTime = null;
-  ticketDay = null;
+    ticketInfo = [
+      this.ticketDays,
+      this.ticketTimes,
+      this.ticketAmounts
+    ];
+  
+
+  ticketTime = "";
+  ticketDay = "";
   ticketAmount = null;
 
   ticket: ITicket = {
-    id: 1,
     price: 15.99,
     movieTitle: "",
     genre: "",
     showTime:"",
     showTimeSlot:"",
     owner:{
-      id: 0,
+      id: "",
       email:"",
       password:""
     },
   }
 
-  
 
-  //We need to be able to populate a ticket object to send to our back end. 
-  saveTickets(pageMovie:IMovieDetail, ticketDay:any, ticketTime:any, ticketAmount:any){
+  purchaseTickets(pageMovie:IMovieDetail, ticketDay:any, ticketTime:any, ticketAmount:any){
+    console.log("Purchase Tickets has been called");
+  }
+
+
+  //We need to be able to populate a ticket object to send to our back end.
+  saveTickets(pageMovie:IMovieDetail, ticketDay: any, ticketTime: any, ticketAmount:any){
     console.log("saveTickets function called");
-    if(!this.getCookie("id")){
-      alert("Please login to save a ticket");
-      window.location.href = "/login";
-    }
-
-  
+    console.log(pageMovie.title);
+    console.log(ticketDay);
+    console.log(ticketTime);
+    console.log(ticketAmount);
 
     //Setting up our ticket to send back
     this.ticket.movieTitle = pageMovie.title;
     this.ticket.genre = pageMovie.genres;
-
     this.ticket.showTime = ticketDay.name;
     this.ticket.showTimeSlot = ticketTime.name;
+    console.log(this.ticket);
 
     let id = this.getCookie("id");
-
-    console.log(this.ticket);
 
     for (let i = 0; i < ticketAmount.id; i++){
     this.ticketService.createTickets(this.ticket, id)
@@ -101,7 +109,7 @@ export class MainPageComponent implements OnInit {
         console.log(data);
       });
     }
-  
+
 
   }
 
@@ -110,13 +118,13 @@ export class MainPageComponent implements OnInit {
     this.movieService.getMovies()
     .subscribe((data) => {
       console.log(data);
-      
+
       this.movieList = data;
 
     });
 
   }
-  
+
 
   getCookie(cname:any) {
     let name = cname + "=";

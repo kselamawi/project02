@@ -11,9 +11,16 @@
     width:25rem;
   }
 
+
+select {
+    background-color: #0c1f1e;
+    color:#b78534;
+}
+
   .card {
       background-color: #2a6460;
       /* color: #0c1f1e; */
+      color:#cda04b;
   }
 
 .card-title {
@@ -22,8 +29,10 @@
 
 .our-btn {
     background-color: #0c1f1e;
+    margin-top: 1.5em;
     
 }
 .our-btn:hover {
-    color: white;
+ 
+    background-color: #063332;
 }

@@ -22,17 +22,17 @@ public class User {
     @Column(name="last_name", nullable = false)
     private String last;
 
-    @Column(name="email", nullable = false)
+    @Column(name="email", nullable = false, unique=true)
     private String email;
 
-    @Column(name="password", nullable = false)
+    @Column(name="password", nullable = false, unique=true)
     private String password;
 
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Purchase> purchases = new ArrayList<>();
 
-    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.MERGE)
     private List<Ticket> tickets = new ArrayList<>();
 
     public User(){
@@ -111,4 +111,5 @@ public class User {
     public void setTickets(List<Ticket> tickets) {
         this.tickets = tickets;
     }
+
 }

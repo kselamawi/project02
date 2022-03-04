@@ -16,11 +16,9 @@ import java.util.List;
 public class UserService {
 
     private UserRepository ur;
-    private TicketRepository tr;
 
     @Autowired
-    public UserService(UserRepository ur, TicketRepository tr){
-        this.tr = tr;
+    public UserService(UserRepository ur){
         this.ur = ur;
     }
 

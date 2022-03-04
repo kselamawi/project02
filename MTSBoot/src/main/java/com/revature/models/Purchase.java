@@ -33,12 +33,8 @@ public class Purchase {
     @JsonIgnore
     private User owner;
 
-    @OneToMany(mappedBy = "purchase", cascade = CascadeType.ALL)
-    @Column(name="ticket_id")
+    @OneToMany(mappedBy = "purchase")
     private List<Ticket> tickets = new ArrayList<Ticket>();
-
-
-
 
     public Purchase() {}
 

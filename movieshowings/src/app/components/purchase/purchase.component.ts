@@ -109,7 +109,10 @@ export class PurchaseComponent implements OnInit {
     console.log("called sendPurchase");
     console.log(this.purchase);
 
-    this.purchaseService.doPurchase(this.purchase, this.purchase.owner.id);
+    this.purchaseService.sendPurchase(this.purchase, this.purchase.owner.id)
+      .subscribe((data) => {
+        console.log(data);
+      })
    // this.purchaseService.doPurchase(this.purchase);
 
     

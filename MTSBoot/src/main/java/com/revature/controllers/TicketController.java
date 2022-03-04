@@ -27,12 +27,14 @@ import java.util.List;
             this.ts = ts;
             this.us = us;
         }
-        // mapping our methods to controller URI
+
+
         @GetMapping("/")
         @ResponseBody
         public List<Ticket> getAllTickets(){
             return ts.getAllTickets();
         }
+
 //        @GetMapping("/id")
 //        @ResponseBody
 //        public Ticket getTicketById(@PathVariable("id") int id){

@@ -56,10 +56,11 @@
         </table>
         <!-- <p id="userEmail"><b>A confirmation email will be sent to :</b> {{userEmail}}</p>
        <a href="mailto:{{userEmail}}">Confirmation of Purchase E-mail</a>-->
+
+        <p class="col-1" id="purchaseTotalAmt"><b>Total Cost: $ {{purchase.price}}</b></p>
+        <input type="submit" class="btn btn-log btn-block our-btn" value="Purchase" (click)="sendPurchase()" />
       </div>
     </div>
-    <p class="col-1" id="purchaseTotalAmt"><b>Total Cost: $ {{purchase.price}}</b></p>
-    <input type="submit" class="purchase-btn" value="Purchase" (click)="sendPurchase()" />
   </div>
 
 

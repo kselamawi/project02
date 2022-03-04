@@ -14,8 +14,7 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.us.user$.subscribe(user => {
-      console.log("HERE", user);
-      if (user) {
+      if (user.id) {
         this.showLogin = false;
       } else {
         this.showLogin = true;
@@ -39,7 +38,12 @@ export class NavBarComponent implements OnInit {
     this.router.navigate(['purchase']);
   }
   navigateLogout():void{
-    this.router.navigate(['main-page']);
+    this.us.logout().subscribe(()=> {
+      this.router.navigate(['login']);
+      this.us.user$.next({
+       email:"", password:""
+      });
+    });
   }
 
 }

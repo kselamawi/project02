@@ -5,6 +5,7 @@
     <content url="file://$MODULE_DIR$/../../MTSBoot">
       <excludeFolder url="file://$MODULE_DIR$/../../MTSBoot/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../MTSBoot/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../MTSBoot/out" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

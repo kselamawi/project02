@@ -1,5 +1,7 @@
 package com.revature.models;
 
+import lombok.Builder;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;

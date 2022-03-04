@@ -28,6 +28,7 @@ public class PurchaseService {
 
     public Purchase createPurchase(int purchaseId, Date purchaseDate, User user) {
         Purchase purchase = new Purchase(purchaseId, (java.sql.Date) purchaseDate, user);
+
         return pr.save(purchase);
     }
 

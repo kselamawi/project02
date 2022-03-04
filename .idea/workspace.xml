@@ -5,21 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad944271-0c46-47a3-aa31-5e2f36cbd485" name="Changes" comment="updated main files">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1abe9cafed11e6f05fe98588f7d80b5c708043de" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/7/27f8ae6eec456a4ba64d2a37bd651489ed99fca9" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/6/463dd7e4ad93ca6faeca736365f35d8a2fd239e4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5ee627d5515c2119f64ee6307be00bc32bc1ce4b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/f/5f6ec6e91c1cfe2ace624aa0fc8b1c862a281c6f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/b/7b05492d35a2b14a8e19e1c6dd32951236c2d765" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/1/910b2d6b36847a87d0bc8315e28ccde2ac8015b4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f616c20162e03e27a33cb4540ab50e64ce6bff09" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_13_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_2_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_junit_jupiter_junit_jupiter_api_5_7_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_mockito_mockito_core_4_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_projectlombok_lombok_1_18_20.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_junit_jupiter_junit_jupiter_api_5_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_junit_jupiter_junit_jupiter_engine_5_8_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_junit_jupiter_junit_jupiter_engine_5_7_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_mockito_mockito_core_4_0_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/MTSBoot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/MTSBoot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/MTSBoot.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/MTSBoot.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/MTSBoot.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/MTSBoot.test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/models/Purchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/models/Purchase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/services/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/services/EmailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movieshowings/.vs/movieshowings/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/.vs/movieshowings/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movieshowings/.vs/slnx.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/movieshowings/.vs/slnx.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MTSBoot/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/MTSBoot/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/models/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/models/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/services/PurchaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/services/PurchaseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MTSBoot/src/main/java/com/revature/services/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +54,13 @@
         </projects_view>
       </state>
     </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Rebase.Settings">
     <option name="NEW_BASE" value="origin/nabi" />
@@ -86,40 +100,97 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/MTSBoot" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
-  <component name="RunManager" selected="Application.EmailService">
-    <configuration name="EmailService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.revature.services.EmailService" />
-      <module name="MTSBoot.main" />
+  <component name="RunManager" selected="JUnit.PurchaseServiceTest">
+    <configuration name="PurchaseServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MTSBoot.test" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.revature.services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.revature.services" />
+      <option name="MAIN_CLASS_NAME" value="com.revature.services.PurchaseServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MtsBootApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.revature.MtsBootApplication" />
-      <module name="MTSBoot.main" />
+    <configuration name="PurchaseServiceTest.deletePurchase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MTSBoot.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.revature.*" />
+          <option name="PATTERN" value="com.revature.services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.revature.services" />
+      <option name="MAIN_CLASS_NAME" value="com.revature.services.PurchaseServiceTest" />
+      <option name="METHOD_NAME" value="deletePurchase" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MTSBoot.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revature.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revature.services" />
+      <option name="MAIN_CLASS_NAME" value="com.revature.services.UserServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.login" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MTSBoot.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revature.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revature.services" />
+      <option name="MAIN_CLASS_NAME" value="com.revature.services.UserServiceTest" />
+      <option name="METHOD_NAME" value="login" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.updateUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MTSBoot.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revature.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revature.services" />
+      <option name="MAIN_CLASS_NAME" value="com.revature.services.UserServiceTest" />
+      <option name="METHOD_NAME" value="updateUser" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.EmailService" />
-        <item itemvalue="Application.MtsBootApplication" />
+        <item itemvalue="JUnit.PurchaseServiceTest" />
+        <item itemvalue="JUnit.UserServiceTest.login" />
+        <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="JUnit.UserServiceTest.updateUser" />
+        <item itemvalue="JUnit.PurchaseServiceTest.deletePurchase" />
       </list>
     </recent_temporary>
   </component>
@@ -187,5 +258,26 @@
     <MESSAGE value="added Amy's files" />
     <MESSAGE value="updated main files" />
     <option name="LAST_COMMIT_MESSAGE" value="updated main files" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Project2$PurchaseServiceTest.ic" NAME="PurchaseServiceTest Coverage Results" MODIFIED="1646432592730" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.revature.services.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Project2$UserServiceTest.ic" NAME="UserServiceTest Coverage Results" MODIFIED="1646430161060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.revature.services.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Project2$TicketServiceTest.ic" NAME="TicketServiceTest Coverage Results" MODIFIED="1646403648957" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.revature.services.*</FILTER>
+    </SUITE>
   </component>
 </project>

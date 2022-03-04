@@ -1,0 +1,2 @@
+insert into user(id,first,last,email,password) values (1002,'Solomon','kahsai','solomon@email.com','password');
+insert into user(Id,first,last,email,password) values (1004,'Smith','payne','Smith@email.com','florida');

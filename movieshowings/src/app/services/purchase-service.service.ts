@@ -38,7 +38,7 @@ export class PurchaseService {
   }
 
   
-  doPurchase(purchase: IPurchase, id:String): Observable<IPurchase> {
+  sendPurchase(purchase: IPurchase, id:String): Observable<IPurchase> {
     console.log("inside doPurchase()");
     return this.http.post<IPurchase>("http://localhost:8080/purchase/" + id, JSON.stringify(purchase), { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })
       .pipe(catchError((e) => {
@@ -49,7 +49,7 @@ export class PurchaseService {
   
 
   /*
-  doPurchase(purchase: IPurchase): Observable<IPurchase> {
+  sendPurchase(purchase: IPurchase): Observable<IPurchase> {
     console.log("inside doPurchase()");
     return this.http.post<IPurchase>("http://localhost:8080/purchase/", JSON.stringify(purchase), { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })
       .pipe(catchError((e) => {

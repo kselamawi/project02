@@ -33,12 +33,13 @@ export class PurchaseService {
     while(num <= ticket.length) {
       sum += ticket[num].price;
     }
+    sum = Math.round(sum * 100) / 100;
     return sum;
   }
 
 
   sendPurchase(purchase: IPurchase, id:String): Observable<IPurchase> {
-    console.log("inside doPurchase()");
+    console.log("inside sendPurchase()");
     console.log(id);
     return this.http.post<IPurchase>("http://localhost:8080/purchase/" + id, JSON.stringify(purchase), { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) })
       .pipe(catchError((e) => {

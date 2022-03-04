@@ -29,15 +29,17 @@ public class PurchaseController {
     public PurchaseController(PurchaseService ps, UserService us, TicketService ts) {
         this.ps = ps;
         this.us = us;
+        this.ts = ts;
     }
 
     @PostMapping("/")
     @ResponseBody
     public Purchase createPurchase(@RequestBody Purchase purchase) {
-        java.util.Date utilDate = new java.util.Date();
-        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
-        purchase.setPurchaseDate(sqlDate);
-        return ps.createPurchase(this.ps.getPrice(purchase.getPurchaseId()), purchase.getTickets(), purchase.getOwner());
+        System.out.println(purchase);
+
+        //How do I "unsave" ticket now that it has been purchased?
+
+        return ps.createPurchase(purchase);
     }
 
 

@@ -50,10 +50,10 @@ public class Purchase {
         this.owner = user;
     }
 
-    public Purchase(double price, List<Ticket> ticket, User owner) {
+    public Purchase(double price, User owner) {
         this.purchasePrice = price;
-        this.tickets = ticket;
         this.owner = owner;
+        this.purchaseDate = new Date(System.currentTimeMillis());
     }
 
 

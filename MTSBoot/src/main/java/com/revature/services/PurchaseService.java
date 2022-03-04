@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.Date;
 import java.util.List;
 
 @Service
@@ -18,6 +19,7 @@ public class PurchaseService {
     private PurchaseRepository pr;
     private EmailService es;
     private TicketRepository tr;
+    private TicketService ts;
 
     public PurchaseService() {}
 
@@ -26,9 +28,23 @@ public class PurchaseService {
         this.pr = pr;
     }
 
-    public Purchase createPurchase(double price, List<Ticket> ticket, User owner) {
-        Purchase purchase = new Purchase(price, ticket, owner);
-        return pr.save(purchase);
+    //function used to update DB w/ populated purchase object
+    public Purchase createPurchase(Purchase purchase) {
+        Purchase newPurchase = new Purchase();
+        newPurchase.setOwner(newPurchase.getOwner());
+        Date date = new Date(System.currentTimeMillis());
+        newPurchase.setPurchaseDate(date);
+        newPurchase.setPrice(purchase.getPrice(purchase));
+        newPurchase.setOwner(purchase.getOwner());
+        //before returning, you should delete from saved tickets
+
+        for(int i = 0; i<newPurchase.getTickets().size(); i++){
+            Ticket ticket = newPurchase.getTickets().get(i);
+            ticket.setPurchase(newPurchase);
+            pr.setPurchaseFieldForTicketItem(newPurchase, ticket.getId());
+        }
+
+        return pr.save(newPurchase); //send to DB
     }
 
     public Purchase getPurchaseById(int id) {

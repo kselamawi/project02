@@ -89,13 +89,13 @@ public class UserController {
 
     //THis is used to log a user out.
     @GetMapping("/logout")
-    public ResponseEntity<String> login(HttpServletResponse response) {
+    public ResponseEntity<String> logout(HttpServletResponse response) {
         Cookie cookie = new Cookie("id", null);
         cookie.setMaxAge(0);
 
         response.addCookie(cookie);
 
-        return new ResponseEntity<>("User has been logged out.", HttpStatus.OK);
+        return new ResponseEntity<String>("User has been logged out.", HttpStatus.OK);
     }
 
 

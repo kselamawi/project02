@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -36,7 +37,7 @@ public class PurchaseController {
         java.util.Date utilDate = new java.util.Date();
         java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
         purchase.setPurchaseDate(sqlDate);
-        return ps.createPurchase(purchase.getPurchaseId(), purchase.getPurchaseDate(), purchase.getOwner());
+        return ps.createPurchase(this.ps.getPrice(purchase.getPurchaseId()), purchase.getTickets(), purchase.getOwner());
     }
 
 
@@ -65,5 +66,9 @@ public class PurchaseController {
         return true;
     }
 
-
+    @GetMapping("/price")
+    @ResponseBody
+    public int getPrice(@RequestBody int id) {
+        return ps.getPrice(id);
+    }
 }

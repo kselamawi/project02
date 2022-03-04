@@ -1,8 +1,10 @@
 
-Q	java:S125?"<This block of commented-out lines of code should be removed.(åì˜
-4
-java:S1128"Remove this duplicated import.(¬µ²
-C
-java:S1068 "&Remove this unused "es" private field.(úÜÀò8¸•êàô/
+V	java:S1256"<This block of commented-out lines of code should be removed.(äÆùœùÿÿÿÿ
+e
+java:S1128"CRemove this unused import 'com.revature.repository.UserRepository'.(¤ûÁÿÿÿÿÿ8õÖÃõ/
 <
-java:S1068!"&Remove this unused "tr" private field.(‹º¯£
+java:S1068"&Remove this unused "es" private field.(úÜÀò
+<
+java:S1068"&Remove this unused "tr" private field.(‹º¯£
+H
+java:S1068"&Remove this unused "ts" private field.(ÉÆÍÖşÿÿÿÿ8õÖÃõ/

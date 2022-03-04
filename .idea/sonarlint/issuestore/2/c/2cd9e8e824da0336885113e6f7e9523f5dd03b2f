@@ -1,5 +1,8 @@
-[	java:S1077"AConstructor has 8 parameters, which is greater than 7 authorized.(Ã½Å â€šâ€ Ã½Ã¿Ã¿Ã¿Ã¿
-k	java:S117,"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã¿Ã©Â²â€œÃ¹Ã¿Ã¿Ã¿Ã¿
-k	java:S117,"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã¿Ã©Â²â€œÃ¹Ã¿Ã¿Ã¿Ã¿
-k	java:S1177"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã½Å â€šâ€ Ã½Ã¿Ã¿Ã¿Ã¿
-k	java:S1177"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã½Å â€šâ€ Ã½Ã¿Ã¿Ã¿Ã¿
+
+H
+java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü8“¨²õ/
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8“¨²õ/
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8“¨²õ/
+]	java:S107/"AConstructor has 8 parameters, which is greater than 7 authorized.(Ê³çª8¢¨²õ/

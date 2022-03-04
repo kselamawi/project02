@@ -40,6 +40,8 @@ export class LoginComponent implements OnInit {
         password: password2,
         id: data.id
       };
+
+    });
       this.userService.user$.next(this.userService.user);
       // window.location.href="/main-page";
        this.router.navigate(["/main-page"]);

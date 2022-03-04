@@ -7,20 +7,26 @@ import javax.persistence.*;
 import javax.persistence.Table;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.sql.Date;
+
+import static com.fasterxml.jackson.databind.cfg.CoercionInputShape.Array;
 
 @Entity
 @Table(name="purchases")
 public class Purchase {
 
     @Id
-    @Column(name="purchaseId")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int purchaseId;
+    @Column(name="purchase_id")
+    private int id;
 
     @Column(name="purchase_date", nullable = false)
     private Date purchaseDate;
+
+    @Column(name="purchase_price", nullable = false)
+    private double purchasePrice;
 
     @ManyToOne() //removed @CascadeType.All
     @JoinColumn(name="owner")
@@ -28,25 +34,44 @@ public class Purchase {
     private User owner;
 
     @OneToMany(mappedBy = "purchase", cascade = CascadeType.ALL)
+<<<<<<< HEAD
     @Column(name="ticket_id")
     private List<Ticket> tickets = new ArrayList<>();
+=======
+    private List<Ticket> tickets = new ArrayList<Ticket>();
+
+>>>>>>> origin/main
 
 
     public Purchase() {}
 
     public Purchase(int id, Date purchaseDate, User user) {
-        this.purchaseId = id;
+        this.id = id;
         this.purchaseDate = purchaseDate;
-//        this.owner = user;
+        this.owner = user;
+    }
+
+    public Purchase(double price, User owner) {
+        this.purchasePrice = price;
+        this.owner = owner;
+        this.purchaseDate = new Date(System.currentTimeMillis());
     }
 
 
+    public void setPrice(double price){
+        this.purchasePrice = price;
+    }
+
+    public double getPrice(Purchase purchase){
+        return purchase.purchasePrice;
+    }
+
     public int getPurchaseId() {
-        return purchaseId;
+        return id;
     }
 
     public void setPurchaseId(int purchaseId) {
-        this.purchaseId = purchaseId;
+        this.id = purchaseId;
     }
 
     public Date getPurchaseDate() {
@@ -66,6 +91,10 @@ public class Purchase {
         this.owner = owner;
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
     public List<Ticket> getTickets() {
         return tickets;
     }

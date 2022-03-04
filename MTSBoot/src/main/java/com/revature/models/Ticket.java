@@ -31,7 +31,7 @@ public class Ticket {
     private String showTime;
 
     @ManyToOne(fetch =FetchType.LAZY)
-    @JoinColumn(name="purchase")
+    @JoinColumn(name="purchase_id")
     @JsonIgnore
     public Purchase purchase;
 

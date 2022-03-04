@@ -27,7 +27,6 @@ public class UserController {
     private UserService us;
 
     public UserController(){
-
     }
 
     @Autowired

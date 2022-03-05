@@ -1,0 +1,11 @@
+
+table {
+  color: #b78534;
+}
+
+#purchase-container {
+  width: 1000px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}

@@ -1,0 +1,28 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no" />
+    <title>Log In</title>
+</head>
+<body>
+    <div class="header-container">
+        <img src="./assets/images/hit_the_lights.png" class="log-img">
+    </div>
+
+    <div class="form-label-group text-center mb-4 form-container">
+        <form id="register" (ngSubmit)="onSubmit()">
+            <div>
+                <input [(ngModel)]="email" id="email" name="email" type="email" class="form-control" placeholder="E-Mail" required/>
+            </div>
+            <br>
+            <div>
+                <input [(ngModel)]="password" id="password" name="password" type="password" class="form-control" placeholder="Password" required minlength="8"/>
+            </div>
+            <br>
+            <input type="submit" class="btn btn-log btn-block our-btn" value="Sign In"/>
+            <a href="./register" class="badge badge-warning alink">Register</a>
+        </form>
+    </div>
+</body>
+</html>

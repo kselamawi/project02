@@ -1,0 +1,26 @@
+.navbar {
+    height: 200px;
+    background-color: #0c1f1e;
+  }
+  /* #0c1f1e
+  #2a6460 */
+  
+  .navbar span{
+    float: right;
+    padding: 10px 10px;
+    font-size: 25px;
+    color: #f7e7c6
+  }
+
+  .bar-img {
+    width: 35rem;
+  }
+
+  .btn-margin {
+    margin: 15px;
+  }
+
+  .navbar span:hover {
+    color: #8bc5a7;
+    cursor: pointer;
+}

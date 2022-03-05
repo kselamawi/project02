@@ -52,6 +52,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Gradle: org.apiguardian:apiguardian-api:1.1.2" level="project" />
     <orderEntry type="library" name="Gradle: org.junit.platform:junit-platform-commons:1.8.2" level="project" />
     <orderEntry type="library" name="Gradle: org.opentest4j:opentest4j:1.2.0" level="project" />
+    <orderEntry type="library" name="Gradle: javax.activation:activation:1.1" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-aop:5.3.15" level="project" />
     <orderEntry type="library" name="Gradle: org.aspectj:aspectjweaver:1.9.7" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-jdbc:5.3.15" level="project" />

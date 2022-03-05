@@ -1,53 +1,78 @@
 package com.revature.models;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.revature.services.EmailService;
 
 import javax.persistence.*;
 import javax.persistence.Table;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.sql.Date;
+
+import static com.fasterxml.jackson.databind.cfg.CoercionInputShape.Array;
 
 @Entity
 @Table(name="purchases")
 public class Purchase {
 
     @Id
-    @Column(name="purchaseId")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int purchaseId;
+    @Column(name="purchase_id")
+    private int id;
 
     @Column(name="purchase_date", nullable = false)
     private Date purchaseDate;
 
-    @ManyToOne(fetch=FetchType.LAZY) //removed @CascadeType.All
+    @Column(name="purchase_price", nullable = false)
+    private double purchasePrice;
+
+    @ManyToOne(fetch = FetchType.LAZY) //removed @CascadeType.All
     @JoinColumn(name="owner")
-//    @JsonIgnore
+    @JsonIgnore
     private User owner;
 
-    @OneToMany(mappedBy = "purchase", cascade = CascadeType.ALL)
-    private List<Ticket> tickets = new ArrayList<>();
-
+    @OneToMany(mappedBy = "purchase", cascade = CascadeType.MERGE)
+    private List<Ticket> tickets = new ArrayList<Ticket>();
 
     public Purchase() {}
 
+    public Purchase(int id, Date purchaseDate, double purchasePrice, User owner, List<Ticket> tickets) {
+        this.id = id;
+        this.purchaseDate = purchaseDate;
+        this.purchasePrice = purchasePrice;
+        this.owner = owner;
+        this.tickets = tickets;
+    }
+
     public Purchase(int id, Date purchaseDate, User user) {
-        this.purchaseId = id;
+        this.id = id;
         this.purchaseDate = purchaseDate;
         this.owner = user;
     }
 
-    public void sendEmailConfirmation(String smtpServer, String to, String from, String subject, String body){
-        EmailService.send(smtpServer, to, from, subject, body);
+    public Purchase(double price, User owner) {
+        this.purchasePrice = price;
+        this.owner = owner;
+        this.purchaseDate = new Date(System.currentTimeMillis());
+    }
+
+
+    public void setPrice(double price){
+        this.purchasePrice = price;
+    }
+
+    public double getPrice(Purchase purchase){
+        return purchase.purchasePrice;
     }
 
     public int getPurchaseId() {
-        return purchaseId;
+        return id;
     }
 
     public void setPurchaseId(int purchaseId) {
-        this.purchaseId = purchaseId;
+        this.id = purchaseId;
     }
 
     public Date getPurchaseDate() {
@@ -67,11 +92,27 @@ public class Purchase {
         this.owner = owner;
     }
 
-    //    public List<Ticket> getTickets() {
-//        return tickets;
-//    }
+    public List<Ticket> getTickets() {
+        return tickets;
+    }
 
-//    public void setTickets(List<Ticket> tickets) {
-//        this.tickets = tickets;
-//    }
+    public void setTickets(List<Ticket> tickets) {
+        this.tickets = tickets;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public double getPurchasePrice() {
+        return purchasePrice;
+    }
+
+    public void setPurchasePrice(double purchasePrice) {
+        this.purchasePrice = purchasePrice;
+    }
 }

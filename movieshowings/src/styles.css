@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+.our-btn {
+    color: #cda04b;
+    background-color: #2a6460;
+}
+
+.our-btn:hover {
+    color: #8bc5a7;
+}
+
+body {
+    background-color: #063332;
+    color: #b78534;
+   
+}
+

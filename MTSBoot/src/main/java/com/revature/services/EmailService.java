@@ -1,54 +1,70 @@
 package com.revature.services;
+import com.revature.models.*;
+
+import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
-import java.util.*;
+import javax.activation.*;
 
-public class EmailService {
+public class EmailService
+{
+    String smtpServer = "smtp.gmail.com";
+    String to;
+    String from = "germygrimes@gmail.com";
+    String subject = "Thank You For Your Purchase!";
+    String body;
+    int userId;
+    User u;
+    PurchaseService ps;
 
-    public static void main(String args[]) {
-        try {
-            String smtpServer = args[0];
-            String to = args[1];
-            String from = args[2];
-            String subject = args[3];
-            String body = args[4];
-            send(smtpServer, to, from, subject, body);
-        } catch (Exception e) {
-            System.out.println("Usage: smtpServer toAddress fromAddress subjectText bodyText");
-        }
-        System.exit(0);
+    EmailService(){}
+
+    EmailService(String smtpServer, String to, String from, String subject, String body) {
+        this.smtpServer = smtpServer;
+        this.to = to;
+        this.from = from;
+        this.subject = subject;
+        this.body = body;
     }
 
-    /**
-    * "send" method to send the message.
-    */
-    public static void send(String smtpServer, String to, String from, String subject, String body){
+    //smtpServer and from should always be the same, so don't need them
+    EmailService(String to, String body) {
+        this.to = to;
+        this.body = body;
+    }
+
+    public void getEmailInfo(){
+        to = u.getEmail();
+    }
+
+    public void setBody() {
+        List<Ticket> tickets = ps.getPurchaseById(userId).getTickets();
+
+        body = "Thank you, " + u.getFirst() + "for your purchase of " + tickets.size() + "tickets to see " +
+                tickets.get(0).getMovieTitle() + "on " + tickets.get(0).getShowTime() + ". Enjoy the movie!";
+    }
+
+    public void send(){
+        setBody();
+        String host = "localhost";//or IP address
+
+        //Get the session object
+        Properties properties = System.getProperties();
+        properties.setProperty("smtp.gmail.com", host);
+        Session session = Session.getDefaultInstance(properties);
+
+        //compose the message
         try{
-            Properties props = System.getProperties();
-            // -- Attaching to default Session, or we could start a new one --
-            props.put("mail.smtp.host", smtpServer);
-            Session session = Session.getDefaultInstance(props, null);
-            // -- Create a new message --
-            Message msg = new MimeMessage(session);
-            // -- Set the FROM and TO fields --
-            msg.setFrom(new InternetAddress(from));
-            msg.setRecipients(Message.RecipientType.TO,
-            InternetAddress.parse(to, false));
-            // -- We could include CC recipients too --
-            // if (cc != null)
-            // msg.setRecipients(Message.RecipientType.CC
-            // ,InternetAddress.parse(cc, false));
-            // -- Set the subject and body text --
-            msg.setSubject(subject);
-            msg.setText(body);
-            // -- Set some other header information --
-            msg.setHeader("X-Mailer", "LOTONtechEmail");
-            msg.setSentDate(new Date());
-            // -- Send the message --
-            Transport.send(msg);
-            System.out.println("Message sent OK.");
-        } catch (Exception e){
-            e.printStackTrace();
-        }
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(from));
+            message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));
+            message.setSubject(subject);
+            message.setText(body);
+
+            // Send message
+            Transport.send(message);
+            System.out.println("message sent successfully....");
+
+        }catch (MessagingException mex) {mex.printStackTrace();}
     }
-}
+}  

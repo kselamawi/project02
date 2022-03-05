@@ -32,9 +32,10 @@ dependencies {
     // https://mvnrepository.com/artifact/org.projectlombok/lombok
     compileOnly 'org.projectlombok:lombok:1.18.20'
 
-
-
-
+    implementation group: 'com.sun.mail', name: 'javax.mail', version: '1.5.1'
+    implementation 'org.springframework.boot:spring-boot-starter-mail:2.6.4'
+    implementation 'org.springframework:spring-context-support:5.3.16'
+    implementation 'com.alibaba.spring:spring-context-support:1.0.11'
 }
 
 

@@ -1,9 +1,9 @@
+import { IPurchase } from "./IPurchase";
 import { IUser } from "./IUser";
 
 
 /*
 Expected Ticket Object from server:
-
 {
     id: "",
     price: {
@@ -29,12 +29,11 @@ Expected Ticket Object from server:
 // }
 
 export interface ITicket {
-    id?: number;
-    price: number;
-    movieTitle: string;
-    genre: string;
-    releaseDate: string;
-    showTimeDate: string;
-    timeslot: string;
-    user?: IUser;
+  id?: number;
+  price: number;
+  movieTitle?: string;
+  genre?: string;
+  showTime: string;
+  showTimeSlot: string;
+  owner?: IUser;
 }

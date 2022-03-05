@@ -18,56 +18,48 @@ public class Ticket {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name="ticket_id")
     private int id;
-
-    @Column(name="Show_Time_Date",nullable = false)
-    private Date showTimeDate;
 
     @Column(name = "movie_title",nullable = false)
     private String movieTitle;
 
-    @Column(name="price")
+    @Column(name="price", nullable = false)
     private double price;
 
-    @Column(name="genre",nullable = false)
-    private  String genre;
+    @Column(name="genre")
+    private String genre;
 
-    @Column(name="ReleaseDate",nullable = false)
-    private  Date releaseDate;
+    @Column(name="showTimeSlot")
+    private String showTimeSlot;
+
+    @Column(name="showTime")
+    private String showTime;
 
     @ManyToOne(fetch =FetchType.LAZY)
     @JoinColumn(name="purchase")
+    @JsonIgnore
     public Purchase purchase;
-    
-    @ManyToOne(fetch =FetchType.LAZY)
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="owner")
+    @JsonIgnore
     private User owner;  //unique, null.
 
     public Ticket() {
     }
 
-    public Ticket(Date show_Time_Date, String movie_title, double price, String genre, Date releaseDate, Purchase purchase, User owner) {
-        this.showTimeDate = show_Time_Date;
-        this.movieTitle = movie_title;
-        this.price = price;
-        this.genre = genre;
-        this.releaseDate = releaseDate;
-        this.purchase = purchase;
-        this.owner = owner;
-    }
-
-
-    public Ticket(int id, Date show_Time_Date, String movie_title, double price, String genre, Date releaseDate, Purchase purchase, User owner) {
+    public Ticket(int id, String movieTitle, double price, String genre, String showTimeSlot, String showTime, Purchase purchase, User owner) {
         this.id = id;
-        this.showTimeDate = show_Time_Date;
-        this.movieTitle = movie_title;
+        this.movieTitle = movieTitle;
         this.price = price;
         this.genre = genre;
-        this.releaseDate = releaseDate;
+        this.showTimeSlot = showTimeSlot;
+        this.showTime = showTime;
         this.purchase = purchase;
         this.owner = owner;
     }
+
 
     public int getId() {
         return id;
@@ -77,6 +69,13 @@ public class Ticket {
         this.id = id;
     }
 
+    public String getMovieTitle() {
+        return movieTitle;
+    }
+
+    public void setMovieTitle(String movieTitle) {
+        this.movieTitle = movieTitle;
+    }
 
     public double getPrice() {
         return price;
@@ -94,12 +93,20 @@ public class Ticket {
         this.genre = genre;
     }
 
-    public Date getReleaseDate() {
-        return releaseDate;
+    public String getShowTimeSlot() {
+        return showTimeSlot;
     }
 
-    public void setReleaseDate(Date releaseDate) {
-        this.releaseDate = releaseDate;
+    public void setShowTimeSlot(String showTimeSlot) {
+        this.showTimeSlot = showTimeSlot;
+    }
+
+    public String getShowTime() {
+        return showTime;
+    }
+
+    public void setShowTime(String showTime) {
+        this.showTime = showTime;
     }
 
     public Purchase getPurchase() {
@@ -116,36 +123,6 @@ public class Ticket {
 
     public void setOwner(User owner) {
         this.owner = owner;
-    }
-
-    public Date getShowTimeDate() {
-        return showTimeDate;
-    }
-
-    public void setShowTimeDate(Date showTimeDate) {
-        this.showTimeDate = showTimeDate;
-    }
-
-    public String getMovieTitle() {
-        return movieTitle;
-    }
-
-    public void setMovieTitle(String movieTitle) {
-        this.movieTitle = movieTitle;
-    }
-
-    @Override
-    public String toString() {
-        return "Ticket{" +
-                "id=" + id +
-                ", showTimeDate=" + showTimeDate +
-                ", movieTitle='" + movieTitle + '\'' +
-                ", price=" + price +
-                ", genre='" + genre + '\'' +
-                ", releaseDate=" + releaseDate +
-                ", purchase=" + purchase +
-                ", owner=" + owner +
-                '}';
     }
 }
 

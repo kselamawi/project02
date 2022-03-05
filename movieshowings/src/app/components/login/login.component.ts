@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'login',
@@ -20,27 +21,51 @@ export class LoginComponent implements OnInit {
     //connect to userService
     this.userService.login(this.email, this.password)
     .subscribe(data => {
+      console.log(data);
+      if(data == null){
+        alert("Invalid login, please try again");
+        this.router.navigate(["/login"]);
+      } else {
+      document.cookie = `id=` + data.id;
       let email2 = "";
       let password2 = "";
-      if(data.email) {
-        email2 = data.email;
-      }
-      if(data.password) {
-        password2 = data.password;
-      }
+
+      email2 = data.email;
+      password2 = data.password;
+
       this.userService.user = {
         email: email2,
-        password: password2
-      };
-      //document.cookie = `id=${res.headers.get("id")}`;
+        password: password2,
+        id: data.id
+      }
+        
+    this.userService.user$.next(this.userService.user);
+    this.router.navigate(["/main-page"]);
+    }
+
     });
+    
 
   }
-
-  constructor(private userService:UserService) { }
 
   ngOnInit(): void {
-
   }
 
+  constructor(private userService:UserService, private router: Router){ }
+
+  getCookie(c_name:any) {
+    let name = c_name + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
 }

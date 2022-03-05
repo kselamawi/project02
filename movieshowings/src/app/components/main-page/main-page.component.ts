@@ -105,9 +105,11 @@ export class MainPageComponent implements OnInit {
     this.ticketService.createTickets(this.ticket, id)
       .subscribe((data) => {
         console.log(data);
+        if(data){
+          alert("Tickets have been saved");
+        }
       });
     }
-
 
   }
 

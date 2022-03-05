@@ -1,11 +1,17 @@
 package com.revature.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
+import lombok.Builder;
+import lombok.Data;
+import lombok.Getter;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
-
-
+@Getter
+@Builder()
+@Data
 @Entity
 @Table(name ="tickets")
 public class Ticket {

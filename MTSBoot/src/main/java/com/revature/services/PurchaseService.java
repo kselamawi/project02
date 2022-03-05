@@ -26,6 +26,7 @@ public class PurchaseService {
         this.pr = pr;
     }
 
+
     public List<Purchase> getAllPurchases(){
         return pr.findAll();
     }

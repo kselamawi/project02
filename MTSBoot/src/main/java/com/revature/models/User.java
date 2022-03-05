@@ -1,6 +1,9 @@
 package com.revature.models;
 
+
+import lombok.Builder;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 import javax.persistence.*;
 import java.util.ArrayList;

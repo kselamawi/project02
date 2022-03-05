@@ -1,0 +1,2 @@
+insert into ticket (id,showTimeDate,movieTitle,price,genre,releaseDate) values (1223,'05-25-2022','funnyfriends',450,'comedy','04-04-2022');
+insert into ticket (id,showTimeDate,movieTitle,price,genre,releaseDate) values (1723,'05-02-2022','Bestfriends',480,'LoveStory','04-04-2022');

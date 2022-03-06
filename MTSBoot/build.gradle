@@ -43,6 +43,13 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
+
+bootJar {
+    manifest {
+        attributes 'Start-Class': 'com.revature.MtsBootApplication'
+    }
+}
+
 jar {
 
     duplicatesStrategy = 'include'

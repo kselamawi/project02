@@ -1,0 +1,8 @@
+
+V	java:S125+"<This block of commented-out lines of code should be removed.(«Œž•ùÿÿÿÿ
+S	java:S106D"9Replace this use of System.out or System.err by a logger.(ÏÄ¥‚úÿÿÿÿ
+A
+java:S1068"&Remove this unused "ps" private field.(Ê¨ãÃüÿÿÿÿ
+n
+java:S2293]"YReplace the type specification in this constructor call with the diamond operator ("<>").(ñ¼ýv
+k	java:S1177"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§Žûîýÿÿÿÿ

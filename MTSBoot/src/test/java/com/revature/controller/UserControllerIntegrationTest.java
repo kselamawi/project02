@@ -17,8 +17,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class UserControllerIntegrationTest {
-@Autowired
-    private TestRestTemplate  testRestTemplate;
+//@Autowired
+//    private TestRestTemplate  testRestTemplate;
 //
 //@Test
 //@Sql("/test.sql")

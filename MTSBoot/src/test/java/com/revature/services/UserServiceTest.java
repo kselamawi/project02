@@ -1,7 +1,6 @@
 package com.revature.services;
 
 import com.revature.exceptions.NotAValidLogin;
-import com.revature.models.Purchase;
 import com.revature.models.User;
 import com.revature.repository.UserRepository;
 import org.junit.Before;
@@ -13,7 +12,6 @@ import static org.mockito.Mockito.*;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.when;
 
 public class UserServiceTest {

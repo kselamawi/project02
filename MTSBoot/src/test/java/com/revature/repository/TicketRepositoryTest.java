@@ -20,8 +20,8 @@ import static org.junit.jupiter.api.Assertions.*;
 class TicketRepositoryTest {
 @Autowired
 private TestEntityManager entityManager;
-    @Autowired
-    private TicketRepository ticketRepository;
+//    @Autowired
+//    private TicketRepository ticketRepository;
 //    @Test
 //    public void saveTicketTest(){
 //        Ticket ticket = ticketRepository.save(new Ticket());

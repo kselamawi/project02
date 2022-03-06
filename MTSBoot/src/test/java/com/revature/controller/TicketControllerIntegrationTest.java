@@ -17,12 +17,12 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class TicketControllerIntegrationTest {
-
-    /*I am trying to implement and do integration testing of Rest APIs using @SpringBootTest.
-   I am using TestRestTemplate to execute and test our Rest APIs by starting a real server on a random port.
-     */
-    @Autowired
-    private TestRestTemplate testRestTemplate;
+//
+//    /*I am trying to implement and do integration testing of Rest APIs using @SpringBootTest.
+//   I am using TestRestTemplate to execute and test our Rest APIs by starting a real server on a random port.
+//     */
+//    @Autowired
+//    private TestRestTemplate testRestTemplate;
 //
 //    @Sql("/ticketTest.sql")
 //    @Test

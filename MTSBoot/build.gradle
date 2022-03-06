@@ -37,6 +37,10 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-mail:2.6.4'
     implementation 'org.springframework:spring-context-support:5.3.16'
     implementation 'com.alibaba.spring:spring-context-support:1.0.11'
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.6.3'
+
 }
 
 tasks.named('test') {

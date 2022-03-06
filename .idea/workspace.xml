@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a4b731f-4793-482d-a002-1920fb6d5074" name="Changes" comment="updated main files">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_alibaba_spring_spring_context_support_1_0_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_sun_mail_jakarta_mail_1_6_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_boot_spring_boot_starter_mail_2_6_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_springframework_spring_context_support_5_3_16.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/MTSBoot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/MTSBoot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/MTSBoot.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/MTSBoot.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/MTSBoot.test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/MTSBoot.test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/c/2cd9e8e824da0336885113e6f7e9523f5dd03b2f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/d/3d0f6ad8694e280cfbed410cfe8f8ce930ac8a1f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/1/610d718ab1ab8e78d54ffef556cda608b11fc0d6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/a/9ae50fa931843ce2c36bd24c0f1ddc69df374f68" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/8/e898716923c429b6de576c5612192deb8feef396" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f616c20162e03e27a33cb4540ab50e64ce6bff09" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MTSBoot/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/MTSBoot/build.gradle" afterDir="false" />
-    </list>
+    <list default="true" id="8a4b731f-4793-482d-a002-1920fb6d5074" name="Changes" comment="updated main files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

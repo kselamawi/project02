@@ -53,9 +53,9 @@ To-do list:
 ## Roles & Responsibilties
 
 * Isaish Payne:
-   -Team Leader
-   -Assisted team members with various issues
-   -Updating user account information
+   - Team Leader
+   - Assisted team members with various issues
+   - Updating user account information
    
 * Amy Vang
   - Ticket saving functionality
@@ -63,11 +63,11 @@ To-do list:
   - Webpage design and styling
   
 * Nabiatu Kalokoh
-  -Login and logout functionality
-  -Testing
+  - Login and logout functionality
+  - Testing
    
 * Selamawi Kahsai:
-   -Ticket model
+   - Ticket model
    
 * Jeremiah Grimes:
-   -Ticket purchase functionality
+   - Ticket purchase functionality

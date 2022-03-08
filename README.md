@@ -26,7 +26,7 @@ General
 * Using an external API, current and upcoming movies and their information is displayed from the main website page.
 
 User
-• Register 
+* Register 
 * Login/Logout
 * Update their information 
 * View upcoming Movie Showings

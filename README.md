@@ -67,7 +67,7 @@ To-do list:
   - Testing
    
 * Selamawi Kahsai:
-   - Ticket model
+   - Ticket model functionality,styling in the fornt end and Testing in Backend
    
 * Jeremiah Grimes:
    - Ticket purchase functionality
